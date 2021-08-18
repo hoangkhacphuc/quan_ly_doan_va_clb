@@ -61,8 +61,37 @@
         + Cài đặt thông báo : Bật/tắt tự động khi có bài đăng hoặc hoạt động nào mới
 
 
-
-
-            + Liên chi đoàn
+- Thông tin
+    + Đoàn trường
+        + Liên chi đoàn
             + Chi đoàn
-                + 
+                + Lớp trưởng
+                + Bí thư
+                + Đoàn viên
+            + Bí thư liên chi Đoàn
+        + Bí thư đoàn trường
+        + Phó bí thư đoàn trường
+        + Ủy viên đoàn trường
+        + Thủ quỹ đoàn trường
+
+    + Câu lạc bộ
+        + Chủ tịch CLB
+        + Trưởng ban 
+        + Phó ban 
+        + Thành viên
+        + Cố vấn CLB
+
+- Front-End : Quyết , Tuấn Vinh, Thành Vinh, Phúc
+- Tester : Quyết , Tuấn Vinh, Thành Vinh, Phúc
+- Back-End : Thành Vinh, Phúc
+- SQL : Tuần Vinh , Thành Vinh
+- Tìm thông tin : Quyết, Phúc
+- Hướng đối tượng : Minh
+- Thuật Toán : Minh
+
+Quyết : Thiết kế hình ảnh trong web, FE, tìm thông tin -- html, css
+Tuấn Vinh : FE, Tester, SQL -- SQL + javascript + JSON
+Thành Vinh : FE, BE, SQL -- PHP + SQL + JSON
+Minh : Hướng đối tượng, BE, Thuật toán -- PHP, Từ sql phân tích HĐT phù hợp + JSON
+Phúc : FE, BE, tester, Thuật toán -- Chống hack cho web, tìm một số chức năng mới
+
