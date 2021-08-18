@@ -1,0 +1,68 @@
+- Chưc năng
+    // Hệ thông quản lý - ADMIN
+
+    + Cập nhật chức vụ cho 1 cá nhân nào đó : admin hệ thống, admin đoàn, admin CLB, thành viên
+    + Kiểm tra và chỉnh sửa thông tin của cá nhân hoặc câu lạc bộ
+    + Thêm, sửa, xóa 1 thành viên
+
+
+
+    // Đoàn trường
+
+    + Hiển thị cac bài đăng mới của đoàn, và các hoạt động đoàn tổ chức
+    + Quản lý bài đăng của đoàn
+        * Đăng bài
+        * Sửa bài
+        * Xóa bài
+        * Ẩn bài
+    + Thêm hoạt động đoàn
+        * Hoạt động
+            + Đăng bài
+            + Sửa bài
+            + Xóa bài
+            + Ẩn bài
+        * HOạt động tích điểm - Tức là khi mình tham gia vào hoạt động bất kỳ mình sẽ được 1 
+            số điểm tương ứng với chức trong hoạt động đó : quản lý, tham gia
+            + Đăng bài
+            + Sửa bài
+            + Xóa bài
+            + Ẩn bài
+            + Cập nhật điểm
+            + Tạo giftcode cho những người tham gia
+            + Nhập giftcode
+    + Quản lý đoàn viên
+        + Thêm liên chi đoàn, chi đoàn, đoàn viên
+        + Sửa thông tin liên chi đoàn, chi đoàn, đoàn viên
+        + Xóa thông tin liên chi đoàn, chi đoàn, đoàn viên
+        + Cập nhật chức vụ : BCH hành đoàn trường, bí thư chi đoàn...
+    + Thông báo
+        + Gửi thông báo qua email cho tất cả thành viên hoặc những thành viên có chức vụ
+        + Gửi thông báo qua telegram cho nhóm hoặc tất cả thành viên hoặc những thành viên có chức vụ
+        + Cài đặt thông báo : Bật/tắt tự động khi có bài đăng hoặc hoạt động nào mới
+
+    // Câu lạc bộ
+
+    + Quản lý bài đăng của CLB
+        * Đăng bài
+        * Sửa bài
+        * Xóa bài
+        * Ẩn bài
+    + Thêm hoạt động CLB
+        + Đăng bài
+        + Sửa bài
+        + Xóa bài
+        + Ẩn bài
+    + Quản lý thành viên
+        + Xin gia nhập CLB
+        + Thêm, xóa 1 thành viên
+    + Thông báo
+        + Gửi thông báo qua email cho tất cả thành viên
+        + Gửi thông báo qua telegram cho nhóm hoặc tất cả thành viên trong CLB
+        + Cài đặt thông báo : Bật/tắt tự động khi có bài đăng hoặc hoạt động nào mới
+
+
+
+
+            + Liên chi đoàn
+            + Chi đoàn
+                + 
