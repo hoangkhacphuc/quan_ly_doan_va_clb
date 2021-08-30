@@ -3,7 +3,7 @@
 - Môi trường phát triển : website
 - Nền tảng giao diện : Web app
 # **II - Chức năng** 
-1. ## **Hệ thống quản lý - ADMIN**
+## **1.1. Hệ thống quản lý - ADMIN**
 ### `	`- Thêm , Sửa, Xóa 1 hoặc nhiều thành viên 
 ### `	`- Cập nhật chức vụ chức vụ cho cá nhân : vd Admin hệ thống, Admin đoàn ...
 ### `	`- Check và sửa thông tin 
