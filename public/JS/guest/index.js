@@ -32,11 +32,17 @@ $(document).ready(function(){
     let bannerFocus = 0;
     
     setInterval(function () {
-        document.getElementById('Banner-'+bannerFocus).style = "opacity : 0;";
+        document.getElementById('Banner-'+bannerFocus).style = "display: none;";
         bannerFocus++;
         if (bannerFocus >= slide)
         bannerFocus = 0;
-        document.getElementById('Banner-'+bannerFocus).style = "opacity : 1;";
-    }, 3000);
+        document.getElementById('Banner-'+bannerFocus).style = "display: block;";
+    }, 5000);
 
+    let selectMenuPlayer = false;
+    $('.player').click(function () {
+        console.log(selectMenuPlayer);
+        selectMenuPlayer = !selectMenuPlayer;
+        $('.menu-box').css("display", (selectMenuPlayer ? "grid":"none"));
+    });
 });

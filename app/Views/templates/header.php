@@ -7,11 +7,18 @@
             <input autocomplete="off" type="text" id="search" placeholder="Tìm kiếm ...">
             <button id='btn-search'><i class="fa fa-search"></i></button>
         </div>
-        <div class="item player">
+        <div class="item player" ondblclick="false">
             <img src='Image/avt-<?= $sex ?>.jpg' alt="">
             <div class="content">
                 <span class="name" id="namePlayer"><?= $Name ?></span>
                 <span class="point"><i class="fa fa-heartbeat"></i>&nbsp;<?= $Point ?></span>
+            </div>
+            <div class="menu-box">
+                <a href="#">Thông tin</a>
+                <a href="#">Cài đặt</a>
+                <a href="#">Thông báo</a>
+                <a href="#">Xem hoạt động</a>
+                <a href="#">Đăng xuất</a>
             </div>
         </div>
         <div class="both"></div>
@@ -70,8 +77,14 @@
         </ul>
     </div>
     <div class="row banner">
-        <img src="Image/Banner/img1.jpg" alt="" id="Banner-0">
-        <img src="Image/Banner/img2.jpg" alt="" id="Banner-1">
-        <img src="Image/Banner/img3.jpg" alt="" id="Banner-2">
+        <img src="Image/Banner/img1.jpg" alt="" id="Banner-0" style="display: block;">
+        <img src="Image/Banner/img2.jpg" alt="" id="Banner-1" style="display: none;">
+        <img src="Image/Banner/img3.jpg" alt="" id="Banner-2" style="display: none;">
     </div>
 </header>
+
+<div class="content">
+    <?php
+        for ($i=0; $i < 100; $i++)  echo "$i<br>";
+    ?>
+</div>
