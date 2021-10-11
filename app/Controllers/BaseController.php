@@ -62,10 +62,24 @@ class BaseController extends Controller
     {
         if (strlen($name) <= 20)
             return $name;
+        
         $arr_name = explode(" ", $name);
         $result = $arr_name[0]." ";
+        
         for ($i=1; $i < count($arr_name)-1; $i++)
-            $result .= $arr_name[$i][0].($i == count($arr_name)-2 ? " ":".");
+        {
+            $first_charz = $arr_name[$i][0];
+            $current = "";
+            if (!ctype_alnum($first_charz))
+            {
+                for ($j=0; $j < strlen($arr_name[$i]); $j++)
+                    if (!ctype_alnum($arr_name[$i][$j]))
+                        $current =  $current . $arr_name[$i][$j];
+                    else break;
+                $first_charz = $current;
+            }
+            $result .= $first_charz.($i == count($arr_name)-2 ? " ":".");
+        }
         $result .= $arr_name[count($arr_name)-1];
         return $result;
     }
