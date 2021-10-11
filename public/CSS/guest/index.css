@@ -201,3 +201,16 @@ header > .above > .player > .menu-box > a:hover {
     background-color: #e94b00;
     color: white;
 }
+
+@media only screen and (max-width: 980px) {
+    header > .above > .search {
+        width: 30%;
+        
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    header > .above > .search {
+        display: none;
+    }
+}
