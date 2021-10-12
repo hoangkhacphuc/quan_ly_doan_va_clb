@@ -1,5 +1,8 @@
 <header>
     <div class="row above">
+        <div class="item" id="btn-showMenu">
+            <i class="fa fa-reorder"></i>
+        </div>
         <div class="item">
             <a href="/"><img src="Image/logo.png" alt="Trang chủ"></a>
         </div>
@@ -38,39 +41,47 @@
             <li>
                 <div class="item">
                     <span>Hoạt Động</span>
-                    <div class="dropdown">
-                        <a href="">Đang diễn ra</a>
-                        <a href="">Đã diễn ra</a>
-                        <a href="">Giftcode</a>
+                    <div class="drop">
+                        <div class="dropdown">
+                            <a href="">Đang diễn ra</a>
+                            <a href="">Đã diễn ra</a>
+                            <a href="">Giftcode</a>
+                        </div>
                     </div>
                 </div>
             </li>
             <li>
                 <div class="item">
                     <span>Cộng Đồng</span>
-                    <div class="dropdown">
-                        <a href="">Fanpage</a>
-                        <a href="">Group</a>
+                    <div class="drop">
+                        <div class="dropdown">
+                            <a href="">Fanpage</a>
+                            <a href="">Group</a>
+                        </div>
                     </div>
                 </div>
             </li>
             <li>
                 <div class="item">
                     <span>Câu Lạc Bộ</span>
-                    <div class="dropdown">
-                        <a href="">Bài viết</a>
-                        <a href="">Hoạt động</a>
-                        <a href="">Danh sách</a>
+                    <div class="drop">
+                        <div class="dropdown">
+                            <a href="">Bài viết</a>
+                            <a href="">Hoạt động</a>
+                            <a href="">Danh sách</a>
+                        </div>
                     </div>
                 </div>
             </li>
             <li>
                 <div class="item">
                     <span>Hỗ Trợ</span>
-                    <div class="dropdown">
-                        <a href="">Hướng dẫn</a>
-                        <a href="">Thông Tin</a>
-                        <a href="">Báo Lỗi</a>
+                    <div class="drop">
+                        <div class="dropdown">
+                            <a href="">Hướng dẫn</a>
+                            <a href="">Thông Tin</a>
+                            <a href="">Báo Lỗi</a>
+                        </div>
                     </div>
                 </div>
             </li>
@@ -85,6 +96,6 @@
 
 <div class="content">
     <?php
-        for ($i=0; $i < 100; $i++)  echo "$i<br>";
+        for ($i=0; $i < 20; $i++)  echo "$i<br>";
     ?>
 </div>

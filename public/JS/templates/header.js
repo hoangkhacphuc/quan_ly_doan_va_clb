@@ -41,8 +41,14 @@ $(document).ready(function(){
 
     let selectMenuPlayer = false;
     $('.player').click(function () {
-        console.log(selectMenuPlayer);
         selectMenuPlayer = !selectMenuPlayer;
         $('.menu-box').css("display", (selectMenuPlayer ? "grid":"none"));
+    });
+
+    let selectBtnShowMenu = false;
+    $('#btn-showMenu').click(function () {
+        selectBtnShowMenu = !selectBtnShowMenu;
+        $('.menu').children('ul').css("animation-name", (selectBtnShowMenu ? "showMenu":"hideMenu"));
+        $('.menu').children('ul').css("left", (selectBtnShowMenu ? "0":"-100%"));
     });
 });

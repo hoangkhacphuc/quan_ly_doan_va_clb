@@ -138,7 +138,7 @@ header > .menu > ul > li > .item span:hover , header > .menu > ul > li > .item >
     color: #e94b00;
 }
 
-header > .menu > ul > li > .item > .dropdown {
+header > .menu > ul > li > .item > .drop > .dropdown {
     display: none;
     position: absolute;
     z-index: 1;
@@ -148,11 +148,11 @@ header > .menu > ul > li > .item > .dropdown {
     border-top: none;
 }
 
-header > .menu > ul > li > .item:hover > .dropdown {
+header > .menu > ul > li > .item:hover > .drop > .dropdown {
     display: grid;
 }
 
-header > .menu > ul > li > .item > .dropdown > a {
+header > .menu > ul > li > .item > .drop > .dropdown > a {
     color: #e94b00;
     width: 100%;
     padding: 10px 0;
@@ -160,7 +160,7 @@ header > .menu > ul > li > .item > .dropdown > a {
     transition: 0.5s;
 }
 
-header > .menu > ul > li > .item > .dropdown > a:hover {
+header > .menu > ul > li > .item > .drop > .dropdown > a:hover {
     background-color: white;
     color: #e94b00;
 }
@@ -202,15 +202,56 @@ header > .above > .player > .menu-box > a:hover {
     color: white;
 }
 
+header > .above > .item > i {
+    display: none;
+    color: #777;
+    font-size: 22px;
+    margin: 15px 10px;
+    cursor: pointer;
+}
 @media only screen and (max-width: 980px) {
     header > .above > .search {
         width: 30%;
-        
     }
 }
 
 @media only screen and (max-width: 800px) {
     header > .above > .search {
         display: none;
+    }
+
+    header > .menu > ul {
+        display: grid;
+        position: absolute;
+        z-index: 888;
+        background-color: #223771;
+        border-radius: 0 10px 10px 0;
+        animation-duration: 1s;
+        left: -100%;
+    }
+
+    header > .menu > ul > li > .item {
+        display: flex;
+    }
+
+    header > .menu > ul > li > .item > .dropdown{
+    }
+
+    header > .menu > ul > li > .item > span, header > .menu > ul > li > .item > a {
+        width: 100%;
+    }
+
+    header > .above > .item > i {
+        display: block;
+    }
+
+    @keyframes showMenu {
+        from {left: -100%;}
+        to {left: 0;}
+    }
+
+    @keyframes hideMenu {
+        from {left: 0;}
+        to {left: -100%;}
     }
 }

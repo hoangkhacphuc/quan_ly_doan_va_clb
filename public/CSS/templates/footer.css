@@ -1,0 +1,46 @@
+footer > .copyright {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+footer {
+    background-color: #223771;
+    padding: 30px 10%;
+    color: white;
+    display: grid;
+    box-sizing: border-box;
+}
+
+footer > .content {
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    padding-bottom: 30px;
+}
+
+footer > .content > .item {
+    width: 50%;
+}
+
+footer > .content > .item > p {
+    margin: 10px 0; 
+}
+
+footer > .content > .item > p.title {
+    text-transform: uppercase;
+}
+
+@media only screen and (max-width: 725px) {
+    footer > .content {
+        display: grid;
+    }
+
+    footer > .content > .item {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    footer > .content > .item:last-child {
+        margin-bottom: 0px;
+    }
+}
