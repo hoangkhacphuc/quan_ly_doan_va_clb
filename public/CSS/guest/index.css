@@ -1,0 +1,187 @@
+.body {
+    display: grid;
+}
+
+.body > .row {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 50px 7% 60px 7%;
+}
+
+/* Tiêu đề các khối */
+
+.body > .row > .title {
+    text-align: center;
+    font-weight: 600;
+    padding: 20px;
+    color: #223771;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+/* 2 line bên dưới */
+
+.body > .row > .title::before {
+    background-color: #e94b00;
+    content: " ";
+    width: 60px;
+    height: 2px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 45px;
+    position: absolute;
+    left: 46.5%;
+    right: 46.5%;
+}
+
+.body > .row > .title::after {
+    background-color: #e94b00;
+    content: " ";
+    width: 120px;
+    height: 2px;
+    display: block;
+    margin: 20px auto 40px auto;
+}
+
+/* CSS thông báo */
+
+.notification > .container {
+    
+}
+
+.notification > .container > .item {
+    font-size: 20px;
+    color: #444;
+    border-bottom: 2px dotted #ccc;
+    padding: 15px 0;
+}
+
+.notification > .container > .item > i{
+    color: #e94b00;
+}
+
+/* CSS sự kiện */
+
+.event {
+    box-sizing: border-box;
+    background-color: #191919;
+}
+
+.event > .title {
+    color: white !important;
+}
+
+.event > .title::before, .event > .title::after {
+    background-color: white !important;
+}
+
+.event > .container {
+    width: 100%;
+}
+
+.event > .container > .slider {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+}
+
+.event > .container > .slider > a {
+    width: calc(25% - 11.25px);
+    flex-shrink: 0;
+    margin: 0 5px;
+    background-color: white;
+    text-decoration: none;
+    color: #223771;
+}
+
+.event > .container > .slider > a > .logo-event {
+    overflow: hidden;
+    position: relative;
+    height: auto;
+    width: 100%;
+}
+
+.event > .container > .slider > a > .logo-event > img {
+    width: 100%;
+    object-fit: cover;
+    transform: scale(1);
+    transition: all .5s ease;
+    opacity: 1;
+}
+
+.event > .container > .slider > a > .logo-event > img:hover {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    opacity: 0.7;
+}
+
+.event > .container > .slider > a > .title {
+    background-color: white;
+}
+
+.event > .container > .slider > a > .title {
+    margin: 15px 10px;
+    padding-left: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    display: grid;
+    color : #333;
+    border-left: 4px solid #e94b00;
+}
+
+.event > .container > .slider > a > .title > span {
+    font-size: 12px;
+    color: #777;
+    font-weight: 100;
+    margin-bottom: 5px;
+}
+
+.event > .container > .slider > a > .title > span:first-child {
+    margin-top: 7px;
+}
+
+.event > .container > .slider > a > .title > span > i {
+    color: #e94b00;
+}
+
+.event > .container > .nav-radio {
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.event > .container > .nav-radio > input {
+    display: none;
+}
+
+.event > .container > .nav-radio > label {
+    border: none;
+    width: 8px;
+    height: 8px;
+    font-size: 1px;
+    background: #fff;
+    border-radius: 50%;
+    margin: 0 10px;
+    padding: 4px;
+    cursor: pointer;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+.event > .container > .nav-radio > input.active {
+    background-color: #e94b00;
+}
+
+
+.event > .container > .more {
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.event > .container > .more > a{
+    padding: 15px 40px;
+    text-align: center;
+    color: white;
+    background-color: #e94b00;
+}

@@ -93,9 +93,3 @@
         <img src="Image/Banner/img3.jpg" alt="" id="Banner-2" style="display: none;">
     </div>
 </header>
-
-<div class="content">
-    <?php
-        for ($i=0; $i < 20; $i++)  echo "$i<br>";
-    ?>
-</div>
