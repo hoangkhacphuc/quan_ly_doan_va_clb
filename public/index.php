@@ -1,6 +1,8 @@
 <?php
 
 // Path to the front controller (this file)
+define('ENVIROMENT', "development");
+
 define('FCPATH', __DIR__ . DIRECTORY_SEPARATOR);
 
 /*

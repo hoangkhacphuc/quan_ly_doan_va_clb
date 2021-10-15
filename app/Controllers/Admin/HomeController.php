@@ -6,7 +6,7 @@
     {
         public function index()
         {
-            return view('pages/test');
+            return view('pages/admin/index');
         }
     }
 
