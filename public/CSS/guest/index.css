@@ -1,5 +1,5 @@
 .body {
-    display: grid;
+    
 }
 
 .body > .row {
@@ -179,9 +179,14 @@
     margin-top: 40px;
 }
 
-.event > .container > .more > a{
+.event > .container > .more > a {
     padding: 15px 40px;
     text-align: center;
     color: white;
+    font-size: 18px;
     background-color: #e94b00;
+}
+
+.event > .container > .more > a:hover {
+    background-color: #c04004;
 }
