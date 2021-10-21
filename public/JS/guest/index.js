@@ -1,9 +1,28 @@
 $(document).ready(function(){
-    let focus_nav_radio = "nav-radio-0";
-    $('input:radio[name=nav-radio]').change(function () {
-        if (focus_nav_radio != "nav-radio-0")
-            $("#label-"+focus_nav_radio).css("background-color", "white");
-        $("#label-"+this.id).css("background-color", "#e94b00");
-        focus_nav_radio = this.id;
+    // Slider
+    $('.autoplay').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        pauseOnHover: true,
+        infinite:true,
+        Swipe: true,
+        swipeToSlide: true,
+        responsive : [
+            {
+                breakpoint: 1000,
+                settings : {
+                    slidesToShow: 3
+                }
+            },
+            {
+                breakpoint: 650,
+                settings : {
+                    slidesToShow: 2
+                }
+            }
+        ]
     });
 });
+
