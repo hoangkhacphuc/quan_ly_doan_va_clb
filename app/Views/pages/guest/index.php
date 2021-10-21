@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title><?= $title ?></title>
+    <title><?= $Title ?></title>
     <base href='<?php echo base_url(); ?>'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,10 +29,9 @@
         <div class="row notification">
             <div class="title">Thông Báo</div>
             <div class="container">
-                <div class="item"><i class="fa fa-bell-o"></i> Chưa có thông báo nào</div>
-                <div class="item"><i class="fa fa-bell-o"></i> Chưa có thông báo nào</div>
-                <div class="item"><i class="fa fa-bell-o"></i> Chưa có thông báo nào</div>
-                <div class="item"><i class="fa fa-bell-o"></i> Chưa có thông báo nào</div>
+                <?php foreach ($notification as $value): ?>
+                    <div class="item"><i class="fa fa-bell-o"></i> <?php echo $value['Content']; ?></div>
+                <?php endforeach; ?>
             </div>
         </div>
         <div class="row event">

@@ -33,8 +33,8 @@ class Database extends Config
     public $default = [
         'DSN'      => '',
         'hostname' => 'localhost',
-        'username' => 'kenplaygirl',
-        'password' => 'Phuc123456',
+        'username' => 'root',
+        'password' => '',
         'database' => 'ql_doan_clb',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',

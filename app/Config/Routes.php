@@ -34,6 +34,13 @@ $routes->get('/', 'Guest\HomeController::index');
 
 $routes->group('admin', function($routes) {
     $routes->get('/', 'Admin\HomeController::index');
+    $routes->group('notification', function ($routes)
+    {
+        $routes->post('/add', 'Admin\Notification::add');
+        $routes->post('/update', 'Admin\Notification::update');
+        $routes->post('/delete', 'Admin\Notification::delete');
+    });
+
 });
 
 /*
