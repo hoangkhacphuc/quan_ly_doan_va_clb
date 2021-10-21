@@ -4,14 +4,16 @@ namespace App\Controllers;
 
 class Home extends BaseController
 {
+    public $model;
+
     public function index()
     {
         $data = [];
         $dataHeader = [];
         $dataHeader['sex'] = 'male';
-        $namePlayer = "Trần Thị Lấp Lánh Ánh Sao Mai";
+        $namePlayer = "Hoàng Khắc Phúc";
         $dataHeader['Name'] = $this->collectNamePlayer($namePlayer);
-        $dataHeader['Point'] = '1000';
+        $dataHeader['Award'] = '123444';
         $data = $this->loadHeader($data,"Trang chủ", $dataHeader);
         return view('pages\guest\index', $data);
     }

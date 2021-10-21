@@ -14,7 +14,7 @@
             <img src='Image/avt-<?= $sex ?>.jpg' alt="">
             <div class="content">
                 <span class="name" id="namePlayer"><?= $Name ?></span>
-                <span class="point"><i class="fa fa-heartbeat"></i>&nbsp;<?= $Point ?></span>
+                <span class="point"><i class="fa fa-heartbeat"></i>&nbsp;<?= $Award ?></span>
             </div>
             <div class="menu-box">
                 <a href="#">Thông tin</a>
