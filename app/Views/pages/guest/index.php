@@ -8,12 +8,21 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title><?= $Title ?></title>
     <base href='<?php echo base_url(); ?>'>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Romanesco&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <!-- Slider -->
+    <link rel="stylesheet" type="text/css" href="Lib/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="Lib/slick/slick-theme.css">
+    <script src="Lib/slick/slick.js" type="text/javascript" charset="utf-8"></script>
+
+    <!-- Tài nguyên -->
     <link rel="stylesheet" href="CSS/templates/header.css">
     <link rel="stylesheet" href="CSS/templates/footer.css">
     <link rel="stylesheet" href="CSS/guest/index.css">
@@ -37,121 +46,86 @@
         <div class="row event">
             <div class="title">Sự Kiện</div>
             <div class="container">
-                <div class="slider">
-                    <a href="#" id="event-1">
-                        <div class="logo-event">
-                            <img src="./Image/Event/img-1.jpg" alt="">
-                        </div>
-                        <span class="title">
-                            Phenikaa Anti Covid đồng hành cùng chiến dịch "Tuổi trẻ"
-                            <span><i class="fa fa-check-circle-o"></i> Hoạt động tích điểm</span>
-                            <span><i class="fa fa-paper-plane-o"></i> Nguyễn Văn A</span>
-                            <span><i class="fa fa-calendar"></i> 15/11/2021</span>
-                        </span>
-                    </a>
-                    <a href="#" id="event-2">
-                        <div class="logo-event">
-                            <img src="./Image/Event/img-1.jpg" alt="">
-                        </div>
-                        <span class="title">
-                            Phenikaa Anti Covid đồng hành cùng chiến dịch "Tuổi trẻ"
-                            <span><i class="fa fa-check-circle-o"></i> Hoạt động tích điểm</span>
-                            <span><i class="fa fa-paper-plane-o"></i> Nguyễn Văn A</span>
-                            <span><i class="fa fa-calendar"></i> 15/11/2021</span>
-                        </span>
-                    </a>
-                    <a href="#" id="event-3">
-                        <div class="logo-event">
-                            <img src="./Image/Event/img-1.jpg" alt="">
-                        </div>
-                        <span class="title">
-                            Phenikaa Anti Covid đồng hành cùng chiến dịch "Tuổi trẻ"
-                            <span><i class="fa fa-check-circle-o"></i> Hoạt động tích điểm</span>
-                            <span><i class="fa fa-paper-plane-o"></i> Nguyễn Văn A</span>
-                            <span><i class="fa fa-calendar"></i> 15/11/2021</span>
-                        </span>
-                    </a>
-                    <a href="#" id="event-4">
-                        <div class="logo-event">
-                            <img src="./Image/Event/img-1.jpg" alt="">
-                        </div>
-                        <span class="title">
-                            Phenikaa Anti Covid đồng hành cùng chiến dịch "Tuổi trẻ"
-                            <span><i class="fa fa-check-circle-o"></i> Hoạt động tích điểm</span>
-                            <span><i class="fa fa-paper-plane-o"></i> Nguyễn Văn A</span>
-                            <span><i class="fa fa-calendar"></i> 15/11/2021</span>
-                        </span>
-                    </a>
-                    <a href="#" id="event-5">
-                        <div class="logo-event">
-                            <img src="./Image/Event/img-1.jpg" alt="">
-                        </div>
-                        <span class="title">
-                            Phenikaa Anti Covid đồng hành cùng chiến dịch "Tuổi trẻ"
-                            <span><i class="fa fa-check-circle-o"></i> Hoạt động tích điểm</span>
-                            <span><i class="fa fa-paper-plane-o"></i> Nguyễn Văn A</span>
-                            <span><i class="fa fa-calendar"></i> 15/11/2021</span>
-                        </span>
-                    </a>
-                    <a href="#" id="event-6">
-                        <div class="logo-event">
-                            <img src="./Image/Event/img-1.jpg" alt="">
-                        </div>
-                        <span class="title">
-                            Phenikaa Anti Covid đồng hành cùng chiến dịch "Tuổi trẻ"
-                            <span><i class="fa fa-check-circle-o"></i> Hoạt động tích điểm</span>
-                            <span><i class="fa fa-paper-plane-o"></i> Nguyễn Văn A</span>
-                            <span><i class="fa fa-calendar"></i> 15/11/2021</span>
-                        </span>
-                    </a>
-                    <a href="#" id="event-7">
-                        <div class="logo-event">
-                            <img src="./Image/Event/img-1.jpg" alt="">
-                        </div>
-                        <span class="title">
-                            Phenikaa Anti Covid đồng hành cùng chiến dịch "Tuổi trẻ"
-                            <span><i class="fa fa-check-circle-o"></i> Hoạt động tích điểm</span>
-                            <span><i class="fa fa-paper-plane-o"></i> Nguyễn Văn A</span>
-                            <span><i class="fa fa-calendar"></i> 15/11/2021</span>
-                        </span>
-                    </a>
-                    <a href="#" id="event-8">
-                        <div class="logo-event">
-                            <img src="./Image/Event/img-1.jpg" alt="">
-                        </div>
-                        <span class="title">
-                            Phenikaa Anti Covid đồng hành cùng chiến dịch "Tuổi trẻ"
-                            <span><i class="fa fa-check-circle-o"></i> Hoạt động tích điểm</span>
-                            <span><i class="fa fa-paper-plane-o"></i> Nguyễn Văn A</span>
-                            <span><i class="fa fa-calendar"></i> 15/11/2021</span>
-                        </span>
-                    </a>
-                    <a href="#" id="event-9">
-                        <div class="logo-event">
-                            <img src="./Image/Event/img-1.jpg" alt="">
-                        </div>
-                        <span class="title">
-                            Phenikaa Anti Covid đồng hành cùng chiến dịch "Tuổi trẻ"
-                            <span><i class="fa fa-check-circle-o"></i> Hoạt động tích điểm</span>
-                            <span><i class="fa fa-paper-plane-o"></i> Nguyễn Văn A</span>
-                            <span><i class="fa fa-calendar"></i> 15/11/2021</span>
-                        </span>
-                    </a>
-                    <a href="#" id="event-10">
-                        <div class="logo-event">
-                            <img src="./Image/Event/img-1.jpg" alt="">
-                        </div>
-                        <span class="title">
-                            Phenikaa Anti Covid đồng hành cùng chiến dịch "Tuổi trẻ"
-                            <span><i class="fa fa-check-circle-o"></i> Hoạt động tích điểm</span>
-                            <span><i class="fa fa-paper-plane-o"></i> Nguyễn Văn A</span>
-                            <span><i class="fa fa-calendar"></i> 15/11/2021</span>
-                        </span>
-                    </a>
-                </div>
-                <div class="nav-radio">
-                    <input type="radio" id="nav-radio-1" name="nav-radio"><label for="nav-radio-1" id="label-nav-radio-1"> </label><input type="radio" id="nav-radio-2" name="nav-radio"><label for="nav-radio-2" id="label-nav-radio-2"> </label><input type="radio" id="nav-radio-3" name="nav-radio"><label for="nav-radio-3" id="label-nav-radio-3"> </label><input type="radio" id="nav-radio-4" name="nav-radio"><label for="nav-radio-4" id="label-nav-radio-4"> </label><input type="radio" id="nav-radio-5" name="nav-radio"><label for="nav-radio-5" id="label-nav-radio-5"> </label><input type="radio" id="nav-radio-6" name="nav-radio"><label for="nav-radio-6" id="label-nav-radio-6"> </label><input type="radio" id="nav-radio-7" name="nav-radio"><label for="nav-radio-7" id="label-nav-radio-7"> </label><input type="radio" id="nav-radio-8" name="nav-radio"><label for="nav-radio-8" id="label-nav-radio-8"> </label><input type="radio" id="nav-radio-9" name="nav-radio"><label for="nav-radio-9" id="label-nav-radio-9"> </label><input type="radio" id="nav-radio-10" name="nav-radio"><label for="nav-radio-10" id="label-nav-radio-10"> </label>
-                </div>
+                <section class="autoplay slider">
+                    <div class="inner">
+                        <a href="#" id="event-1">
+                            <div class="logo-event">
+                                <img src="./Image/Event/img-1.jpg" alt="">
+                            </div>
+                            <span class="title">
+                                Phenikaa Anti Covid đồng hành cùng chiến dịch "Tuổi trẻ"
+                                <span><i class="fa fa-check-circle-o"></i> Hoạt động tích điểm</span>
+                                <span><i class="fa fa-paper-plane-o"></i> Nguyễn Văn A</span>
+                                <span><i class="fa fa-calendar"></i> 15/11/2021</span>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="inner">
+                        <a href="#" id="event-1">
+                            <div class="logo-event">
+                                <img src="./Image/Event/img-1.jpg" alt="">
+                            </div>
+                            <span class="title">
+                                Phenikaa Anti Covid đồng hành cùng chiến dịch "Tuổi trẻ"
+                                <span><i class="fa fa-check-circle-o"></i> Hoạt động tích điểm</span>
+                                <span><i class="fa fa-paper-plane-o"></i> Nguyễn Văn A</span>
+                                <span><i class="fa fa-calendar"></i> 15/11/2021</span>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="inner">
+                        <a href="#" id="event-1">
+                            <div class="logo-event">
+                                <img src="./Image/Event/img-1.jpg" alt="">
+                            </div>
+                            <span class="title">
+                                Phenikaa Anti Covid đồng hành cùng chiến dịch "Tuổi trẻ"
+                                <span><i class="fa fa-check-circle-o"></i> Hoạt động tích điểm</span>
+                                <span><i class="fa fa-paper-plane-o"></i> Nguyễn Văn A</span>
+                                <span><i class="fa fa-calendar"></i> 15/11/2021</span>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="inner">
+                        <a href="#" id="event-1">
+                            <div class="logo-event">
+                                <img src="./Image/Event/img-1.jpg" alt="">
+                            </div>
+                            <span class="title">
+                                Phenikaa Anti Covid đồng hành cùng chiến dịch "Tuổi trẻ"
+                                <span><i class="fa fa-check-circle-o"></i> Hoạt động tích điểm</span>
+                                <span><i class="fa fa-paper-plane-o"></i> Nguyễn Văn A</span>
+                                <span><i class="fa fa-calendar"></i> 15/11/2021</span>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="inner">
+                        <a href="#" id="event-1">
+                            <div class="logo-event">
+                                <img src="./Image/Event/img-1.jpg" alt="">
+                            </div>
+                            <span class="title">
+                                Phenikaa Anti Covid đồng hành cùng chiến dịch "Tuổi trẻ"
+                                <span><i class="fa fa-check-circle-o"></i> Hoạt động tích điểm</span>
+                                <span><i class="fa fa-paper-plane-o"></i> Nguyễn Văn A</span>
+                                <span><i class="fa fa-calendar"></i> 15/11/2021</span>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="inner">
+                        <a href="#" id="event-1">
+                            <div class="logo-event">
+                                <img src="./Image/Event/img-1.jpg" alt="">
+                            </div>
+                            <span class="title">
+                                Phenikaa Anti Covid đồng hành cùng chiến dịch "Tuổi trẻ"
+                                <span><i class="fa fa-check-circle-o"></i> Hoạt động tích điểm</span>
+                                <span><i class="fa fa-paper-plane-o"></i> Nguyễn Văn A</span>
+                                <span><i class="fa fa-calendar"></i> 15/11/2021</span>
+                            </span>
+                        </a>
+                    </div>
+                </section>
                 <div class="more">
                     <a href="#">Xem Thêm</a>
                 </div>

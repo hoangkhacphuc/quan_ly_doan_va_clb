@@ -1,6 +1,9 @@
-.body {
-    
+* {
+    margin: 0;
+    padding: 0;
 }
+
+/* start tạo khối */
 
 .body > .row {
     width: 100%;
@@ -8,7 +11,9 @@
     padding: 50px 7% 60px 7%;
 }
 
-/* Tiêu đề các khối */
+/* end khối */
+
+/* start Tiêu đề các khối */
 
 .body > .row > .title {
     text-align: center;
@@ -19,7 +24,9 @@
     text-transform: uppercase;
 }
 
-/* 2 line bên dưới */
+/* end tiêu đề */
+
+/* Start 2 line bên dưới tiêu đề */
 
 .body > .row > .title::before {
     background-color: #e94b00;
@@ -43,6 +50,8 @@
     margin: 20px auto 40px auto;
 }
 
+/* End 2 line bên dưới tiêu đề */
+
 /* CSS thông báo */
 
 .notification > .container {
@@ -60,12 +69,16 @@
     color: #e94b00;
 }
 
+/* End CSS Thông báo */
+
 /* CSS sự kiện */
 
 .event {
     box-sizing: border-box;
     background-color: #191919;
 }
+
+/* Phần tiêu đề */
 
 .event > .title {
     color: white !important;
@@ -75,9 +88,13 @@
     background-color: white !important;
 }
 
+/* Phần nội dung */
+
 .event > .container {
     width: 100%;
 }
+
+/* Phần slider */
 
 .event > .container > .slider {
     display: flex;
@@ -85,7 +102,11 @@
     width: 100%;
 }
 
-.event > .container > .slider > a {
+.event > .container > .slider .inner {
+    padding: 0 5px;
+}
+
+.event > .container > .slider .inner > a {
     width: calc(25% - 11.25px);
     flex-shrink: 0;
     margin: 0 5px;
@@ -94,14 +115,16 @@
     color: #223771;
 }
 
-.event > .container > .slider > a > .logo-event {
+/* phần ảnh item slider */
+
+.event > .container > .slider .inner > a > .logo-event {
     overflow: hidden;
     position: relative;
     height: auto;
     width: 100%;
 }
 
-.event > .container > .slider > a > .logo-event > img {
+.event > .container > .slider .inner > a > .logo-event > img {
     width: 100%;
     object-fit: cover;
     transform: scale(1);
@@ -109,69 +132,50 @@
     opacity: 1;
 }
 
-.event > .container > .slider > a > .logo-event > img:hover {
+.event > .container > .slider .inner > a > .logo-event > img:hover {
     -webkit-transform: scale(1.2);
     transform: scale(1.2);
     opacity: 0.7;
 }
 
-.event > .container > .slider > a > .title {
-    background-color: white;
-}
+/* phần tiêu đề item */
 
-.event > .container > .slider > a > .title {
-    margin: 15px 10px;
-    padding-left: 15px;
+.event > .container > .slider .inner > a > .title {
+    background-color: white;
     font-size: 16px;
     font-weight: 600;
     display: grid;
     color : #333;
     border-left: 4px solid #e94b00;
+    padding: 15px;
 }
 
-.event > .container > .slider > a > .title > span {
+.event > .container > .slider .inner > a:hover > .title {
+    color: #777;
+}
+
+/* Phần thông tin item */
+
+.event > .container > .slider .inner > a > .title > span {
     font-size: 12px;
     color: #777;
     font-weight: 100;
     margin-bottom: 5px;
 }
 
-.event > .container > .slider > a > .title > span:first-child {
-    margin-top: 7px;
-}
-
-.event > .container > .slider > a > .title > span > i {
+.event > .container > .slider .inner > a:hover > .title > span {
     color: #e94b00;
 }
 
-.event > .container > .nav-radio {
-    text-align: center;
-    width: 100%;
-    margin-top: 20px;
+.event > .container > .slider .inner > a > .title > span:first-child {
+    margin-top: 7px;
 }
 
-.event > .container > .nav-radio > input {
-    display: none;
+.event > .container > .slider .inner > a > .title > span > i {
+    color: #e94b00;
 }
 
-.event > .container > .nav-radio > label {
-    border: none;
-    width: 8px;
-    height: 8px;
-    font-size: 1px;
-    background: #fff;
-    border-radius: 50%;
-    margin: 0 10px;
-    padding: 4px;
-    cursor: pointer;
-    outline: 0;
-    box-sizing: border-box;
-}
-
-.event > .container > .nav-radio > input.active {
-    background-color: #e94b00;
-}
-
+/* button xem thêm */
 
 .event > .container > .more {
     width: 100%;
