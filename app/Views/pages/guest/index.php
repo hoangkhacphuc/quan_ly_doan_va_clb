@@ -8,6 +8,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title><?= $Title ?></title>
     <base href='<?php echo base_url(); ?>'>
+    
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -133,7 +134,9 @@
         </div>
         <div class="row">
             <div class="title">Bài Đăng</div>
-            <div class="container"></div>
+            <div class="container">
+                
+            </div>
         </div>
         <div class="row">
             <div class="title">Câu Lạc Bộ</div>
