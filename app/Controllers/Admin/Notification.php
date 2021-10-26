@@ -3,7 +3,7 @@
 namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
-use App\Models\admin\API\ModelNotification;
+use App\Models\admin\ModelNotification;
 
 class Notification extends BaseController
 {

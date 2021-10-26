@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\admin\API;
+namespace App\Models\admin;
 
 use App\Models\HomeModel;
 
