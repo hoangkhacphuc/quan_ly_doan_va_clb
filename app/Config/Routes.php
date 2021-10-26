@@ -41,6 +41,15 @@ $routes->group('admin', function($routes) {
         $routes->post('/delete', 'Admin\Notification::delete');
     });
 
+    $routes->group('chidoan', function ($routes)
+    {
+        $routes->post('/add', 'Admin\ChiDoan::add');
+    });
+    $routes->group('clb', function ($routes)
+    {
+        $routes->post('/add', 'Admin\Clb::add');
+    });
+
 });
 
 /*
