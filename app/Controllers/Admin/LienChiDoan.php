@@ -3,42 +3,38 @@
 namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
-use App\Models\admin\ModelClb;
+use App\Models\admin\ModelLienChiDoan;
 
-class Clb extends BaseController
+class LienChiDoan extends BaseController
 {
     public $model;
     public function __construct()
     {
-        $this->model = new ModelClb();
+        $this->model = new ModelLienChiDoan();
     }
 
     public function add()
     {
-        if (!isset($_POST['Name']) && !isset($_POST['Avatar']))
+        if (!isset($_POST['Name']) && !isset($_POST['ID']))
         {
             echo "Thêm thất bại !";
             return;
         }
         $name = $_POST['Name'];
-        $avatar = $_POST['Avatar'];
-        $foundationdate = $_POST['FoundationDate'];
-        $this->model->add($name, $avatar,$foundationdate);
+        $this->model->add($name);
     }
 
     public function update()
     {
-        if (!isset($_POST['ID']) && !isset($_POST['Avatar']) && !isset($_POST['Name']))
+        if (!isset($_POST['ID']) &&  !isset($_POST['Name']))
         {
             echo "Cập nhật thất bại !";
             return;
         }
         $ID = $_POST['ID'];
-        $avatar = $_POST['Avatar'];
         $name = $_POST['Name'];
-        $foundationdate = $_POST['FoundationDate'];
-
-        $this->model->update($ID, $name, $avatar,$foundationdate);
+        
+        $this->model->update($ID, $name);
     }
 
     public function delete()
