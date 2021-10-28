@@ -198,4 +198,41 @@
 /* End sự kiện */
 
 /* Start bài đăng */
+.row > .container > .news-item{
+    width: 24%;
+    padding: 1%;
+    float: left;
+}
+.row > .container > .news-item > .img img{ 
+    width: 100%;
+    border-radius: 3px;
+}
+.img{
+    overflow: hidden;
+}
+.row > .container > .news-item img:hover{
+    transform: scale(1.4)
+}
+.row > .container > .news-item > .content {
+    background-color: whitesmoke;
+    border-left: 4px solid #e94b00;
+    padding-left: 5px;
+    
+}
 
+.row > .container > .news-item > .content> .button {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+.row > .container > .news-item > .content p{
+    font-style: italic;
+    color:#999999
+}
+.row > .container > .news-item > a{
+    color: black;
+    font-weight: bold;
+    margin: 4px;
+    padding: 3px;
+
+}

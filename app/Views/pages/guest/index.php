@@ -135,12 +135,53 @@
         <div class="row">
             <div class="title">Bài Đăng</div>
             <div class="container">
-                
+                <div class="news-item">
+                    <div class="img"><img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/phenikaa-20090.jpg" alt=""> </div>
+                    <a href=""> Giải mã “sức hút” của trường Đại học Phenikaa với sinh viên 2k3 </a>
+                    <div class="content">
+                    Chất lượng đào tạo và uy tín của một trường đại học được phản ánh dựa trên “sức hút” đối với tân sinh viên của trường qua các năm.
+                         <p><i class="fa fa-paper-plane-o"></i> Nguyễn Văn A</p>
+                         <p><i class="fa fa-calendar"></i> 15/11/2021</p>
+                         <div class="button"> <button> Xem thêm <i class="fa fa-sign-in"></i></button> </div>
+                    </div>
+                </div>    
+                <div class="news-item">
+                    <div class="img"><img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/phenikaa-20090.jpg" alt=""> </div>
+                    <a href=""> Giải mã “sức hút” của trường Đại học Phenikaa với sinh viên 2k3 </a>
+                    <div class="content">
+                    Chất lượng đào tạo và uy tín của một trường đại học được phản ánh dựa trên “sức hút” đối với tân sinh viên của trường qua các năm.
+                         <p><i class="fa fa-paper-plane-o"></i> Nguyễn Văn A</p>
+                         <p><i class="fa fa-calendar"></i> 15/11/2021</p>
+                         <div class="button"> <button> Xem thêm <i class="fa fa-sign-in"></i></button> </div>
+                    </div>
+                </div>    
+                <div class="news-item">
+                    <div class="img"><img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/phenikaa-20090.jpg" alt=""> </div>
+                    <a href=""> Giải mã “sức hút” của trường Đại học Phenikaa với sinh viên 2k3 </a>
+                    <div class="content">
+                         Chất lượng đào tạo và uy tín của một trường đại học được phản ánh dựa trên “sức hút” đối với tân sinh viên của trường qua các năm.
+                         <p><i class="fa fa-paper-plane-o"></i> Nguyễn Văn A</p>
+                         <p><i class="fa fa-calendar"></i> 15/11/2021</p>
+                         <div class="button"> <button> Xem thêm <i class="fa fa-sign-in"></i></button> </div>
+                    </div>
+                </div>    
+                <div class="news-item">
+                    <div class="img"><img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/phenikaa-20090.jpg" alt=""> </div>
+                    <a href=""> Giải mã “sức hút” của trường Đại học Phenikaa với sinh viên 2k3 </a>
+                    <div class="content">
+                    Chất lượng đào tạo và uy tín của một trường đại học được phản ánh dựa trên “sức hút” đối với tân sinh viên của trường qua các năm.
+                         <p><i class="fa fa-paper-plane-o"></i> Nguyễn Văn A</p>
+                         <p><i class="fa fa-calendar"></i> 15/11/2021</p>
+                         <div class="button"> <button>   Xem thêm <i class="fa fa-sign-in"></i></button> </div>
+                    </div>
+                </div>       
             </div>
         </div>
         <div class="row">
             <div class="title">Câu Lạc Bộ</div>
-            <div class="container"></div>
+            <div class="container">
+                
+            </div>
         </div>
     </div>
 
