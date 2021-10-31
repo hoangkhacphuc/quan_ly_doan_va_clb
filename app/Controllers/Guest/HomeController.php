@@ -14,6 +14,7 @@ class HomeController extends BaseController
                 'Name' => $this->collectNamePlayer('Hoàng Khắc Phúc'),
                 'Point' => '1234',
                 'Title' => 'Trang chủ',
+                'Login' => false
             );
             $data = $this->loadHeader($data, $dataHeader);
             $model = new GuestModel();

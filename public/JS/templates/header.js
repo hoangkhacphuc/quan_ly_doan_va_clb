@@ -52,3 +52,11 @@ $(document).ready(function(){
         $('.menu').children('ul').css("left", (selectBtnShowMenu ? "0":"-100%"));
     });
 });
+
+function startModelLogin() {
+    document.getElementById('model-login').style = 'animation: modelMoveStart 1s; margin-top: 0;';
+}
+
+function closeModelLogin() {
+    document.getElementById('model-login').style = 'animation: modelMoveEnd 1s; margin-top: -100%;';
+}

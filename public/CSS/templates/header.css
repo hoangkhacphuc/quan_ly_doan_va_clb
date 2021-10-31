@@ -93,6 +93,21 @@ header > .above > .player > .content {
     color: #5b9bd1;
 }
 
+header > .above > .player > .login {
+    color: #5b9bd1;
+    border: 1px solid #5b9bd1;
+    padding: 5px 15px;
+    cursor: pointer;
+}
+
+header > .above > .player > .login > i {
+    display: none;
+}
+
+header > .above > .player > .login:hover > i {
+    display: inline-block;
+}
+
 header > .above > .player > .content > .name {
     margin-bottom: 5px;
 }
@@ -259,3 +274,138 @@ header > .above > .item > i {
         to {left: -100%;}
     }
 }
+
+/* Start model */
+
+header > .model {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    margin-top: -100%;
+}
+
+header > .model > .container {
+    width: 50%;
+    margin: auto;
+    background-color: white;
+    margin-top: 50px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px 1px rgba(0,0,0,0.5);
+    padding: 0 30px;
+}
+
+/* header model */
+
+header > .model > .container > .header-model {
+    color: #444;
+    font-size: 24px;
+    font-weight: 600;
+    border-bottom: 1px solid#ccc;
+    padding: 20px;
+}
+
+/* Body model */
+
+header > .model > .container > .body-model {
+    padding: 20px 0;
+}
+
+header > .model > .container > .body-model > .item {
+    margin: 10px 0;
+}
+
+header > .model > .container > .body-model > .item > input {
+    padding: 7px 10px;
+    border: 4px solid #eee;
+    border-left: 4px solid #5b9bd1;
+    border-right: none;
+    width: 250px;
+    outline: 0;
+    color: #555;
+    font-size: 15px;
+    background-color: #eee;
+    transition: 0.5s;
+}
+
+header > .model > .container > .body-model > .item > input:focus {
+    background-color: white;
+}
+
+header > .model > .container > .body-model > .item > label {
+    background-color: #5b9bd1;
+    color: white;
+    font-size: 20px;
+    padding: 8px 10px;
+    position: absolute;
+    cursor: pointer;
+}
+
+header > .model > .container > .body-model > .item > span {
+    font-size: 12px;
+    color: #aaa;
+    cursor: pointer;
+}
+
+header > .model > .container > .body-model > .item > span:hover {
+    color: #e94b00;
+}
+
+header > .model > .container > .body-model > .item > button {
+    background-color: white;
+    border: 4px solid #eee;
+    font-size: 16px;
+    color: #555;
+    padding: 5px 20px;
+    cursor: pointer;
+    transition: 0.5s;
+    outline: 0;
+}
+
+header > .model > .container > .body-model > .item > button:hover {
+    border: 4px solid #5b9bd1;
+    color: #5b9bd1;
+}
+
+@keyframes modelMoveStart {
+    from {
+        margin-top: -100%;
+    }
+    to {
+        margin: 0;
+    }
+}
+
+@keyframes modelMoveEnd {
+    from {
+        margin-top: 0;
+    }
+    to {
+        margin-top: -100%;
+    }
+}
+
+/* Footer model */
+
+header > .model > .container > .footer-model {
+    color: #444;
+    border-top: 1px solid#ccc;
+    padding: 15px;
+}
+
+header > .model > .container > .footer-model > button {
+    padding: 5px 20px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background-color: #5b9bd1;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+header > .model > .container > .footer-model > button:hover {
+    background-color: #223771;
+}
+
+/* end model */

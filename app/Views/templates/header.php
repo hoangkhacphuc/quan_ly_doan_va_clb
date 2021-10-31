@@ -1,4 +1,18 @@
 <header>
+    <div class="model" id="model-login">
+        <div class="container" id="container-model-login">
+            <div class="header-model">Đăng nhập</div>
+            <div class="body-model">
+                <div class="item"><input type="text" id="login-user" placeholder="Username"><label for="login-user"><i class="fa fa-user"></i></label></div>
+                <div class="item"><input type="password" id="login-pass" placeholder="Password"><label for="login-pass"><i class="fa fa-unlock-alt"></i></label></div>
+                <div class="item"><span>Quên mật khẩu ?</span></div>
+                <div class="item"><button>login</button></div>
+            </div>
+            <div class="footer-model">
+                <button onclick="closeModelLogin()">Đóng</button>
+            </div>
+        </div>
+    </div>
     <div class="row above">
         <div class="item" id="btn-showMenu">
             <i class="fa fa-reorder"></i>
@@ -11,18 +25,22 @@
             <button id='btn-search'><i class="fa fa-search"></i></button>
         </div>
         <div class="item player" ondblclick="false">
-            <img src='Image/avt-<?= $sex ?>.jpg' alt="">
-            <div class="content">
-                <span class="name" id="namePlayer"><?= $Name ?></span>
-                <span class="point"><i class="fa fa-heartbeat"></i>&nbsp;<?= $Point ?></span>
-            </div>
-            <div class="menu-box">
-                <a href="#">Thông tin</a>
-                <a href="#">Cài đặt</a>
-                <a href="#">Thông báo</a>
-                <a href="#">Xem hoạt động</a>
-                <a href="#">Đăng xuất</a>
-            </div>
+            <?php if ($Login) { ?>
+                <img src='Image/avt-<?= $sex ?>.jpg' alt="">
+                <div class="content">
+                    <span class="name" id="namePlayer"><?= $Name ?></span>
+                    <span class="point"><i class="fa fa-heartbeat"></i>&nbsp;<?= $Point ?></span>
+                </div>
+                <div class="menu-box">
+                    <a href="#">Thông tin</a>
+                    <a href="#">Cài đặt</a>
+                    <a href="#">Thông báo</a>
+                    <a href="#">Xem hoạt động</a>
+                    <a href="#">Đăng xuất</a>
+                </div>
+            <?php } else { ?>
+                <span class="login" onclick="startModelLogin()">Đăng Nhập <i class='fa fa-sign-in'></i></span>
+            <?php } ?>
         </div>
         <div class="both"></div>
     </div>
