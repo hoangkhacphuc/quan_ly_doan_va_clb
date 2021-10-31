@@ -15,7 +15,7 @@ class ChiDoan extends BaseController
 
     public function add()
     {
-        if (!isset($_POST['Name']))
+        if (!isset($_POST['Name']) && !isset($_POST['LienChiDoan']))
         {
             echo "Thêm thất bại !";
             return;
