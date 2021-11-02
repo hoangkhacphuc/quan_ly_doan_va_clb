@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 22, 2021 lúc 12:19 AM
--- Phiên bản máy phục vụ: 10.4.18-MariaDB
--- Phiên bản PHP: 8.0.3
+-- Thời gian đã tạo: Th10 01, 2021 lúc 02:05 PM
+-- Phiên bản máy phục vụ: 10.4.21-MariaDB
+-- Phiên bản PHP: 7.4.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -248,7 +248,7 @@ ALTER TABLE `student`
 -- AUTO_INCREMENT cho bảng `chidoan`
 --
 ALTER TABLE `chidoan`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT cho bảng `club`
