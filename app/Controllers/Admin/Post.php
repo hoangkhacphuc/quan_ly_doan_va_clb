@@ -3,7 +3,7 @@
 namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
-use App\Models\admin\ModelNotification;
+use App\Models\admin\ModelPost;
 
 class Post extends BaseController{
     public $model;

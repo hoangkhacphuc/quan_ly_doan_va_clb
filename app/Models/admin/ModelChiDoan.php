@@ -33,7 +33,7 @@ class ModelChiDoan extends HomeModel {
         $query = $this->database->get();
         if ($query->getRow() == 0)
         {
-            echo "Kiểm tra lại !";
+            echo "Kiểm tra lại thông tin !";
             return;
         }
         $this->database->where('ID', $param1);
@@ -47,7 +47,7 @@ class ModelChiDoan extends HomeModel {
         $query = $this->database->get();
         if ($query->getRow() == 0)
         {
-            echo "Kiểm tra lại !";
+            echo "Kiểm tra lại thông tin !";
             return;
         }
         $this->database->where('ID', $param1);
