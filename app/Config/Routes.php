@@ -59,7 +59,12 @@ $routes->group('admin', function($routes) {
         $routes->post('/update', 'Admin\LienChiDoan::update');
         $routes->post('/delete', 'Admin\LienChiDoan::delete');
     });
-
+    $routes->group('post', function ($routes)
+    {
+        $routes->post('/add', 'Admin\Post::add');
+        $routes->post('/update', 'Admin\Post::update');
+        $routes->post('/delete', 'Admin\Post::delete');
+    });
 });
 
 /*
