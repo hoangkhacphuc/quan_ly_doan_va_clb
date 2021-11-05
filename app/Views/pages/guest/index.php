@@ -35,7 +35,7 @@
 <body>
     <?= $header ?>
 
-    <div class="body">
+    < class="body">
         <div class="row notification">
             <div class="title">Thông Báo</div>
             <div class="container">
@@ -132,9 +132,9 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="title">Bài Đăng</div>
-            <div class="container">
+        <div class="main-baidang">
+            <div class="title"> BÀI ĐĂNG  </div>
+            <div class="box-baidang">
                 <div class="news-item">
                     <div class="img"><img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/phenikaa-20090.jpg" alt=""> </div>
                     <a href=""> Giải mã “sức hút” của trường Đại học Phenikaa với sinh viên 2k3 </a>
@@ -142,8 +142,8 @@
                     Chất lượng đào tạo và uy tín của một trường đại học được phản ánh dựa trên “sức hút” đối với tân sinh viên của trường qua các năm.
                          <p><i class="fa fa-paper-plane-o"></i> Nguyễn Văn A</p>
                          <p><i class="fa fa-calendar"></i> 15/11/2021</p>
-                         <div class="button"> <button> Xem thêm <i class="fa fa-sign-in"></i></button> </div>
                     </div>
+                    <div class="button"> <button> Xem thêm <i class="fa fa-sign-in"></i></button> </div>
                 </div>    
                 <div class="news-item">
                     <div class="img"><img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/phenikaa-20090.jpg" alt=""> </div>
@@ -152,8 +152,9 @@
                     Chất lượng đào tạo và uy tín của một trường đại học được phản ánh dựa trên “sức hút” đối với tân sinh viên của trường qua các năm.
                          <p><i class="fa fa-paper-plane-o"></i> Nguyễn Văn A</p>
                          <p><i class="fa fa-calendar"></i> 15/11/2021</p>
-                         <div class="button"> <button> Xem thêm <i class="fa fa-sign-in"></i></button> </div>
+                         
                     </div>
+                    <div class="button"> <button> Xem thêm <i class="fa fa-sign-in"></i></button> </div>
                 </div>    
                 <div class="news-item">
                     <div class="img"><img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/phenikaa-20090.jpg" alt=""> </div>
@@ -162,8 +163,9 @@
                          Chất lượng đào tạo và uy tín của một trường đại học được phản ánh dựa trên “sức hút” đối với tân sinh viên của trường qua các năm.
                          <p><i class="fa fa-paper-plane-o"></i> Nguyễn Văn A</p>
                          <p><i class="fa fa-calendar"></i> 15/11/2021</p>
-                         <div class="button"> <button> Xem thêm <i class="fa fa-sign-in"></i></button> </div>
+                         
                     </div>
+                    <div class="button"> <button> Xem thêm <i class="fa fa-sign-in"></i></button> </div>
                 </div>    
                 <div class="news-item">
                     <div class="img"><img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/phenikaa-20090.jpg" alt=""> </div>
@@ -172,16 +174,139 @@
                     Chất lượng đào tạo và uy tín của một trường đại học được phản ánh dựa trên “sức hút” đối với tân sinh viên của trường qua các năm.
                          <p><i class="fa fa-paper-plane-o"></i> Nguyễn Văn A</p>
                          <p><i class="fa fa-calendar"></i> 15/11/2021</p>
-                         <div class="button"> <button>   Xem thêm <i class="fa fa-sign-in"></i></button> </div>
+                         
                     </div>
-                </div>       
+                    <div class="button"> <button>   Xem thêm <i class="fa fa-sign-in"></i></button> </div>
+                </div>
+                <div class="news-item">
+                    <div class="img"><img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/phenikaa-20090.jpg" alt=""> </div>
+                    <a href=""> Giải mã “sức hút” của trường Đại học Phenikaa với sinh viên 2k3 </a>
+                    <div class="content">
+                    Chất lượng đào tạo và uy tín của một trường đại học được phản ánh dựa trên “sức hút” đối với tân sinh viên của trường qua các năm.
+                         <p><i class="fa fa-paper-plane-o"></i> Nguyễn Văn A</p>
+                         <p><i class="fa fa-calendar"></i> 15/11/2021</p>
+                        
+                    </div>
+                    <div class="button"> <button>   Xem thêm <i class="fa fa-sign-in"></i></button> </div>
+                </div> 
+                <div class="news-item">
+                    <div class="img"><img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/phenikaa-20090.jpg" alt=""> </div>
+                    <a href=""> Giải mã “sức hút” của trường Đại học Phenikaa với sinh viên 2k3 </a>
+                    <div class="content">
+                    Chất lượng đào tạo và uy tín của một trường đại học được phản ánh dựa trên “sức hút” đối với tân sinh viên của trường qua các năm.
+                         <p><i class="fa fa-paper-plane-o"></i> Nguyễn Văn A</p>
+                         <p><i class="fa fa-calendar"></i> 15/11/2021</p>
+                        
+                    </div>
+                    <div class="button"> <button>   Xem thêm <i class="fa fa-sign-in"></i></button> </div>
+                </div> 
+                <div class="news-item">
+                    <div class="img"><img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/phenikaa-20090.jpg" alt=""> </div>
+                    <a href=""> Giải mã “sức hút” của trường Đại học Phenikaa với sinh viên 2k3 </a>
+                    <div class="content">
+                    Chất lượng đào tạo và uy tín của một trường đại học được phản ánh dựa trên “sức hút” đối với tân sinh viên của trường qua các năm.
+                         <p><i class="fa fa-paper-plane-o"></i> Nguyễn Văn A</p>
+                         <p><i class="fa fa-calendar"></i> 15/11/2021</p>
+                        
+                    </div>
+                    <div class="button"> <button>   Xem thêm <i class="fa fa-sign-in"></i></button> </div>
+                </div> 
+                <div class="news-item">
+                    <div class="img"><img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/phenikaa-20090.jpg" alt=""> </div>
+                    <a href=""> Giải mã “sức hút” của trường Đại học Phenikaa với sinh viên 2k3 </a>
+                    <div class="content">
+                    Chất lượng đào tạo và uy tín của một trường đại học được phản ánh dựa trên “sức hút” đối với tân sinh viên của trường qua các năm.
+                         <p><i class="fa fa-paper-plane-o"></i> Nguyễn Văn A</p>
+                         <p><i class="fa fa-calendar"></i> 15/11/2021</p>
+                        
+                    </div>
+                    <div class="button"> <button>   Xem thêm <i class="fa fa-sign-in"></i></button> </div>
+                </div>        
             </div>
         </div>
-        <div class="row">
-            <div class="title">Câu Lạc Bộ</div>
-            <div class="container">
-                
-            </div>
+        <br>
+        <div class="title-clb">
+            <h3>
+               CÂU LẠC BỘ  
+            </h3>
+            <br>
+
+        </div>
+        <div class="main-clb">
+           <div class="image-slider-clb">
+               <div class="image-item-clb">
+                   <div class="image">
+                       <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/phenikaa-20090.jpg" alt="">
+                   </div>
+                   <h3 class="image-title"> thong tin clb </h3>
+                   <p>
+                       Cau lac bo van hoa nhat ban 
+                   </p>
+               </div>
+               <div class="image-item-clb">
+                   <div class="image">
+                       <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/phenikaa-20090.jpg" alt="">
+                   </div>
+                   <h3 class="image-title"> thong tin clb </h3>
+                   <p> Cau lac bo truyen thong </p>
+               </div>
+               <div class="image-item-clb">
+                   <div class="image">
+                       <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/phenikaa-20090.jpg" alt="">
+                   </div>
+                   <h3 class="image-title"> thong tin clb </h3>
+                   <p> Cau lac bo truyen thong </p>
+               </div>
+               <div class="image-item-clb">
+                   <div class="image">
+                       <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/phenikaa-20090.jpg" alt="">
+                   </div>
+                   <h3 class="image-title"> thong tin clb </h3>
+                   <p> Cau lac bo truyen thong </p>
+               </div>
+               <div class="image-item-clb">
+                   <div class="image">
+                       <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/phenikaa-20090.jpg" alt="">
+                   </div>
+                   <h3 class="image-title"> thong tin clb </h3>
+                   <p> Cau lac bo truyen thong </p>
+               </div>
+               <div class="image-item-clb">
+                   <div class="image">
+                       <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/phenikaa-20090.jpg" alt="">
+                   </div>
+                   <h3 class="image-title"> thong tin clb </h3>
+                   <p> Cau lac bo truyen thong </p>
+               </div>
+               <div class="image-item-clb">
+                   <div class="image">
+                       <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/phenikaa-20090.jpg" alt="">
+                   </div>
+                   <h3 class="image-title"> thong tin clb </h3>
+                   <p> Cau lac bo truyen thong </p>
+               </div>
+               <div class="image-item-clb">
+                   <div class="image">
+                       <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/phenikaa-20090.jpg" alt="">
+                   </div>
+                   <h3 class="image-title"> thong tin clb </h3>
+                   <p> Cau lac bo truyen thong </p>
+               </div>
+           </div>
+            <script
+              type="text/javascript"
+              src="https://code.jquery.com/jquery-1.11.0.min.js"
+            ></script>
+            <script
+              type="text/javascript"
+              src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"
+            ></script>
+            <script
+              type="text/javascript"
+              src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+            ></script>
+            
+            
         </div>
     </div>
 
