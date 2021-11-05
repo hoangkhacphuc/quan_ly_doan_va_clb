@@ -6,7 +6,7 @@
                 <div class="item"><input type="text" id="login-user" placeholder="Username"><label for="login-user"><i class="fa fa-user"></i></label></div>
                 <div class="item"><input type="password" id="login-pass" placeholder="Password"><label for="login-pass"><i class="fa fa-unlock-alt"></i></label></div>
                 <div class="item"><span>Quên mật khẩu ?</span></div>
-                <div class="item"><button>login</button></div>
+                <div class="item"><button id="btn-login">login</button></div>
             </div>
             <div class="footer-model">
                 <button onclick="closeModelLogin()">Đóng</button>
@@ -26,7 +26,7 @@
         </div>
         <div class="item player" ondblclick="false">
             <?php if ($Login) { ?>
-                <img src='Image/avt-<?= $sex ?>.jpg' alt="">
+                <img src='Image/Avatar/<?= $Avatar ?>' alt="">
                 <div class="content">
                     <span class="name" id="namePlayer"><?= $Name ?></span>
                     <span class="point"><i class="fa fa-heartbeat"></i>&nbsp;<?= $Point ?></span>
@@ -36,7 +36,7 @@
                     <a href="#">Cài đặt</a>
                     <a href="#">Thông báo</a>
                     <a href="#">Xem hoạt động</a>
-                    <a href="#">Đăng xuất</a>
+                    <a href="/logout">Đăng xuất</a>
                 </div>
             <?php } else { ?>
                 <span class="login" onclick="startModelLogin()">Đăng Nhập <i class='fa fa-sign-in'></i></span>
