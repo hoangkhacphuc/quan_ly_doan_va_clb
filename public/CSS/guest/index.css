@@ -198,30 +198,41 @@
 /* End sự kiện */
 
 /* Start bài đăng */
-.row > .container {
-    background-color: whitesmoke;
-    display: flex;
+.notification{
+    width: 100%;
+}
+.notification > .container {
     flex-wrap: wrap;
+    display: flex;
+    padding-left: 70px;
+    padding-right: 70px;
+    width: 1280px;
   }
-  .row > .container > .news-item{
-      width: 576px;
-      height: 260px;
+  .notification > .container > .news-item{
+      width: 570px;
+      height: 270px;
       padding: 1%;
       display: flex;
       flex-direction: row;
+      overflow: hidden;
+      background-color: whitesmoke;
+      border-radius: 2px ;
   }
-  .row > .container > .news-item > .img img{ 
+  .notification > .container > .news-item > .logo-notification { 
       width: 255px;
-      height: 260px;
+      height: 245px;
       border-radius: 3px;
-  }
-  .img{
+      opacity: 1;
       overflow: hidden;
   }
-  .row > .container > .news-item img:hover{
-      transform: scale(1.4)
+  .notification > .container > .news-item > .logo-notification img{
+      width: 255px;
+      height: 260px;
   }
-  .row > .container > .news-item > .content {
+  .notification > .container > .news-item img:hover{
+      transform: scale(1.2)
+  }
+  .notification > .container > .news-item > .content {
       
       padding-left: 5px;
       width: 255px;
@@ -229,81 +240,68 @@
       margin-left: 20px;
       padding-left: 20px;
   }
-  
-  .row > .container > .news-item > .content> .button {
-      text-align: center;
-      padding-top: 10px;
-      padding-bottom: 5px;
+  .notification > .container > .news-item > .content>.gc{
+      width: 80px;
+      height: 5px;
+      height: 2px;
+      border-top: 2px solid red;
+      border-bottom: 3px solid red;
+      margin: 4px;
+      padding:1px;
   }
-  .row > .container > .news-item > .content p{
-      font-style: italic;
-      color:#999999
+  .notification > .container > .news-item > .content> .more  {
+        border: 1px solid #c4c4c4;
+        font-style: italic;
+        font-size: 11px;
+        padding: 5px 8px;
+        width: 100px;
+        height: 28px;
   }
-  .row > .container > .news-item > .content a{
+  .notification > .container > .news-item > .content> .more  a{
+      color: #808080;
+  }
+  .notification > .container > .news-item > .content p{
+      font-size: 14px;
+      font-family: Roboto,sans-serif;
+  }
+  .notification > .container > .news-item > .content >.content-1  a{
       color: black;
       font-weight: bold;
       padding-bottom: 30px;
       text-decoration: none;
+      width: 240px;
   }
-  .row > .container > .news-item > .content >.ct1{
+  .notification > .container > .news-item > .content >.content-1{
     padding-top: 10px;
+    width: 240px;
   }
-  .row > .container > .news-item > .content >.ct{
+  .notification > .container > .news-item > .content >.content-2  {
     margin-top: 5px;
-  }
-  /* end bài đăng */
-  /* Start sự kiện */
-  .row > .container {
-    background-color: whitesmoke;
-  }
-  .row > .container > .news-item{
-      width: 576px;
-      height: 260px;
-      padding: 1%;
-      display: flex;
-      flex-direction: row;
-  }
-  .row > .container > .news-item > .img img{ 
-      width: 255px;
-      height: 260px;
-      border-radius: 3px;
-  }
-  .img{
-      overflow: hidden;
-  }
-  .row > .container > .news-item img:hover{
-      transform: scale(1.4)
-  }
-  .row > .container > .news-item > .content {
-      
-      padding-left: 5px;
-      width: 255px;
-      height: 260px;
-      margin-left: 20px;
-      padding-left: 20px;
-  }
+    font-size: 12px;
+    width: 240px;
+    padding-bottom: 10px;
+}
+.notification > .container > .news-item > .content >.content-2{
+    font-size: 12px;
+    color: #777;
+    font-weight: 100;
+    margin-bottom: 5px;
+}
+.notification > .container > .news-item > .content >.content-2 > #at{
+    padding-bottom: 10px;
+}
+.notification > .container > .news-item :hover{
+    color:#777;
+}
+.notification > .container > .news-item > .content >.content-2 i{
+    color: #e94b00;
+}
+.notification > .container > .news-item > .content >.content-2 p:hover{
+    color: #e94b00;
+}
+  /* end bài đăng */ 
+  /* Start câu lạc bộ */
   
-  .row > .container > .news-item > .content> .button {
-      text-align: center;
-      padding-top: 10px;
-      padding-bottom: 5px;
-  }
-  .row > .container > .news-item > .content p{
-      font-style: italic;
-      color:#999999
-  }
-  .row > .container > .news-item > .content a{
-      color: black;
-      font-weight: bold;
-      padding-bottom: 30px;
-      text-decoration: none;
-  }
-  .row > .container > .news-item > .content >.ct1{
-    padding-top: 10px;
-  }
-  .row > .container > .news-item > .content >.ct{
-    margin-top: 5px;
-  }
   /* end sự kiện */
 /* cách lam bằng grid-template-colums .
 .container{
