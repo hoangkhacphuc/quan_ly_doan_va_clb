@@ -8,7 +8,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title><?= $Title ?></title>
     <base href='<?php echo base_url(); ?>'>
-    
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="CSS/guest/index.css">
     <script src="JS/templates/header.js"></script>
     <script src="JS/guest/index.js"></script>
-    
+
 </head>
 
 <body>
@@ -39,7 +39,7 @@
         <div class="row">
             <div class="title">Thông Báo</div>
             <div class="container">
-                <?php foreach ($notification as $value): ?>
+                <?php foreach ($notification as $value) : ?>
                     <div class="item"><i class="fa fa-bell-o"></i> <?php echo $value['Content']; ?></div>
                 <?php endforeach; ?>
             </div>
@@ -132,6 +132,7 @@
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
         <div class="row notification">
             <div class="title">Bài Đăng</div>
                 <div class="container">
@@ -213,6 +214,23 @@
             <div class="title">Câu Lạc Bộ</div>
             <div class="container"> </div>
             
+=======
+        <div class="row">
+            <div class="title">BÀI ĐĂNG</div>
+            <div class="container">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="title">Câu lạc bộ</div>
+            <div class="container">
+
+            </div>
+        </div>
+        <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> -->
+>>>>>>> 624b3e66df3a5960f6d9668712e3b105aa875764
     </div>
 
     <?= $footer ?>

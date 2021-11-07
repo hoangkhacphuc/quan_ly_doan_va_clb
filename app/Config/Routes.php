@@ -31,36 +31,50 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 
 $routes->get('/', 'Guest\HomeController::index');
+$routes->get('/home', 'Guest\HomeController::index');
+$routes->post('login', 'Guest\HomeController::login');
 
-$routes->group('admin', function($routes) {
-    $routes->get('/', 'Admin\HomeController::index');
-    $routes->group('notification', function ($routes)
-    {
-        $routes->post('/add', 'Admin\Notification::add');
-        $routes->post('/update', 'Admin\Notification::update');
-        $routes->post('/delete', 'Admin\Notification::delete');
-    });
-    $routes->group('chidoan', function ($routes)
-    {
-        $routes->post('/add', 'Admin\ChiDoan::add');
-        $routes->post('/delete', 'Admin\ChiDoan::delete');
-        $routes->post('/update', 'Admin\ChiDoan::update');
+$session = session();
 
+if ($session->get('User') != "" && $session->get('User') != null)
+{
+    $routes->get('logout', 'Guest\HomeController::logout');
+    $routes->group('admin', function($routes) {
+        $routes->get('/', 'Admin\HomeController::index');
+        $routes->group('notification', function ($routes)
+        {
+            $routes->post('/add', 'Admin\Notification::add');
+            $routes->post('/update', 'Admin\Notification::update');
+            $routes->post('/delete', 'Admin\Notification::delete');
+        });
+        $routes->group('chidoan', function ($routes)
+        {
+            $routes->post('/add', 'Admin\ChiDoan::add');
+            $routes->post('/delete', 'Admin\ChiDoan::delete');
+            $routes->post('/update', 'Admin\ChiDoan::update');
+    
+        });
+        $routes->group('clb', function ($routes)
+        {
+            $routes->post('/add', 'Admin\Clb::add');
+            $routes->post('/update', 'Admin\Clb::update');
+            $routes->post('/delete', 'Admin\Clb::delete');
+        });
+        $routes->group('lienchidoan', function ($routes)
+        {
+            $routes->post('/add', 'Admin\LienChiDoan::add');
+            $routes->post('/update', 'Admin\LienChiDoan::update');
+            $routes->post('/delete', 'Admin\LienChiDoan::delete');
+        });
+        $routes->group('post', function ($routes)
+        {
+            $routes->post('/add', 'Admin\Post::add');
+            $routes->post('/update', 'Admin\Post::update');
+            $routes->post('/delete', 'Admin\Post::delete');
+        });
     });
-    $routes->group('clb', function ($routes)
-    {
-        $routes->post('/add', 'Admin\Clb::add');
-        $routes->post('/update', 'Admin\Clb::update');
-        $routes->post('/delete', 'Admin\Clb::delete');
-    });
-    $routes->group('lienchidoan', function ($routes)
-    {
-        $routes->post('/add', 'Admin\LienChiDoan::add');
-        $routes->post('/update', 'Admin\LienChiDoan::update');
-        $routes->post('/delete', 'Admin\LienChiDoan::delete');
-    });
+}
 
-});
 
 /*
  * --------------------------------------------------------------------

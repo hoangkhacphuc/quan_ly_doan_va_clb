@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 22, 2021 lúc 12:19 AM
--- Phiên bản máy phục vụ: 10.4.18-MariaDB
--- Phiên bản PHP: 8.0.3
+-- Thời gian đã tạo: Th10 06, 2021 lúc 02:23 AM
+-- Phiên bản máy phục vụ: 10.4.21-MariaDB
+-- Phiên bản PHP: 7.4.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,25 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `ql_doan_clb`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `account`
+--
+
+CREATE TABLE `account` (
+  `User` varchar(30) NOT NULL,
+  `Pass` varchar(50) DEFAULT NULL,
+  `ID` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `account`
+--
+
+INSERT INTO `account` (`User`, `Pass`, `ID`) VALUES
+('admin', '21232f297a57a5a743894a0e4a801fc3', 1);
 
 -- --------------------------------------------------------
 
@@ -54,6 +73,19 @@ CREATE TABLE `club` (
   `Name` varchar(70) NOT NULL,
   `Avatar` varchar(100) DEFAULT NULL,
   `FoundationDate` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `giftcode`
+--
+
+CREATE TABLE `giftcode` (
+  `Gift` varchar(10) NOT NULL,
+  `ID_event` int(11) DEFAULT NULL,
+  `Score` int(11) DEFAULT NULL,
+  `ID_player` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -138,9 +170,9 @@ CREATE TABLE `positionmanagement` (
 CREATE TABLE `post` (
   `ID` int(11) NOT NULL,
   `Title` varchar(100) NOT NULL,
-  `Content` varchar(5000) DEFAULT NULL,
-  `Author` int(11) DEFAULT NULL,
-  `Posting` date DEFAULT NULL,
+  `Content` varchar(10000) DEFAULT NULL,
+  `Author` int(11) DEFAULT NULL COMMENT 'Tác giả',
+  `Posting` date DEFAULT NULL COMMENT 'Ngày đăng',
   `Type` int(11) DEFAULT NULL,
   `Hide` int(11) DEFAULT NULL,
   `Image` varchar(100) DEFAULT NULL,
@@ -161,7 +193,7 @@ CREATE TABLE `student` (
   `PhoneNumber` varchar(12) DEFAULT NULL,
   `Email` varchar(45) NOT NULL,
   `DOB` varchar(45) NOT NULL,
-  `Sex` int(11) NOT NULL,
+  `Sex` int(2) NOT NULL COMMENT '0 : Nam\r\n1 : Nữ',
   `Address` varchar(150) NOT NULL,
   `Language` varchar(150) DEFAULT NULL,
   `DateJoinUnion` date NOT NULL,
@@ -169,15 +201,29 @@ CREATE TABLE `student` (
   `DateJoinParty` date DEFAULT NULL,
   `AddressJoinParty` varchar(150) DEFAULT NULL,
   `ChiDoan` int(11) DEFAULT NULL,
-  `Grade` int(11) NOT NULL,
+  `Grade` int(11) NOT NULL COMMENT 'Điểm',
   `Award` varchar(150) DEFAULT NULL,
   `Punishment` varchar(150) DEFAULT NULL,
   `Notification` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Đang đổ dữ liệu cho bảng `student`
+--
+
+INSERT INTO `student` (`ID`, `Name`, `StudentID`, `Avatar`, `PhoneNumber`, `Email`, `DOB`, `Sex`, `Address`, `Language`, `DateJoinUnion`, `AddressJoinUnion`, `DateJoinParty`, `AddressJoinParty`, `ChiDoan`, `Grade`, `Award`, `Punishment`, `Notification`) VALUES
+(1, 'Hoàng Khắc Phúc', '19010066', '1.jpg', '0563014144', 'nhockenxx2@gmail.com', '2001-02-24', 0, 'Kim Sơn-Ninh Bình', NULL, '0000-00-00', '', NULL, NULL, NULL, 0, NULL, NULL, '');
+
+--
 -- Chỉ mục cho các bảng đã đổ
 --
+
+--
+-- Chỉ mục cho bảng `account`
+--
+ALTER TABLE `account`
+  ADD PRIMARY KEY (`User`),
+  ADD KEY `ID` (`ID`);
 
 --
 -- Chỉ mục cho bảng `chidoan`
@@ -191,6 +237,14 @@ ALTER TABLE `chidoan`
 --
 ALTER TABLE `club`
   ADD PRIMARY KEY (`ID`);
+
+--
+-- Chỉ mục cho bảng `giftcode`
+--
+ALTER TABLE `giftcode`
+  ADD PRIMARY KEY (`Gift`),
+  ADD KEY `ID_player` (`ID_player`),
+  ADD KEY `ID_event` (`ID_event`);
 
 --
 -- Chỉ mục cho bảng `lienchidoan`
@@ -248,7 +302,7 @@ ALTER TABLE `student`
 -- AUTO_INCREMENT cho bảng `chidoan`
 --
 ALTER TABLE `chidoan`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT cho bảng `club`
@@ -284,17 +338,30 @@ ALTER TABLE `post`
 -- AUTO_INCREMENT cho bảng `student`
 --
 ALTER TABLE `student`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
 --
 
 --
+-- Các ràng buộc cho bảng `account`
+--
+ALTER TABLE `account`
+  ADD CONSTRAINT `account_ibfk_1` FOREIGN KEY (`ID`) REFERENCES `student` (`ID`);
+
+--
 -- Các ràng buộc cho bảng `chidoan`
 --
 ALTER TABLE `chidoan`
   ADD CONSTRAINT `chidoan_ibfk_1` FOREIGN KEY (`LienChiDoan`) REFERENCES `lienchidoan` (`ID`);
+
+--
+-- Các ràng buộc cho bảng `giftcode`
+--
+ALTER TABLE `giftcode`
+  ADD CONSTRAINT `giftcode_ibfk_1` FOREIGN KEY (`ID_player`) REFERENCES `student` (`ID`),
+  ADD CONSTRAINT `giftcode_ibfk_2` FOREIGN KEY (`ID_event`) REFERENCES `post` (`ID`);
 
 --
 -- Các ràng buộc cho bảng `positionactivity`

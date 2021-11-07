@@ -51,6 +51,21 @@ $(document).ready(function(){
         $('.menu').children('ul').css("animation-name", (selectBtnShowMenu ? "showMenu":"hideMenu"));
         $('.menu').children('ul').css("left", (selectBtnShowMenu ? "0":"-100%"));
     });
+
+    // Login
+
+    $('#btn-login').click(function () {
+        $.post('/login', 
+        {
+            User: $('#login-user').val(),
+            Pass: $('#login-pass').val()
+        },
+        function (data, status) {
+            console.log(data);
+        }).done(function () {
+            console.log(123);
+        });
+    });
 });
 
 function startModelLogin() {
@@ -58,5 +73,5 @@ function startModelLogin() {
 }
 
 function closeModelLogin() {
-    document.getElementById('model-login').style = 'animation: modelMoveEnd 1s; margin-top: -100%;';
+    document.getElementById('model-login').style = 'animation: modelMoveEnd 1s; margin-top: -200%;';
 }
