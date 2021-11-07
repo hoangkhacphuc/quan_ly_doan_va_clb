@@ -198,19 +198,22 @@
 
 /* End sự kiện */
 
-/* Start bài đăng */
-.notification{
-    width: 100%;
+/*Start bài đăng*/
+ .notification{
+   padding: 10%;
+    
 }
 .notification > .container {
     flex-wrap: wrap;
     display: flex;
     padding-left: 70px;
     padding-right: 70px;
-    width: 1280px;
+    width:100%;
+    margin: auto;
+    gap: 10px;
   }
   .notification > .container > .news-item{
-      width: 570px;
+      width: 560px;
       height: 270px;
       padding: 1%;
       display: flex;
@@ -219,16 +222,15 @@
       background-color: whitesmoke;
       border-radius: 2px ;
   }
-  .notification > .container > .news-item > .logo-notification { 
-      width: 255px;
-      height: 245px;
+  .notification > .container > .news-item > .logo-notification{
+      overflow: hidden;
+  }
+  .notification > .container > .news-item > .logo-notification img { 
       border-radius: 3px;
       opacity: 1;
       overflow: hidden;
-  }
-  .notification > .container > .news-item > .logo-notification img{
-      width: 255px;
-      height: 260px;
+      width: 100%;
+      height: 100%;
   }
   .notification > .container > .news-item img:hover{
       transform: scale(1.2)
@@ -251,12 +253,12 @@
       padding:1px;
   }
   .notification > .container > .news-item > .content> .more  {
-        border: 1px solid #c4c4c4;
-        font-style: italic;
-        font-size: 11px;
-        padding: 5px 8px;
-        width: 100px;
-        height: 28px;
+            border: 1px solid #c4c4c4;
+            font-style: italic;
+            font-size: 11px;
+            padding: 5px 8px;
+            width: 100px;
+            height: 28px;
   }
   .notification > .container > .news-item > .content> .more  a{
       color: #808080;
@@ -300,7 +302,28 @@
 .notification > .container > .news-item > .content >.content-2 p:hover{
     color: #e94b00;
 }
-  /* end bài đăng */ 
+.notification > .container > .xemthem {
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.notification > .container > .xemthem > a {
+    padding: 15px 40px;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    background-color: #e94b00;
+}
+
+.notification > .container > .xemthem > a:hover {
+    background-color: #c04004;
+}
+@media screen and (max-width: 600px) {
+    .notification > .container{
+       width: 50%;
+    }
+  /* end bài đăng  
   /* Start câu lạc bộ */
   
   /* end sự kiện */
@@ -329,6 +352,4 @@
 } */
 /* ------------------------------ */
 /* cach lam gọn hơn  */
-
-
 

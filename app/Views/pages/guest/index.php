@@ -134,10 +134,10 @@
         </div>
 <div class="row notification">
             <div class="title">Bài Đăng</div>
-                <div class="container">
-                    <div class="news-item">
+            <div class="container">
+            <div class="news-item">
                         <div class="logo-notification">
-                            <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/phenikaa-20090.jpg" alt=""> 
+                            <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/dsc8958.JPG" alt=""> 
                         </div>
                     
                  <div class="content">
@@ -155,7 +155,7 @@
                 </div>
                 <div class="news-item">
                         <div class="logo-notification">
-                            <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/phenikaa-20090.jpg" alt=""> 
+                            <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/dsc8958.JPG" alt=""> 
                         </div>
                     
                  <div class="content">
@@ -173,7 +173,7 @@
                 </div>
                 <div class="news-item">
                         <div class="logo-notification">
-                            <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/phenikaa-20090.jpg" alt=""> 
+                            <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/dsc8958.JPG" alt=""> 
                         </div>
                     
                  <div class="content">
@@ -191,7 +191,7 @@
                 </div>
                 <div class="news-item">
                         <div class="logo-notification">
-                            <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/phenikaa-20090.jpg" alt=""> 
+                            <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/dsc8958.JPG" alt=""> 
                         </div>
                     
                  <div class="content">
@@ -207,8 +207,10 @@
                     </div>
                     </div>
                 </div>
+                <div class="xemthem"> <a href="#">Xem Thêm</a> </div> 
                 </div>
                 </div>
+            
         <div class="row">
             <div class="title">Câu lạc bộ</div>
             <div class="container">
