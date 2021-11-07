@@ -132,8 +132,7 @@
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
-        <div class="row notification">
+<div class="row notification">
             <div class="title">Bài Đăng</div>
                 <div class="container">
                     <div class="news-item">
@@ -211,17 +210,6 @@
                 </div>
                 </div>
         <div class="row">
-            <div class="title">Câu Lạc Bộ</div>
-            <div class="container"> </div>
-            
-=======
-        <div class="row">
-            <div class="title">BÀI ĐĂNG</div>
-            <div class="container">
-
-            </div>
-        </div>
-        <div class="row">
             <div class="title">Câu lạc bộ</div>
             <div class="container">
 
@@ -230,7 +218,6 @@
         <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
         <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> -->
->>>>>>> 624b3e66df3a5960f6d9668712e3b105aa875764
     </div>
 
     <?= $footer ?>
