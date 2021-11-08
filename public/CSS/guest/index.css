@@ -200,48 +200,74 @@
 
 /*Start bài đăng*/
  .notification{
-   padding: 10%;
+   background-color:rgba(255, 255, 255, 0.034);
+    
+   
     
 }
 .notification > .container {
-    flex-wrap: wrap;
-    display: flex;
-    padding-left: 70px;
-    padding-right: 70px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: px;
+    grid-gap: 12PX;
     width:100%;
     margin: auto;
-    gap: 10px;
   }
   .notification > .container > .news-item{
-      width: 560px;
-      height: 270px;
+      width: auto ;
+      height: auto ;
       padding: 1%;
-      display: flex;
-      flex-direction: row;
-      overflow: hidden;
-      background-color: whitesmoke;
       border-radius: 2px ;
+      display: grid;
+      grid-template-columns: 379px 1fr;
+      border-style: solid;
+      border-width: 1px;
+      border-color:rgba(255, 255, 255, 0.034);
   }
   .notification > .container > .news-item > .logo-notification{
       overflow: hidden;
   }
   .notification > .container > .news-item > .logo-notification img { 
-      border-radius: 3px;
+      border-radius: 12px;
       opacity: 1;
       overflow: hidden;
       width: 100%;
-      height: 100%;
+    
+      /* object-fit: cover; */
   }
-  .notification > .container > .news-item img:hover{
-      transform: scale(1.2)
+  .notification > .container > .news-item img{
+    width: 100%;
+    object-fit: cover;
+    transform: scale(1);
+    transition: all .5s ease;
+    opacity: 1;   
+}
+
+  .notification > .container > .news-item img:hover  {
+    
+    border:1px solid rgb(240, 156, 87);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    opacity: 0.7;
   }
+  
+  .notification > .container > .news-item:hover {
+      border: 1px solid rgba(240, 156, 87,0.1);
+      border-radius: 12px;
+      background-color: rgba(106, 108, 109, 0.1)
+  } 
   .notification > .container > .news-item > .content {
       
       padding-left: 5px;
-      width: 255px;
-      height: 260px;
-      margin-left: 20px;
-      padding-left: 20px;
+      width: auto;
+      height: auto;
+      margin-left: 10px;
+      margin-right: 10px;
+      padding-left: 10px;
+      display:flex;
+      flex-direction:column;
+      justify-content: space-between;
   }
   .notification > .container > .news-item > .content>.gc{
       width: 80px;
@@ -302,54 +328,28 @@
 .notification > .container > .news-item > .content >.content-2 p:hover{
     color: #e94b00;
 }
-.notification > .container > .xemthem {
+.notification >  .xemthem {
     width: 100%;
     text-align: center;
-    margin-top: 40px;
+    margin-top: 100px;
 }
 
-.notification > .container > .xemthem > a {
+.notification > .xemthem > a {
     padding: 15px 40px;
     text-align: center;
     color: white;
     font-size: 18px;
     background-color: #e94b00;
 }
-
-.notification > .container > .xemthem > a:hover {
+.notification > .xemthem > a:hover {
     background-color: #c04004;
 }
-@media screen and (max-width: 600px) {
-    .notification > .container{
-       width: 50%;
+@media screen and (max-width:1023px){
+    .notification> .container{
+        grid-template-columns: repeat(1,1fr);
     }
+}
+    
+}
   /* end bài đăng  
-  /* Start câu lạc bộ */
-  
-  /* end sự kiện */
-/* cách lam bằng grid-template-colums .
-.container{
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    grid-gap:30px;
-}
-    /* màn hình lớn
-@media screen and (max-width: 1279px) {
-    .container{
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-    /* màn hình vừa 
-@media screen and (max-width: 1023px) {
-    .container{
-        grid-template-columns: repeat(2, 1fr);
-    }
-    /* màn hình bé 
-}@media screen and (max-width: 600px) {
-    .container{
-        grid-template-columns: repeat(1, 1fr);
-    }
-} */
-/* ------------------------------ */
-/* cach lam gọn hơn  */
-
+ 
