@@ -199,13 +199,10 @@
 /* End sự kiện */
 
 /*Start bài đăng*/
- .notification{
-   background-color:rgba(255, 255, 255, 0.034);
-    
-   
-    
+ .post{
+   background-color:rgba(255, 255, 255, 0.034);   
 }
-.notification > .container {
+.post > .container {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -214,7 +211,7 @@
     width:100%;
     margin: auto;
   }
-  .notification > .container > .news-item{
+  .post > .container > .news-item{
       width: auto ;
       height: auto ;
       padding: 1%;
@@ -225,35 +222,46 @@
       border-width: 1px;
       border-color:rgba(255, 255, 255, 0.034);
   }
-  .notification > .container > .news-item > .logo-notification{
+  .post > .container > .news-item > .logo-post{
       overflow: hidden;
   }
+<<<<<<< HEAD
   .notification > .container > .news-item > .logo-notification img { 
+=======
+  .post > .container > .news-item > .logo-post img { 
+      border-radius: 12px;
+>>>>>>> 96407b81a546b104c45b45dd6cf43c45ac049bbc
       opacity: 1;
       overflow: hidden;
       width: 100%;
     
       /* object-fit: cover; */
   }
-  .notification > .container > .news-item img{
+  .post > .container > .news-item img{
     width: 100%;
     object-fit: cover;
     transition: all .5s ease;
     opacity: 1;   
 }
 
+<<<<<<< HEAD
   .notification > .container > .news-item img:hover  {
+=======
+  .post > .container > .news-item img:hover  {
+    
+    border:1px solid rgb(240, 156, 87);
+>>>>>>> 96407b81a546b104c45b45dd6cf43c45ac049bbc
     -webkit-transform: scale(1.2);
     transform: scale(1.2);
     opacity: 0.7;
   }
   
-  .notification > .container > .news-item:hover {
+  .post > .container > .news-item:hover {
       border: 1px solid rgba(240, 156, 87,0.1);
       border-radius: 12px;
       background-color: rgba(106, 108, 109, 0.1)
   } 
-  .notification > .container > .news-item > .content {
+  .post > .container > .news-item > .content {
       
       padding-left: 5px;
       width: auto;
@@ -265,7 +273,7 @@
       flex-direction:column;
       /* justify-content: space-between; */
   }
-  .notification > .container > .news-item > .content>.gc{
+  .post > .container > .news-item > .content>.gc{
       width: 80px;
       height: 5px;
       height: 2px;
@@ -274,7 +282,7 @@
       margin: 4px;
       padding:1px;
   }
-  .notification > .container > .news-item > .content> .more  {
+  .post > .container > .news-item > .content> .more  {
             border: 1px solid #c4c4c4;
             font-style: italic;
             font-size: 11px;
@@ -282,72 +290,79 @@
             width: 100px;
             height: 28px;
   }
-  .notification > .container > .news-item > .content> .more  a{
+  .post > .container > .news-item > .content> .more  a{
       color: #808080;
   }
-  .notification > .container > .news-item > .content p{
+  .post > .container > .news-item > .content p{
       font-size: 14px;
       font-family: Roboto,sans-serif;
   }
-  .notification > .container > .news-item > .content >.content-1  a{
+  .post > .container > .news-item > .content >.content-1  a{
       color: black;
       font-weight: bold;
       padding-bottom: 30px;
       text-decoration: none;
       width: 240px;
   }
+<<<<<<< HEAD
   .notification > .container > .news-item > .content >.content-1 {
+=======
+  .post > .container > .news-item > .content >.content-1{
+>>>>>>> 96407b81a546b104c45b45dd6cf43c45ac049bbc
     padding-top: 10px;
     width: 240px;
     height: 50px;
   }
+<<<<<<< HEAD
 
   .notification > .container > .news-item > .content >.content-2  {
+=======
+  .post > .container > .news-item > .content >.content-2  {
+>>>>>>> 96407b81a546b104c45b45dd6cf43c45ac049bbc
     margin-top: 5px;
     font-size: 12px;
     width: 240px;
     padding-bottom: 10px;
 }
-.notification > .container > .news-item > .content >.content-2{
+.post > .container > .news-item > .content >.content-2{
     font-size: 12px;
     color: #777;
     font-weight: 100;
     margin-bottom: 5px;
 }
-.notification > .container > .news-item > .content >.content-2 > #at{
+.post > .container > .news-item > .content >.content-2 > #at{
     padding-bottom: 10px;
 }
-.notification > .container > .news-item :hover{
+.post > .container > .news-item :hover{
     color:#777;
 }
-.notification > .container > .news-item > .content >.content-2 i{
+.post > .container > .news-item > .content >.content-2 i{
     color: #e94b00;
 }
-.notification > .container > .news-item > .content >.content-2 p:hover{
+.post > .container > .news-item > .content >.content-2 p:hover{
     color: #e94b00;
 }
-.notification >  .xemthem {
+.post >  .xemthem {
     width: 100%;
     text-align: center;
     margin-top: 100px;
 }
 
-.notification > .xemthem > a {
+.post > .xemthem > a {
     padding: 15px 40px;
     text-align: center;
     color: white;
     font-size: 18px;
     background-color: #e94b00;
 }
-.notification > .xemthem > a:hover {
+.post > .xemthem > a:hover {
     background-color: #c04004;
 }
 @media screen and (max-width:1023px){
-    .notification> .container{
+    .post> .container{
         grid-template-columns: repeat(1,1fr);
     }
 }
     
-}
   /* end bài đăng  
  

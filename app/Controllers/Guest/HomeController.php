@@ -26,44 +26,57 @@ class HomeController extends BaseController
         $data = $this->loadHeader($data, $dataHeader);
         
         $data['notification'] = $model->getNotification();
-        return view('pages\guest\index', $data);
+        return view('pages/guest/index', $data);
     }
 
     public function login()
     {
+        $response = array(
+            "Error" => "",
+        );
         if (!isset($_POST['User']) || !isset($_POST['Pass']))
         {
-            echo "Vui lòng nhập đầy đủ thông tin !";
+            $response['Error'] = 'Vui lòng nhập đầy đủ thông tin !';
+            echo json_encode($response);
             return;
         }
         $user = $_POST['User'];
         $pass = $_POST['Pass'];
 
         if ($user == "" || $user == null || $pass == "" || $pass == null)
-            return "Vui lòng nhập đầy đủ thông tin !";
+        {
+            $response['Error'] = 'Vui lòng nhập đầy đủ thông tin !';
+            echo json_encode($response);
+            return;
+        }
 
         $pass = md5($pass);
 
         $user = strtolower($user);
         if ($this->KyTuDacBiet($user))
-            return "Thông tin tài khoản không chính xác !";
+        {
+            $response['Error'] = 'Thông tin tài khoản không chính xác !';
+            echo json_encode($response);
+            return;
+        }
 
         $modelUser = new ModelUser();
         $result = $modelUser->login($user, $pass);
 
         if ($result)
         {
-            echo "Đăng nhập thành công !";
             $session = session();
             $data = array(
                 'User' => $user,
                 'ID' => $result,
             );
             $session->set($data);
+            $response['Done'] = 'Đăng nhập thành công !';
+            echo json_encode($response);
+            return;
         }
-        else
-            echo "Thông tin tài khoản hoặc mật khẩu không chính xác !";
-            
+        $response['Error'] = 'Thông tin tài khoản hoặc mật khẩu không chính xác !';
+        echo json_encode($response);
     }
 
     public function logout()
