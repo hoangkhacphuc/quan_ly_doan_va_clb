@@ -312,6 +312,15 @@ header > .model > .container > .body-model {
     padding: 20px 0;
 }
 
+header > .model > .container > .body-model > #errorLogin {
+    border: 1px solid #f87a7a;
+    background-color: #fcd7d7;
+    color: #f84d4d;
+    padding: 15px 20px;
+    display: none;
+    margin-bottom: 20px;
+}
+
 header > .model > .container > .body-model > .item {
     margin: 10px 0;
 }

@@ -36,7 +36,7 @@
     <?= $header ?>
 
     <div class="body">
-        <div class="row">
+        <div class="row notification">
             <div class="title">Thông Báo</div>
             <div class="container">
                 <?php foreach ($notification as $value) : ?>
@@ -132,11 +132,11 @@
                 </div>
             </div>
         </div>
-<div class="row notification">
+<div class="row post">
             <div class="title">Bài Đăng</div>
             <div class="container">
                 <div class="news-item">
-                        <div class="logo-notification">
+                        <div class="logo-post">
                             <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/dsc8958.JPG" alt=""> 
                                 </div>
                     
@@ -156,7 +156,7 @@
                     </div>
                 </div>
                 <div class="news-item">
-                    <div class="logo-notification">
+                    <div class="logo-post">
                             <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/dsc8958.JPG" alt=""> 
                     </div>
                     
@@ -174,7 +174,7 @@
                     </div>
                 </div>
                 <div class="news-item">
-                    <div class="logo-notification">
+                    <div class="logo-post">
                             <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/dsc8958.JPG" alt=""> 
                     </div>
                     
@@ -192,7 +192,7 @@
                     </div>
                 </div>
                 <div class="news-item">
-                    <div class="logo-notification">
+                    <div class="logo-post">
                             <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/dsc8958.JPG" alt=""> 
                     </div>
                     
@@ -210,7 +210,7 @@
                     </div>
                 </div>
                 <div class="news-item">
-                    <div class="logo-notification">
+                    <div class="logo-post">
                         <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/dsc8958.JPG" alt=""> 
                     </div>
                     
@@ -228,7 +228,7 @@
                 </div>
                 </div>
                 <div class="news-item">
-                    <div class="logo-notification">
+                    <div class="logo-post">
                         <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/dsc8958.JPG" alt=""> 
                     </div>
                     
