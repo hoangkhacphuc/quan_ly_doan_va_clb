@@ -207,8 +207,6 @@
                     </div>
                     </div>
                 </div>
-<<<<<<< HEAD
-=======
                 <div class="news-item">
                     <div class="logo-post">
                         <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/dsc8958.JPG" alt=""> 
@@ -246,7 +244,6 @@
                     </div>
                 </div>
             
->>>>>>> 96407b81a546b104c45b45dd6cf43c45ac049bbc
             </div>
             <div class="xemthem"> <a href="#">Xem Thêm </a>  </div> 
 </div>
