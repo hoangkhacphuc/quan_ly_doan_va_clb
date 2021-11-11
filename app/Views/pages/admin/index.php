@@ -13,7 +13,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 
     <!-- Tài nguyên -->
     <link rel="stylesheet" href="CSS/admin/index.css">
@@ -21,7 +20,7 @@
 </head>
 <body>
     <header>
-        <div class="item menu-dashboard"><i class="fa fa-bars"></i></div>
+        <div class="item btn-menu-dashboard"><i class="fa fa-bars"></i></div>
         <div class="item">
             <a href="/"><img src="Image/logo.png" alt="Trang chủ"></a>
         </div>
@@ -29,7 +28,21 @@
             <input autocomplete="off" type="text" id="search" placeholder="Tìm kiếm ...">
             <button id='btn-search'><i class="fa fa-search"></i></button>
         </div>
-        <div class="item"></div>
     </header>
+    <div class="dashboard">
+        <div class="menu-dashboard">
+            <div class="container">
+                <strong><i class="fa fa-plus"></i> Bài đăng mới</strong>
+            </div>
+            <div class="container">
+                <div class="item" id="page-1"><i class="fa fa-home"></i> Trang Chủ</div>
+                <div class="item" id="page-2"><i class="fa fa-users"></i> Thành Viên</div>
+                <div class="item" id="page-3"><i class="fa fa-bullhorn"></i> Thông Báo</div>
+                <div class="item" id="page-4"><i class="fa fa-wrench"></i> Cài Đặt</div>
+                <div class="item" id="page-5"><i class="fa fa-bug"></i> Góp Ý & Báo Lỗi</div>
+            </div>
+        </div>
+        <div class="page"></div>
+    </div>
 </body>
 </html>

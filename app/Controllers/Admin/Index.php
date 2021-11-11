@@ -13,7 +13,17 @@ class Index extends BaseController
 
     public function index()
     {
-        return view('pages/admin/index');
+        $data = array(
+            'Title' => "Super Admin - Dashboard",
+            'Avatar' => $this->student_data['Avatar'],
+
+        );
+        return view('pages/admin/index', $data);
+    }
+
+    public function home()
+    {
+        return view('pages/admin/home');
     }
 
 }

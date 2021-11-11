@@ -40,6 +40,7 @@ if ($session->get('User') != "" && $session->get('User') != null)
     $routes->get('logout', 'Guest\HomeController::logout');
     $routes->group('admin', function($routes) {
         $routes->get('/', 'Admin\Index::index');
+        $routes->get('home', 'Admin\Index::home');
         $routes->group('notification', function ($routes)
         {
             $routes->post('/add', 'Admin\Notification::add');

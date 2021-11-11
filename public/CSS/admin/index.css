@@ -13,19 +13,16 @@ header {
     padding-bottom: 10px;
 }
 
-/* Menu dashboard */
+/* Button menu dashboard */
 
-header > .menu-dashboard {
+header > .btn-menu-dashboard {
     font-size: 22px;
     margin-left: 30px;
     color: #555;
     cursor: pointer;
     padding: 10px 15px;
     border-radius: 50%;
-}
-
-header > .menu-dashboard:hover {
-    background-color: #ccc;
+    display: none;
 }
 
 /* logo */
@@ -71,3 +68,126 @@ header > .search > input:focus, header > .search > button:focus{
 }
 
 /* End header */
+
+/* Start dashboard  */
+
+.dashboard {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+.dashboard > .menu-dashboard {
+    border-right: 1px solid #eee;
+    width: 300px;
+    box-sizing: border-box;
+}
+
+.dashboard > .menu-dashboard > .container {
+    padding: 20px;
+}
+
+/* Bài đăng mới */
+
+.dashboard > .menu-dashboard > .container:first-child {
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+
+.dashboard > .menu-dashboard > .container:first-child > strong {
+    color: #f86019;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-size: 17px;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+}
+
+.dashboard > .menu-dashboard > .container:first-child > strong:hover {
+    border-color: #f86019;
+}
+
+/* Menu chức năng */
+
+.dashboard > .menu-dashboard > .container:last-child {
+    padding: 20px 0;
+}
+
+.dashboard > .menu-dashboard > .container:last-child > .item{
+    padding: 15px 20px;
+    cursor: pointer;
+    color: #555;
+    font-size: 17px;
+}
+
+.dashboard > .menu-dashboard > .container:last-child > .item:hover {
+    background-color: #eee;
+}
+
+/* End dashboard */
+
+/* Start content page */
+
+.dashboard > .page {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* End content page */
+
+/* responsive */
+
+@media only screen and (max-width: 1075px) {
+    header > .btn-menu-dashboard {
+        display: block;
+    }
+
+    .dashboard > .menu-dashboard {
+        margin-left: -300px;
+    }
+
+    .dashboard > .page {
+        width: 100%;
+        border:1px solid red;
+    }
+
+    header > .search > input {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 755px) {
+    .dashboard > .menu-dashboard {
+        position: absolute;
+        background: white;
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    header > .search {
+        display: none;
+    }
+}
+
+/* Animation */
+
+@keyframes menu_Move_To_Left {
+    from {
+        margin-left: -300px;
+    }
+    to {
+        margin-left: 0;
+    }
+}
+
+@keyframes menu_Move_To_Right {
+    from {
+        margin-left: 0;
+    }
+    to {
+        margin-left: -300px;
+    }
+}
