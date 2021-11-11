@@ -13,10 +13,14 @@ class BaseController extends Controller
 {
     protected $request;
     protected $helpers = [];
+    public $home_model;
+    public $student_data;
 
     public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
     {
         parent::initController($request, $response, $logger);
+        $this->home_model = model('App\Models\HomeModel');
+        $this->student_data = $this->home_model->get_data_user();
     }
     
     public function loadHeader($data, $dataHeader)
@@ -26,8 +30,9 @@ class BaseController extends Controller
         return $data;
     }
 
-    public function collectNamePlayer($name)
+    public function getNameUser()
     {
+        $name = $this->student_data['Name'];
         if (strlen($name) <= 20)
             return $name;
         
@@ -50,6 +55,22 @@ class BaseController extends Controller
         }
         $result .= $arr_name[count($arr_name)-1];
         return $result;
+    }
+
+    public function load_Position($param = '')
+    {
+        $session = session();
+
+        if (empty($param) || !$param) // Đăng nhập không được vào
+        {
+            if ($session->get('User') != "" && $session->get('User') != null)
+                redirect('/');
+            return;
+        }
+        if ($param == 1)  // Admin được vào
+        {
+            
+        }
     }
 
 }

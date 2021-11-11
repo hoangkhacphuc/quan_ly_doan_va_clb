@@ -22,15 +22,4 @@ class GuestModel extends HomeModel {
             return false;
         return $query->getResultArray();
     }
-
-    public function getInfo($ID)
-    {
-        $this->modelStudent->select('Name, Avatar, Sex, Grade');
-        $this->modelStudent->where('ID', $ID);
-        $query = $this->modelStudent->get();
-
-        if ($query->getRowArray() == "" || count($query->getRowArray()) == 0)
-            return false;
-        return $query->getResultArray();
-    }
 }

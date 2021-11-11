@@ -31,8 +31,7 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 
 $routes->get('/', 'Guest\HomeController::index');
-$routes->get('/home', 'Guest\HomeController::index');
-$routes->post('login', 'Guest\HomeController::login');
+
 
 $session = session();
 
@@ -40,7 +39,7 @@ if ($session->get('User') != "" && $session->get('User') != null)
 {
     $routes->get('logout', 'Guest\HomeController::logout');
     $routes->group('admin', function($routes) {
-        $routes->get('/', 'Admin\HomeController::index');
+        $routes->get('/', 'Admin\Index::index');
         $routes->group('notification', function ($routes)
         {
             $routes->post('/add', 'Admin\Notification::add');
@@ -73,6 +72,10 @@ if ($session->get('User') != "" && $session->get('User') != null)
             $routes->post('/delete', 'Admin\Post::delete');
         });
     });
+}
+else 
+{
+    $routes->post('login', 'Guest\HomeController::login');
 }
 
 

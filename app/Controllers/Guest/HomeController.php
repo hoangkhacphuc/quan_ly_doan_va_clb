@@ -11,20 +11,17 @@ class HomeController extends BaseController
 
     public function index()
     {
-        $session = session();
-        $user = $session->get('User');
-        $model = new GuestModel();
-        $dataUser = $model->getInfo($session->get('ID'))[0];
         $data = [];
         $dataHeader = array(
-            'Avatar' => $dataUser['Avatar'] == "" ? ($dataUser['Sex'] ? 'avt-famale.jpg' : 'avt-male.jpg') : $dataUser['Avatar'],
-            'Name' => $this->collectNamePlayer($dataUser['Name']),
-            'Point' => $dataUser['Grade'],
+            'Avatar' => $this->student_data['Avatar'] == "" ? ($this->student_data['Sex'] ? 'avt-famale.jpg' : 'avt-male.jpg') : $this->student_data['Avatar'],
+            'Name' => $this->getNameUser(),
+            'Point' => $this->student_data['Grade'],
             'Title' => 'Trang chủ',
-            'Login' => $session->get('ID') ? true : false
+            'Login' => $this->student_data['User_ID'] ? true : false
         );
         $data = $this->loadHeader($data, $dataHeader);
         
+        $model = model('App\Models\Guest\GuestModel');
         $data['notification'] = $model->getNotification();
         return view('pages/guest/index', $data);
     }

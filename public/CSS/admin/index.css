@@ -1,105 +1,73 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Roboto';
 }
 
-/* Start Xóa banner */
+/* Start header */
 
-header > .banner {
-    display: none !important;
-}
-
-/* End Xóa banner */
-
-/* Nội dung trang */
-
-.home {
+header {
     display: flex;
-    flex-flow: row;
-    box-sizing: border-box;
+    height: 50px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
 }
 
-/* Start menu chức năng */
+/* Menu dashboard */
 
-.home > .menu {
-    width: 20%;
-    border-right: 1px solid #ccc;
-    box-sizing: border-box;
-    margin: 10px 0;
-}
-
-/* tạo hàng */
-
-.home > .menu > .row {
-    width: 100%;
-}
-
-/* Phần bài đăng mới  */
-
-.home > .menu > .row > .new-posts {
-    text-transform: uppercase;
-    border-radius: 30px;
-    padding: 10px 20px;
-    margin: 15px 15px;
-    text-align: center;
-    color: #777;
-    font-weight: 600;
+header > .menu-dashboard {
+    font-size: 22px;
+    margin-left: 30px;
+    color: #555;
     cursor: pointer;
-    box-shadow: 0 0 5px 1px #ccc;
-    transition: 0.5s;
+    padding: 10px 15px;
+    border-radius: 50%;
 }
 
-.home > .menu > .row > .new-posts:hover {
-    color: #e94b00;
+header > .menu-dashboard:hover {
+    background-color: #ccc;
 }
 
-.home > .menu > .row > .new-posts > i {
-    color: #e94b00;
-    padding-right: 5px;
+/* logo */
+
+header > .item > a > img {
+    height: 50px;
+    margin-top: 5px;
 }
 
-/* Phần list danh sách menu */
+/* seach */
 
-.home > .menu > .list {
-    width: 100%;
+header > .search {
+    margin-left: 100px;
+    margin-top: 10px;
+    display: flex;
 }
 
-.home > .menu > .list > ul {
-    list-style: none;
-    border-top: 1px solid #ccc;
-    margin: 20px;
-    margin-bottom: 0;
+header > .search > input {
+    padding: 7px 15px;
+    font-size: 16px;
+    outline: 0;
+    border: 1px solid #ddd;
+    border-radius: 20px 0 0 20px;
+    width: 400px;
+    border-right: none;
+    background-color: #eee;
+    color: #555;
 }
 
-.home > .menu > .list > ul > li {
-    width: 100%;
-    display: grid;
+header > .search > button {
+    color: white;
+    padding: 5px 15px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
+    border-left: none;
+    background-color: #eee;
 }
 
-.home > .menu > .list > ul > li > a {
-    padding: 15px 20px;
-    color: #505457;
-    font-size: 18px;
-    line-height: 24px;
+header > .search > input:focus, header > .search > button:focus{
+    background-color: white;
 }
 
-.home > .menu > .list > ul > li > a.select {
-    color: #e94b00;
-}
-
-.home > .menu > .list > ul > li > a:hover {
-    background-color: #eceff1;
-}
-
-.home > .menu > .list > ul > li > a > i {
-    padding-right: 10px;
-}
-
-/* end menu chức năng */
-
-/* Start Phần Nội dung */
-
-.home > .container {
-    width: 80%;
-    box-sizing: border-box;
-}
+/* End header */

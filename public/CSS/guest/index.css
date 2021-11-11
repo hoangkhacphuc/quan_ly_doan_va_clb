@@ -199,152 +199,168 @@
 /* End sự kiện */
 
 /*Start bài đăng*/
- .post{
-   background-color:rgba(255, 255, 255, 0.034);   
+.post {
+    background-color: rgba(255, 255, 255, 0.034);
 }
-.post > .container {
+
+.post>.container {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: px;
     grid-gap: 12PX;
-    width:100%;
+    width: 100%;
     margin: auto;
-  }
-  .post > .container > .news-item{
-      width: auto ;
-      height: auto ;
-      padding: 1%;
-      border-radius: 2px ;
-      display: grid;
-      grid-template-columns: 379px 1fr;
-      border-style: solid;
-      border-width: 1px;
-      border-color:rgba(255, 255, 255, 0.034);
-  }
-  .post > .container > .news-item > .logo-post{
-      overflow: hidden;
-  }
-  .post > .container > .news-item > .logo-post img { 
-      opacity: 1;
-      overflow: hidden;
-      width: 100%;
-    
-      /* object-fit: cover; */
-  }
-  .post > .container > .news-item img{
+}
+
+.post>.container>.news-item {
+    width: auto;
+    height: auto;
+    padding: 1%;
+    display: grid;
+    grid-template-columns: 379px 1fr;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0.034);
+    cursor: pointer;
+}
+
+.post>.container>.news-item>.logo-post {
+    overflow: hidden;
+}
+
+.post>.container>.news-item>.logo-post img {
+    opacity: 1;
+    overflow: hidden;
+    width: 100%;
+
+    /* object-fit: cover; */
+}
+
+.post>.container>.news-item img {
     width: 100%;
     object-fit: cover;
     transform: scale(1);
     transition: all .5s ease;
-    opacity: 1;   
+    opacity: 1;
 }
 
-  .post > .container > .news-item img:hover  {
-    
-    border:1px solid rgb(240, 156, 87);
+.post>.container>.news-item img:hover {
+
+    border: 1px solid rgb(240, 156, 87);
     -webkit-transform: scale(1.2);
     transform: scale(1.2);
     opacity: 0.7;
-  }
-  
-  .post > .container > .news-item:hover {
-      border: 1px solid rgba(240, 156, 87,0.1);
-      border-radius: 12px;
-      background-color: rgba(106, 108, 109, 0.1)
-  } 
-  .post > .container > .news-item > .content {
-      
-      padding-left: 5px;
-      width: auto;
-      height: auto;
-      margin-left: 10px;
-      margin-right: 10px;
-      padding-left: 10px;
-      display:flex;
-      flex-direction:column;
-      justify-content: space-between;
-  }
-  .post > .container > .news-item > .content>.gc{
-      width: 80px;
-      height: 5px;
-      height: 2px;
-      border-top: 2px solid red;
-      border-bottom: 3px solid red;
-      margin: 4px;
-      padding:1px;
-  }
-  .post > .container > .news-item > .content> .more  {
-            border: 1px solid #c4c4c4;
-            font-style: italic;
-            font-size: 11px;
-            padding: 5px 8px;
-            width: 100px;
-            height: 28px;
-  }
-  .post > .container > .news-item > .content> .more  a{
-      color: #808080;
-  }
-  .post > .container > .news-item > .content p{
-      font-size: 14px;
-      font-family: Roboto,sans-serif;
-  }
-  .post > .container > .news-item > .content >.content-1  a{
-      color: black;
-      font-weight: bold;
-      padding-bottom: 30px;
-      text-decoration: none;
-      width: 240px;
-  }
-  .post > .container > .news-item > .content >.content-1{
+}
+
+.post>.container>.news-item:hover {
+    border: 1px solid rgba(240, 156, 87, 0.1);
+    background-color: rgba(106, 108, 109, 0.1)
+}
+
+.post>.container>.news-item>.content {
+    padding-left: 5px;
+    width: auto;
+    height: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.post>.container>.news-item>.content>.gc {
+    width: 80px;
+    height: 2px;
+    border-top: 2px solid red;
+    border-bottom: 2px solid red;
+    margin: 4px;
+    padding: 1px;
+}
+
+.post>.container>.news-item>.content>.more {
+    border: 1px solid #c4c4c4;
+    font-style: italic;
+    font-size: 11px;
+    padding: 5px 8px;
+    width: 100px;
+    height: 28px;
+}
+
+.post>.container>.news-item>.content>.more a {
+    color: #808080;
+}
+
+.post>.container>.news-item>.content p {
+    font-size: 14px;
+    font-family: Roboto, sans-serif;
+}
+
+.post>.container>.news-item>.content>.content-1 a {
+    color: black;
+    font-weight: bold;
+    padding-bottom: 30px;
+    text-decoration: none;
+    width: 240px;
+}
+
+.post>.container>.news-item>.content>.content-1 {
     padding-top: 10px;
     width: 240px;
-  }
-  .post > .container > .news-item > .content >.content-2  {
+}
+
+.post>.container>.news-item>.content>.content-2 {
     margin-top: 5px;
     font-size: 12px;
     width: 240px;
     padding-bottom: 10px;
 }
-.post > .container > .news-item > .content >.content-2{
+
+.post>.container>.news-item>.content>.content-2 {
     font-size: 12px;
     color: #777;
     font-weight: 100;
     margin-bottom: 5px;
 }
-.post > .container > .news-item > .content >.content-2 > #at{
+
+.post>.container>.news-item>.content>.content-2>#at {
     padding-bottom: 10px;
 }
-.post > .container > .news-item :hover{
-    color:#777;
+
+.post>.container>.news-item :hover {
+    color: #777;
 }
-.post > .container > .news-item > .content >.content-2 i{
+
+.post>.container>.news-item>.content>.content-2 i {
     color: #e94b00;
 }
-.post > .container > .news-item > .content >.content-2 p:hover{
+
+.post>.container>.news-item>.content>.content-2 p:hover {
     color: #e94b00;
 }
-.post >  .xemthem {
+
+.post>.xemthem {
     width: 100%;
     text-align: center;
     margin-top: 100px;
 }
 
-.post > .xemthem > a {
+.post>.xemthem>a {
     padding: 15px 40px;
     text-align: center;
     color: white;
     font-size: 18px;
     background-color: #e94b00;
 }
-.post > .xemthem > a:hover {
+
+.post>.xemthem>a:hover {
     background-color: #c04004;
 }
-@media screen and (max-width:1023px){
-    .post> .container{
-        grid-template-columns: repeat(1,1fr);
+
+@media screen and (max-width:1023px) {
+    .post>.container {
+        grid-template-columns: repeat(1, 1fr);
     }
 }
-    
   /* end bài đăng  
  
