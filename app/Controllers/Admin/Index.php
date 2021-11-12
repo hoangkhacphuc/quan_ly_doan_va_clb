@@ -13,9 +13,11 @@ class Index extends BaseController
 
     public function index()
     {
+        
+        if (!$this->load_Permissions(1))
+            return redirect("/");
         $data = array(
             'Title' => "Super Admin - Dashboard",
-            'Avatar' => $this->student_data['Avatar'],
 
         );
         return view('pages/admin/index', $data);
@@ -23,6 +25,8 @@ class Index extends BaseController
 
     public function home()
     {
+        if (!$this->load_Permissions(1))
+            return redirect("/");
         return view('pages/admin/home');
     }
 

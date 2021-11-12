@@ -31,6 +31,12 @@ class HomeController extends BaseController
         $response = array(
             "Error" => "",
         );
+        if (!$this->load_Permissions())
+        {
+            $response['Error'] = 'Đã đăng nhập !';
+            echo json_encode($response);
+            return;
+        }
         if (!isset($_POST['User']) || !isset($_POST['Pass']))
         {
             $response['Error'] = 'Vui lòng nhập đầy đủ thông tin !';
@@ -78,6 +84,8 @@ class HomeController extends BaseController
 
     public function logout()
     {
+        if (!$this->load_Permissions(4))
+            return redirect("/");
         $session = session();
         $session->destroy();
         return redirect("/");

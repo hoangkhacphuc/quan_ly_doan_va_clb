@@ -8,7 +8,11 @@ class HomeModel{
     public function __construct()
     {
         $this->db = \Config\Database::connect();
-        $this->student_data = $this->get_data_user();
+        $session = session();
+        if ($session->get('User') != "" && $session->get('User') != null)
+        {
+            $this->student_data = $this->get_data_user();
+        }
     }
 
     public function dbTable($param)
@@ -59,7 +63,7 @@ class HomeModel{
             'Position' => $position,
             'Position_ID' => $position_id,
         );
-
+        
         return $student_data;
     }
 }

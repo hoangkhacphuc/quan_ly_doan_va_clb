@@ -15,6 +15,8 @@ class Notification extends BaseController
 
     public function add()
     {
+        if (!$this->load_Permissions(2))
+            return redirect("/");
         if (!isset($_POST['Content']))
         {
             echo "Thêm thất bại !";
@@ -26,6 +28,8 @@ class Notification extends BaseController
 
     public function update()
     {
+        if (!$this->load_Permissions(2))
+            return redirect("/");
         if (!isset($_POST['ID']) && !isset($_POST['Content']) && !isset($_POST['Status']))
         {
             echo "Cập nhật thất bại !";
@@ -40,6 +44,8 @@ class Notification extends BaseController
 
     public function delete()
     {
+        if (!$this->load_Permissions(2))
+            return redirect("/");
         if (!isset($_POST['ID']))
         {
             echo "Xóa thất bại !";

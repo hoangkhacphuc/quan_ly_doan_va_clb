@@ -19,8 +19,12 @@ class BaseController extends Controller
     public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
     {
         parent::initController($request, $response, $logger);
-        $this->home_model = model('App\Models\HomeModel');
-        $this->student_data = $this->home_model->get_data_user();
+        $session = session();
+        if ($session->get('User') != "" && $session->get('User') != null)
+        {
+            $this->home_model = model('App\Models\HomeModel');
+            $this->student_data = $this->home_model->get_data_user();
+        }
     }
     
     public function loadHeader($data, $dataHeader)
@@ -57,20 +61,36 @@ class BaseController extends Controller
         return $result;
     }
 
-    public function load_Position($param = '')
+    public function load_Permissions($param = '')
     {
         $session = session();
-
+        $User = $session->get('User');
+        
         if (empty($param) || !$param) // Đăng nhập không được vào
         {
-            if ($session->get('User') != "" && $session->get('User') != null)
-                redirect('/');
-            return;
+            if (!empty($User))
+                return false;
+            return true;
         }
-        if ($param == 1)  // Admin được vào
+        if (empty($User) || $User == NULL) // Chưa đăng nhập ko được vào
         {
-            
+            return false;
         }
-    }
 
+        $this->home_model = model('App\Models\HomeModel');
+        $this->student_data = $this->home_model->get_data_user();
+        if ($param == 1  && $this->student_data['Position'] != "Super Admin")  // Super Admin được vào
+        {
+            return false;
+        }
+        if ($param == 2 && $User != "" && $this->student_data['Position'] != "Quản Lý Đoàn" &&  $this->student_data['Position'] != "Super Admin")  // Super Admin & quản lý đoàn được vào
+        {
+            return false;
+        }
+        if ($param == 3 && $User != "" && $this->student_data['Position'] != "Quản Lý Câu Lạc Bộ")  // Quản lý CLB được vào
+        {
+            return false;
+        }
+        return true;
+    }
 }
