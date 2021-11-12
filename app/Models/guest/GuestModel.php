@@ -19,7 +19,15 @@ class GuestModel extends HomeModel {
     {
         $query = $this->modelNotification->select('Content')->where('Status = 0')->get();
         if ($query->getRow() == 0)
-            return false;
+            return [];
         return $query->getResultArray();
+    }
+
+    public function getBanner()
+    {
+        $query = $this->dbTable('banner')->select('*')->get()->getResultArray();
+        if (count($query) == 0)
+            return [];
+        return $query;
     }
 }

@@ -11,17 +11,18 @@ class HomeController extends BaseController
 
     public function index()
     {
+        $model = model('App\Models\Guest\GuestModel');
         $data = [];
         $dataHeader = array(
             'Avatar' => $this->student_data['Avatar'] == "" ? ($this->student_data['Sex'] ? 'avt-famale.jpg' : 'avt-male.jpg') : $this->student_data['Avatar'],
             'Name' => $this->getNameUser(),
             'Point' => $this->student_data['Grade'],
             'Title' => 'Trang chủ',
-            'Login' => $this->student_data['User_ID'] ? true : false
+            'Login' => $this->student_data['User_ID'] ? true : false,
+            'Banner' => $model->getBanner()
         );
         $data = $this->loadHeader($data, $dataHeader);
         
-        $model = model('App\Models\Guest\GuestModel');
         $data['notification'] = $model->getNotification();
         return view('pages/guest/index', $data);
     }

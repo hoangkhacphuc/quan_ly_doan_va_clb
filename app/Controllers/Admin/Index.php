@@ -13,12 +13,12 @@ class Index extends BaseController
 
     public function index()
     {
-        
         if (!$this->load_Permissions(1))
             return redirect("/");
+
+        
         $data = array(
             'Title' => "Super Admin - Dashboard",
-
         );
         return view('pages/admin/index', $data);
     }
@@ -27,7 +27,12 @@ class Index extends BaseController
     {
         if (!$this->load_Permissions(1))
             return redirect("/");
-        return view('pages/admin/home');
+        $model = model('App\Models\Guest\GuestModel');
+        $data = array(
+            'Banner' => $model->getBanner(),
+            'notification' => $this->model_index->getNotification()
+        );
+        return view('pages/admin/home', $data);
     }
 
 }

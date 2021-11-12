@@ -107,8 +107,11 @@
         </ul>
     </div>
     <div class="row banner">
-        <img src="Image/Banner/img1.jpg" alt="" id="Banner-0" style="display: block;">
-        <img src="Image/Banner/img2.jpg" alt="" id="Banner-1" style="display: none;">
-        <img src="Image/Banner/img3.jpg" alt="" id="Banner-2" style="display: none;">
+        <?php 
+        $id = 0;
+        foreach ($Banner as $value) { ?>
+            <img src="Image/Banner/<?= $value['Image']; ?>" alt="" id="Banner-<?= $id; ?>" style="display: <?= $id==0 ? 'block':'none' ?>">
+            
+        <?php $id++; } ?>
     </div>
 </header>

@@ -39,9 +39,14 @@
         <div class="row notification">
             <div class="title">Thông Báo</div>
             <div class="container">
-                <?php foreach ($notification as $value) : ?>
+                <?php 
+                if ($notification != "" && $notification != [])
+                    foreach ($notification as $value) : ?>
                     <div class="item"><i class="fa fa-bell-o"></i> <?php echo $value['Content']; ?></div>
-                <?php endforeach; ?>
+                <?php endforeach;
+                else { ?>
+                    <div class="item"><i class="fa fa-bell-o"></i> Chưa có thông báo nào !</div>
+                    <?php } ?>
             </div>
         </div>
         <div class="row event">
@@ -132,7 +137,7 @@
                 </div>
             </div>
         </div>
-<div class="row post">
+        <div class="row post">
             <div class="title">Bài Đăng</div>
             <div class="container">
                 <div class="news-item">
@@ -246,20 +251,15 @@
             
             </div>
             <div class="xemthem"> <a href="#">Xem Thêm </a>  </div> 
-</div>
+        </div>
        
-
-
         <div class="row">
             <div class="title">Câu lạc bộ</div>
             <div class="container">
 
             </div>
         </div>
-        <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-        <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> -->
-    </div>
+   </div>
 
     <?= $footer ?>
 </body>

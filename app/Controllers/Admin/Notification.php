@@ -19,7 +19,7 @@ class Notification extends BaseController
             return redirect("/");
         if (!isset($_POST['Content']))
         {
-            echo "Thêm thất bại !";
+            echo json_encode(array("Error" => "Thêm thất bại !"));
             return;
         }
         $content = $_POST['Content'];
@@ -32,7 +32,7 @@ class Notification extends BaseController
             return redirect("/");
         if (!isset($_POST['ID']) && !isset($_POST['Content']) && !isset($_POST['Status']))
         {
-            echo "Cập nhật thất bại !";
+            echo json_encode(array("Error" => "Cập nhật thất bại !"));
             return;
         }
         $ID = $_POST['ID'];
@@ -48,7 +48,7 @@ class Notification extends BaseController
             return redirect("/");
         if (!isset($_POST['ID']))
         {
-            echo "Xóa thất bại !";
+            echo json_encode(array("Error" => "Xóa thất bại !"));
             return;
         }
         $ID = $_POST['ID'];

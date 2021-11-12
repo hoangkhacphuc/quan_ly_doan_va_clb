@@ -18,7 +18,7 @@ class ModelLienChiDoan extends HomeModel {
             'Name' => $param1,
         );
         $query = $this->database->insert($data);
-        echo $query ? "them thanh cong !" : "them that bai !";
+        echo $query ? "Thêm thành công !" : "Thêm thất bại !";
     }
     public function update($param1,$param2)
     {

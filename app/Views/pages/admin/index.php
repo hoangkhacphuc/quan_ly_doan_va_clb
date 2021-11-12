@@ -16,6 +16,7 @@
 
     <!-- Tài nguyên -->
     <link rel="stylesheet" href="CSS/admin/index.css">
+    <link rel="stylesheet" href="CSS/admin/home.css">
     <script src="JS/admin/index.js"></script>
 </head>
 <body>
@@ -43,6 +44,8 @@
             </div>
         </div>
         <div class="page"></div>
+    </div>
+    <div class="system-notification">
     </div>
 </body>
 </html>

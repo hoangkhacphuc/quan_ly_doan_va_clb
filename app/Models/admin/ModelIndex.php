@@ -10,4 +10,10 @@ class ModelIndex extends HomeModel
     {
         echo "123";
     }
+
+    public function getNotification()
+    {
+        $query = $this->dbTable('notification')->select('*')->get()->getResultArray();
+        return $query;
+    }
 }

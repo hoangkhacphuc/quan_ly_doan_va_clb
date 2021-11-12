@@ -1,5 +1,4 @@
 $(document).ready(function(){
-    
     $('#search').focus(function(){
         $('#btn-search').css("background-color" ,"white");
         $('#search').css("background-color" ,"white");
@@ -56,8 +55,6 @@ $(document).ready(function(){
         });
     }
 
-    console.log($(window).width());
-
     // page Home
     let show = false;
     $('.btn-menu-dashboard').click(function () { 
@@ -77,4 +74,11 @@ $(document).ready(function(){
             });
         }
     });
+    
+
+    // System Notification
+    
+    function system_Notification(param1, param2 = 0) {
+        $('.system-notification').append('<div class="item"'+(param2 == 0 ? '':'style="background-color: #f75454;"')+'>'+param1+'</div>');
+    }
 });
