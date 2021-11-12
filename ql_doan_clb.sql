@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 12, 2021 lúc 02:53 AM
+-- Thời gian đã tạo: Th10 12, 2021 lúc 04:17 PM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 7.4.25
 
@@ -24,44 +24,45 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `account`
+-- Cấu trúc bảng cho bảng `banner`
 --
 
-CREATE TABLE `account` (
-  `User` varchar(30) NOT NULL,
-  `Pass` varchar(50) NOT NULL,
+CREATE TABLE `banner` (
   `ID` int(11) NOT NULL,
-  `Position` int(11) DEFAULT 2
+  `Image` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `account`
+-- Đang đổ dữ liệu cho bảng `banner`
 --
 
-INSERT INTO `account` (`User`, `Pass`, `ID`, `Position`) VALUES
-('admin', '21232f297a57a5a743894a0e4a801fc3', 1, 1);
+INSERT INTO `banner` (`ID`, `Image`) VALUES
+(1, 'img1.jpg'),
+(2, 'img2.jpg'),
+(3, 'img3.jpg'),
+(4, 'img4.jpg'),
+(5, 'img5.jpg'),
+(6, 'img6.jpg');
 
 --
 -- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Chỉ mục cho bảng `account`
+-- Chỉ mục cho bảng `banner`
 --
-ALTER TABLE `account`
-  ADD PRIMARY KEY (`User`),
-  ADD KEY `ID` (`ID`),
-  ADD KEY `Position` (`Position`);
+ALTER TABLE `banner`
+  ADD PRIMARY KEY (`ID`);
 
 --
--- Các ràng buộc cho các bảng đã đổ
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- Các ràng buộc cho bảng `account`
+-- AUTO_INCREMENT cho bảng `banner`
 --
-ALTER TABLE `account`
-  ADD CONSTRAINT `account_ibfk_1` FOREIGN KEY (`ID`) REFERENCES `student` (`ID`);
+ALTER TABLE `banner`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

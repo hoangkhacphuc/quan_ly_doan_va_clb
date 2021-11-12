@@ -32,6 +32,11 @@
                 <input type="file" id="upload-file" style="display: none">
                 <label for="upload-file"><i class="fa fa-cloud-upload"></i></label>
             </div>
+            <div class="info-file">
+                <div class="item" id="name-file">This is file name</div>
+                <div class="item" id="size-file">7749kb</div>
+                <div class="item"><button id="btn-upload-file">Tải lên</button></div>
+            </div>
             <div class="list-banner">
                 <?php 
                     $id = 1;

@@ -30,4 +30,10 @@ class GuestModel extends HomeModel {
             return [];
         return $query;
     }
+
+    public function upload_banner($url)
+    {
+        $query = $this->dbTable('banner')->insert(array('Image' => $url));
+        echo $query ? json_encode(array("Error" => "", "Done" => "Thêm thành công !")) : json_encode(array("Error" => "Thêm thất bại !"));
+    }
 }

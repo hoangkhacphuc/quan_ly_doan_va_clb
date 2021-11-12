@@ -35,11 +35,16 @@ $routes->get('/', 'Guest\HomeController::index');
 
 $session = session();
 
-
 $routes->get('logout', 'Guest\HomeController::logout');
+
 $routes->group('admin', function($routes) {
     $routes->get('/', 'Admin\Index::index');
     $routes->get('home', 'Admin\Index::home');
+    $routes->group('banner', function ($routes)
+    {
+        $routes->post('upload', 'Guest\HomeController::upload_banner');
+        $routes->post('delete', 'Admin\Index::banner_delete');
+    });
     $routes->group('notification', function ($routes)
     {
         $routes->post('/add', 'Admin\Notification::add');

@@ -92,6 +92,43 @@ class HomeController extends BaseController
         return redirect("/");
     }
 
+    public function upload_banner()
+    {
+        if (!$this->load_Permissions(4))
+        {
+            echo json_encode(array("Error" => "Không đủ quyền truy cập !"));
+            return;
+        }
+        if (!isset($_FILES['file']['name']) || empty($_FILES['file']['name']))
+        {
+            echo json_encode(array("Error" => "Không có dữ liệu !"));
+            return;
+        }
+        if (intval($_FILES['file']['size']) > 10485760)
+        {
+            echo json_encode(array("Error" => "Kích thước file quá lớn. Vui lòng chọn file nhỏ hơn 10MB !"));
+            return;
+        }
+        $location = $_FILES['file']['name'];
+        $imageFileType = pathinfo($location,PATHINFO_EXTENSION);
+        $imageFileType = strtolower($imageFileType);
+        
+        $valid = array("jpg","jpeg","png");
+
+        if (in_array(strtolower($imageFileType), $valid))
+        {
+            $model = model('App\Models\Guest\GuestModel');
+            $name = 'img'.(count($model->getBanner())+1).".".strtolower($imageFileType);
+            if(move_uploaded_file($_FILES['file']['tmp_name'],'Image/Banner/'.$name)){
+                $model->upload_banner($name);
+                return;
+            }
+            echo json_encode(array("Error" => "Xảy ra lỗi trong quá trình lưu file. Vui lòng thử lại !"));
+            return;
+        }
+        echo json_encode(array("Error" => "File tải lên không phải ảnh !"));
+    }
+
     public function KyTuDacBiet($str)
     {
        return preg_match('/[\'^£$%&*()}{@#~?><>,|=_+¬-]/', $str);

@@ -16,4 +16,16 @@ class ModelIndex extends HomeModel
         $query = $this->dbTable('notification')->select('*')->get()->getResultArray();
         return $query;
     }
+
+    public function banner_delete($img)
+    {
+        $query = $this->dbTable('banner')->select('*')->where('Image', $img)->get()->getResultArray();
+        if (empty($query) || count($query) == 0)
+        {
+            echo json_encode(array("Error" => "Không tìm thấy ảnh này !"));
+            return;
+        }
+        $query = $this->dbTable('banner')->where('Image', $img)->delete();
+        echo $query ? json_encode(array("Error" => "", "Done" => "Xóa thành công !")) : json_encode(array("Error" => "Xóa thất bại !"));
+    }
 }

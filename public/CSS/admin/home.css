@@ -123,10 +123,40 @@
     flex-wrap: wrap;
 }
 
+.page > .page-home > .container > .content > .info-file {
+    margin-bottom: 40px;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.page > .page-home > .container > .content > .info-file > #name-file {
+    font-size: 16px;
+    color: #444;
+    font-weight: 600;
+}
+
+.page > .page-home > .container > .content > .info-file > .item > button {
+    background-color: #38c733;
+    padding: 7px 20px;
+    color: white;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.page > .page-home > .container > .content > .info-file > .item > button:hover{
+    background-color: #45d440;
+}
+
 .page > .page-home > .container > .content > .upload {
     margin-bottom: 40px;
     text-align: center;
-}
+} 
 
 .page > .page-home > .container > .content > .upload > label {
     font-size: 60px;

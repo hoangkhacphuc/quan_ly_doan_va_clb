@@ -35,4 +35,19 @@ class Index extends BaseController
         return view('pages/admin/home', $data);
     }
 
+    public function banner_delete()
+    {
+        if (!$this->load_Permissions(2))
+        {
+            echo json_encode(array("Error" => "Không đủ quyền truy cập !"));
+            return;
+        }
+        if (!isset($_POST['Image']) || empty($_POST['Image']))
+        {
+            echo json_encode(array("Error" => "Không có dữ liệu !"));
+            return;
+        }
+        $this->model_index->banner_delete($_POST['Image']);
+    }
+
 }
