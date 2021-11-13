@@ -37,6 +37,10 @@ $session = session();
 
 $routes->get('logout', 'Guest\HomeController::logout');
 
+$routes->group('group', function($routes) {
+    $routes->get('/', 'Group\Group::index');
+});
+
 $routes->group('admin', function($routes) {
     $routes->get('/', 'Admin\Index::index');
     $routes->get('home', 'Admin\Index::home');

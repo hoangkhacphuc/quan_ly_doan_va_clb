@@ -62,6 +62,7 @@ class HomeModel{
             'Notification' => $query['Notification'],
             'Position' => $position,
             'Position_ID' => $position_id,
+            'DOJ' => $query['DOJ'],
         );
         
         return $student_data;
