@@ -22,7 +22,7 @@ class ChiDoan extends BaseController
         }
         if (!isset($_POST['Name']) && !isset($_POST['LienChiDoan']))
         {
-            echo json_encode(array("Error" => "Cập nhật thất bại !"));
+            echo json_encode(array("Error" => "Thêm thất bại !"));
             return;
         }
         
