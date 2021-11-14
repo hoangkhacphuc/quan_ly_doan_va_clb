@@ -33,13 +33,10 @@
     <div class="dashboard">
         <div class="menu-dashboard">
             <div class="container">
-                <strong><i class="fa fa-plus"></i> Bài đăng mới</strong>
-            </div>
-            <div class="container">
                 <div class="item" id="page-1"><i class="fa fa-home"></i> Trang Chủ</div>
                 <div class="item" id="page-2"><i class="fa fa-users"></i> Thành Viên</div>
                 <div class="item" id="page-3"><i class="fa fa-bullhorn"></i> Thông Báo</div>
-                <div class="item" id="page-4"><i class="fa fa-wrench"></i> Cài Đặt</div>
+                <div class="item" id="page-4"><i class="fa fa-gift"></i> Giftcode</div>
                 <div class="item" id="page-5"><i class="fa fa-bug"></i> Góp Ý & Báo Lỗi</div>
             </div>
         </div>

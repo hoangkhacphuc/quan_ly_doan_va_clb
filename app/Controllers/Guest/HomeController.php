@@ -13,14 +13,21 @@ class HomeController extends BaseController
     {
         $model = model('App\Models\Guest\GuestModel');
         $data = [];
-        $dataHeader = array(
-            'Avatar' => $this->student_data['Avatar'] == "" ? ($this->student_data['Sex'] ? 'avt-famale.jpg' : 'avt-male.jpg') : $this->student_data['Avatar'],
-            'Name' => $this->getNameUser(),
-            'Point' => $this->student_data['Grade'],
-            'Title' => 'Trang chủ',
-            'Login' => $this->student_data['User_ID'] ? true : false,
-            'Banner' => $model->getBanner()
-        );
+        if (!$this->load_Permissions())
+            $dataHeader = array(
+                'Avatar' => $this->student_data['Avatar'] == "" ? ($this->student_data['Sex'] ? 'avt-famale.jpg' : 'avt-male.jpg') : $this->student_data['Avatar'],
+                'Name' => $this->getNameUser(),
+                'Point' => $this->student_data['Grade'],
+                'Title' => 'Trang chủ',
+                'Login' => $this->student_data['User_ID'] ? true : false,
+                'Banner' => $model->getBanner()
+            );
+        else 
+            $dataHeader = array(
+                'Title' => 'Trang chủ',
+                'Login' => false,
+                'Banner' => $model->getBanner()
+            );
         $data = $this->loadHeader($data, $dataHeader);
         
         $data['notification'] = $model->getNotification();
