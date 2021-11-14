@@ -13,11 +13,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    
 
     <!-- Tài nguyên -->
-    <link rel="stylesheet" href="CSS/admin/index.css">
-    <link rel="stylesheet" href="CSS/admin/home.css">
-    <script src="JS/admin/index.js"></script>
+    <link rel="stylesheet" href="CSS/group/index.css">
+    <link rel="stylesheet" href="CSS/group/new_post.css">
+    <script src="JS/group/index.js"></script>
 </head>
 <body>
     <header>
@@ -37,9 +38,9 @@
             </div>
             <div class="container">
                 <div class="item" id="page-1"><i class="fa fa-home"></i> Bài Đăng</div>
-                <div class="item" id="page-2"><i class="fa fa-users"></i> Thành Viên</div>
-                <div class="item" id="page-3"><i class="fa fa-bullhorn"></i> Thông Báo</div>
-                <div class="item" id="page-4"><i class="fa fa-wrench"></i> Cài Đặt</div>
+                <div class="item" id="page-2"><i class="fa fa-users"></i> Liên Chi Đoàn</div>
+                <div class="item" id="page-3"><i class="fa fa-universal-access"></i> Câu Lạc Bộ</div>
+                <div class="item" id="page-4"><i class="fa fa-bullhorn"></i> Thông Báo</div>
                 <div class="item" id="page-5"><i class="fa fa-bug"></i> Góp Ý & Báo Lỗi</div>
             </div>
         </div>

@@ -39,6 +39,7 @@ $routes->get('logout', 'Guest\HomeController::logout');
 
 $routes->group('group', function($routes) {
     $routes->get('/', 'Group\Group::index');
+    $routes->get('new_post', 'Group\Group::new_post');
 });
 
 $routes->group('admin', function($routes) {

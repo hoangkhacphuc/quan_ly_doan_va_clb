@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 13, 2021 lúc 04:21 AM
+-- Thời gian đã tạo: Th10 14, 2021 lúc 04:32 AM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 7.4.25
 
@@ -158,12 +158,13 @@ CREATE TABLE `notification` (
 --
 
 INSERT INTO `notification` (`ID`, `Content`, `Status`) VALUES
-(1, 'This is content 1 nè', 0),
+(1, 'This is content 1', 0),
 (2, 'This is thông báo 2', 1),
 (4, 'This is thông báo 4', 1),
 (5, 'This is thông báo 5', 0),
 (6, 'This is thông báo 6', 1),
-(7, 'This is thông báo 7', 1);
+(7, 'This is thông báo 7', 1),
+(31, 'This is thông báo 8', 1);
 
 -- --------------------------------------------------------
 
@@ -362,7 +363,7 @@ ALTER TABLE `student`
 -- AUTO_INCREMENT cho bảng `banner`
 --
 ALTER TABLE `banner`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT cho bảng `chidoan`
@@ -386,7 +387,7 @@ ALTER TABLE `lienchidoan`
 -- AUTO_INCREMENT cho bảng `notification`
 --
 ALTER TABLE `notification`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT cho bảng `position`

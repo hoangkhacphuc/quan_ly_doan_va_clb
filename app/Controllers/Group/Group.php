@@ -14,6 +14,13 @@
             );
             return view('pages/group/index', $data);
         }
+
+        public function new_post()
+        {
+            if (!$this->load_Permissions(1))
+                return redirect("/");
+            return view('pages/group/new_post');
+        }
     }
 
 ?>
