@@ -132,8 +132,9 @@
                 </div>
             </div>
         </div>
-<div class="row notification">
+<div class="row-notification">
             <div class="title">Bài Đăng</div>
+            
             <div class="container">
                 <div class="news-item">
                         <div class="logo-notification">
@@ -151,7 +152,7 @@
                             <p><i class="fa fa-calendar"></i> 15/11/2021</p>
                         </div>
                         <div class="more"> 
-                        <a href=""> Xem thêm <i class="fa fa-long-arrow-right"></i></a> 
+                            <a href=""> Xem thêm <i class="fa fa-long-arrow-right"></i></a> 
                         </div>
                     </div>
                 </div>
@@ -238,7 +239,7 @@
                         <p> Chất lượng đào tạo và uy tín của một trường đại học được phản ánh dựa trên “sức hút” đối với tân sinh viên của trường qua các năm.</p>
                     <div class="content-2">
                         <p><i class="fa fa-paper-plane-o"></i> Nguyễn Văn A</p>
-                        <p><i class="fa fa-calendar"></i> 15/11/2021</p>
+                        <p><i class="fa fa-caleIndar"></i> 15/11/2021</p>
                     </div>
                     <div class="more"> 
                         <a href=""> Xem thêm <i class="fa fa-long-arrow-right"></i></a> 
