@@ -19,18 +19,21 @@ class GuestModel extends HomeModel {
     {
         $query = $this->modelNotification->select('Content')->where('Status = 0')->get();
         if ($query->getRow() == 0)
-            return false;
+            return [];
         return $query->getResultArray();
     }
 
-    public function getInfo($ID)
+    public function getBanner()
     {
-        $this->modelStudent->select('Name, Avatar, Sex, Grade');
-        $this->modelStudent->where('ID', $ID);
-        $query = $this->modelStudent->get();
+        $query = $this->dbTable('banner')->select('*')->get()->getResultArray();
+        if (count($query) == 0)
+            return [];
+        return $query;
+    }
 
-        if ($query->getRowArray() == "" || count($query->getRowArray()) == 0)
-            return false;
-        return $query->getResultArray();
+    public function upload_banner($url)
+    {
+        $query = $this->dbTable('banner')->insert(array('Image' => $url));
+        echo $query ? json_encode(array("Error" => "", "Done" => "Thêm thành công !")) : json_encode(array("Error" => "Thêm thất bại !"));
     }
 }

@@ -15,11 +15,17 @@ class ChiDoan extends BaseController
 
     public function add()
     {
-        if (!isset($_POST['Name']) && !isset($_POST['LienChiDoan']))
+        if (!$this->load_Permissions(2))
         {
-            echo "Thêm thất bại !";
+            echo json_encode(array("Error" => "Không đủ quyền truy cập !"));
             return;
         }
+        if (!isset($_POST['Name']) && !isset($_POST['LienChiDoan']))
+        {
+            echo json_encode(array("Error" => "Thêm thất bại !"));
+            return;
+        }
+        
         $name = $_POST['Name'];
         $lienchidoan = $_POST['LienChiDoan'];
         $this->model->add($name,$lienchidoan);
@@ -27,9 +33,14 @@ class ChiDoan extends BaseController
 
     public function update()
     {
+        if (!$this->load_Permissions(2))
+        {
+            echo json_encode(array("Error" => "Không đủ quyền truy cập !"));
+            return;
+        }
         if (!isset($_POST['ID']) && !isset($_POST['Name']) && !isset($_POST['LienChiDoan']))
         {
-            echo "Cập nhật thất bại !";
+            echo json_encode(array("Error" => "Cập nhật thất bại !"));
             return;
         }
         $ID = $_POST['ID'];
@@ -41,9 +52,14 @@ class ChiDoan extends BaseController
 
     public function delete()
     {
+        if (!$this->load_Permissions(2))
+        {
+            echo json_encode(array("Error" => "Không đủ quyền truy cập !"));
+            return;
+        }
         if (!isset($_POST['ID']))
         {
-            echo "Xóa thất bại !";
+            echo json_encode(array("Error" => "Xóa thất bại !"));
             return;
         }
         $ID = $_POST['ID'];

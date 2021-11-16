@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    
     $('#search').focus(function(){
         $('#btn-search').css("background-color" ,"white");
         $('#search').css("background-color" ,"white");
@@ -55,15 +56,33 @@ $(document).ready(function(){
     // Login
 
     $('#btn-login').click(function () {
+        document.getElementById('errorLogin').innerHTML = "Đang đăng nhập . . .";
+        document.getElementById('errorLogin').style = "display: inline-block; border: 1px solid #2bb157; background-color: #d6f7e1; color: #2bb157;";
         $.post('/login', 
         {
             User: $('#login-user').val(),
             Pass: $('#login-pass').val()
         },
-        function (data, status) {
-            console.log(data);
-        }).done(function () {
-            console.log(123);
+        function () {
+
+        }).done(function (data) {
+            json = JSON.parse(data);
+            if (json["Error"] !== "")
+            {
+                document.getElementById('errorLogin').innerHTML = json["Error"];
+                document.getElementById('errorLogin').style = "display: inline-block";
+            }
+            else
+            {
+                document.getElementById('errorLogin').innerHTML = json["Done"];
+                document.getElementById('errorLogin').style = "display: inline-block; border: 1px solid #2bb157; background-color: #d6f7e1; color: #2bb157;";
+                setTimeout(() => {
+                    window.location.replace("/");
+                }, 2000);
+            }
+        }).fail(function() {
+            document.getElementById('errorLogin').innerHTML = "Xảy ra lỗi trong quá trình truyền tin. Vui lòng thử lại !";
+            document.getElementById('errorLogin').style = "display: inline-block";
         });
     });
 });

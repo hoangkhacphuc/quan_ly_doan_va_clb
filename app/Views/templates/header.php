@@ -3,6 +3,7 @@
         <div class="container" id="container-model-login">
             <div class="header-model">Đăng nhập</div>
             <div class="body-model">
+                <div class="item" id="errorLogin"></div>
                 <div class="item"><input type="text" id="login-user" placeholder="Username"><label for="login-user"><i class="fa fa-user"></i></label></div>
                 <div class="item"><input type="password" id="login-pass" placeholder="Password"><label for="login-pass"><i class="fa fa-unlock-alt"></i></label></div>
                 <div class="item"><span>Quên mật khẩu ?</span></div>
@@ -106,8 +107,11 @@
         </ul>
     </div>
     <div class="row banner">
-        <img src="Image/Banner/img1.jpg" alt="" id="Banner-0" style="display: block;">
-        <img src="Image/Banner/img2.jpg" alt="" id="Banner-1" style="display: none;">
-        <img src="Image/Banner/img3.jpg" alt="" id="Banner-2" style="display: none;">
+        <?php 
+        $id = 0;
+        foreach ($Banner as $value) { ?>
+            <img src="Image/Banner/<?= $value['Image']; ?>" alt="" id="Banner-<?= $id; ?>" style="display: <?= $id==0 ? 'block':'none' ?>">
+            
+        <?php $id++; } ?>
     </div>
 </header>

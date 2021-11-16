@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 06, 2021 lúc 02:23 AM
+-- Thời gian đã tạo: Th10 14, 2021 lúc 04:32 AM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 7.4.25
 
@@ -29,16 +29,17 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `account` (
   `User` varchar(30) NOT NULL,
-  `Pass` varchar(50) DEFAULT NULL,
-  `ID` int(11) DEFAULT NULL
+  `Pass` varchar(50) NOT NULL,
+  `ID` int(11) NOT NULL,
+  `Position` int(11) DEFAULT 2
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Đang đổ dữ liệu cho bảng `account`
 --
 
-INSERT INTO `account` (`User`, `Pass`, `ID`) VALUES
-('admin', '21232f297a57a5a743894a0e4a801fc3', 1);
+INSERT INTO `account` (`User`, `Pass`, `ID`, `Position`) VALUES
+('admin', '21232f297a57a5a743894a0e4a801fc3', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -47,8 +48,19 @@ INSERT INTO `account` (`User`, `Pass`, `ID`) VALUES
 --
 
 CREATE TABLE `banner` (
+  `ID` int(11) NOT NULL,
   `Image` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `banner`
+--
+
+INSERT INTO `banner` (`ID`, `Image`) VALUES
+(1, 'img1.jpg'),
+(2, 'img2.jpg'),
+(3, 'img3.jpg'),
+(4, 'img4.jpg');
 
 -- --------------------------------------------------------
 
@@ -62,6 +74,18 @@ CREATE TABLE `chidoan` (
   `LienChiDoan` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Đang đổ dữ liệu cho bảng `chidoan`
+--
+
+INSERT INTO `chidoan` (`ID`, `Name`, `LienChiDoan`) VALUES
+(41, 'dtn', 2),
+(42, 'Doan Thanh Nien1', 2),
+(44, 'Doan Thanh Nien1', 3),
+(45, 'Doan Thanh Nien1', 3),
+(46, '', 3),
+(48, 'dtn', 4);
+
 -- --------------------------------------------------------
 
 --
@@ -74,6 +98,15 @@ CREATE TABLE `club` (
   `Avatar` varchar(100) DEFAULT NULL,
   `FoundationDate` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `club`
+--
+
+INSERT INTO `club` (`ID`, `Name`, `Avatar`, `FoundationDate`) VALUES
+(2, '12', NULL, '0000-00-00'),
+(3, 'Doan Thanh Nien', NULL, '0000-00-00'),
+(4, '', NULL, '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -99,6 +132,15 @@ CREATE TABLE `lienchidoan` (
   `Name` varchar(70) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Đang đổ dữ liệu cho bảng `lienchidoan`
+--
+
+INSERT INTO `lienchidoan` (`ID`, `Name`) VALUES
+(2, 'Doan Thanh Nien'),
+(3, 'Doan Thanh Nien1'),
+(4, 'Doan Thanh Nien1');
+
 -- --------------------------------------------------------
 
 --
@@ -116,12 +158,13 @@ CREATE TABLE `notification` (
 --
 
 INSERT INTO `notification` (`ID`, `Content`, `Status`) VALUES
-(1, 'This is thông báo 1', 0),
-(2, 'This is thông báo 2', 0),
-(4, 'This is thông báo 4', 0),
-(5, 'This is thông báo 5', 1),
+(1, 'This is content 1', 0),
+(2, 'This is thông báo 2', 1),
+(4, 'This is thông báo 4', 1),
+(5, 'This is thông báo 5', 0),
 (6, 'This is thông báo 6', 1),
-(7, 'This is thông báo 7', 1);
+(7, 'This is thông báo 7', 1),
+(31, 'This is thông báo 8', 1);
 
 -- --------------------------------------------------------
 
@@ -133,6 +176,16 @@ CREATE TABLE `position` (
   `ID` int(11) NOT NULL,
   `Name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `position`
+--
+
+INSERT INTO `position` (`ID`, `Name`) VALUES
+(1, 'Super Admin'),
+(2, 'Sinh Viên'),
+(3, 'Quản Lý Đoàn'),
+(4, 'Quản Lý Câu Lạc Bộ');
 
 -- --------------------------------------------------------
 
@@ -191,28 +244,29 @@ CREATE TABLE `student` (
   `StudentID` varchar(30) NOT NULL,
   `Avatar` varchar(100) NOT NULL,
   `PhoneNumber` varchar(12) DEFAULT NULL,
-  `Email` varchar(45) NOT NULL,
-  `DOB` varchar(45) NOT NULL,
+  `Email` varchar(50) NOT NULL,
+  `DOB` date NOT NULL,
   `Sex` int(2) NOT NULL COMMENT '0 : Nam\r\n1 : Nữ',
   `Address` varchar(150) NOT NULL,
-  `Language` varchar(150) DEFAULT NULL,
+  `Language` varchar(150) DEFAULT '',
   `DateJoinUnion` date NOT NULL,
   `AddressJoinUnion` varchar(150) NOT NULL,
   `DateJoinParty` date DEFAULT NULL,
-  `AddressJoinParty` varchar(150) DEFAULT NULL,
-  `ChiDoan` int(11) DEFAULT NULL,
-  `Grade` int(11) NOT NULL COMMENT 'Điểm',
-  `Award` varchar(150) DEFAULT NULL,
-  `Punishment` varchar(150) DEFAULT NULL,
-  `Notification` varchar(10) NOT NULL
+  `AddressJoinParty` varchar(300) DEFAULT '',
+  `ChiDoan` int(11) NOT NULL,
+  `Grade` int(11) DEFAULT 0 COMMENT 'Điểm',
+  `Award` varchar(300) DEFAULT '' COMMENT 'Khen thưởng',
+  `Punishment` varchar(300) DEFAULT '' COMMENT 'Kỷ luật',
+  `Notification` varchar(10) NOT NULL,
+  `DOJ` date NOT NULL COMMENT 'Ngày đăng ký'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Đang đổ dữ liệu cho bảng `student`
 --
 
-INSERT INTO `student` (`ID`, `Name`, `StudentID`, `Avatar`, `PhoneNumber`, `Email`, `DOB`, `Sex`, `Address`, `Language`, `DateJoinUnion`, `AddressJoinUnion`, `DateJoinParty`, `AddressJoinParty`, `ChiDoan`, `Grade`, `Award`, `Punishment`, `Notification`) VALUES
-(1, 'Hoàng Khắc Phúc', '19010066', '1.jpg', '0563014144', 'nhockenxx2@gmail.com', '2001-02-24', 0, 'Kim Sơn-Ninh Bình', NULL, '0000-00-00', '', NULL, NULL, NULL, 0, NULL, NULL, '');
+INSERT INTO `student` (`ID`, `Name`, `StudentID`, `Avatar`, `PhoneNumber`, `Email`, `DOB`, `Sex`, `Address`, `Language`, `DateJoinUnion`, `AddressJoinUnion`, `DateJoinParty`, `AddressJoinParty`, `ChiDoan`, `Grade`, `Award`, `Punishment`, `Notification`, `DOJ`) VALUES
+(1, 'Hoàng Khắc Phúc', '19010066', '1.jpg', '0563014144', 'nhockenxx2@gmail.com', '2001-02-24', 0, 'Kim Sơn-Ninh Bình', NULL, '0000-00-00', '', NULL, NULL, 0, 0, NULL, NULL, '', '2021-11-13');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -223,7 +277,14 @@ INSERT INTO `student` (`ID`, `Name`, `StudentID`, `Avatar`, `PhoneNumber`, `Emai
 --
 ALTER TABLE `account`
   ADD PRIMARY KEY (`User`),
-  ADD KEY `ID` (`ID`);
+  ADD KEY `ID` (`ID`),
+  ADD KEY `Position` (`Position`);
+
+--
+-- Chỉ mục cho bảng `banner`
+--
+ALTER TABLE `banner`
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- Chỉ mục cho bảng `chidoan`
@@ -299,34 +360,40 @@ ALTER TABLE `student`
 --
 
 --
+-- AUTO_INCREMENT cho bảng `banner`
+--
+ALTER TABLE `banner`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT cho bảng `chidoan`
 --
 ALTER TABLE `chidoan`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT cho bảng `club`
 --
 ALTER TABLE `club`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `lienchidoan`
 --
 ALTER TABLE `lienchidoan`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `notification`
 --
 ALTER TABLE `notification`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT cho bảng `position`
 --
 ALTER TABLE `position`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `post`

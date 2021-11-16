@@ -1,0 +1,242 @@
+.page > .page-home {
+    padding: 0 20px;
+}
+
+.page > .page-home > .container {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 30px;
+}
+
+.page > .page-home > .container:last-child {
+    border: none;
+}
+
+/* Tiêu đề */
+
+.page > .page-home > .container > .title {
+    color: #555;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 30px 0;
+}
+
+/* Thêm + edit thông báo */
+
+.page > .page-home > .container > .content > .add-notification,
+.page > .page-home > .container > .content > .edit-notification {
+    margin-bottom: 40px;
+}
+
+.page > .page-home > .container > .content > .add-notification > input,
+.page > .page-home > .container > .content > .edit-notification > input {
+    padding: 5px 12px;
+    font-size: 16px;
+    outline: 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 300px;
+    margin-right: 15px;
+}
+
+.page > .page-home > .container > .content > .add-notification > button,
+.page > .page-home > .container > .content > .edit-notification > button {
+    padding: 6px 15px;
+    font-size: 16px;
+    outline: 0;
+    border: none;
+    background-color: #38c733;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.page > .page-home > .container > .content > .add-notification > button:hover,
+.page > .page-home > .container > .content > .edit-notification > button:hover {
+    background-color: #45d440;
+}
+
+.page > .page-home > .container > .content > .edit-notification > p > strong {
+    color: #555;
+    margin-bottom: 10px;
+    display: block;
+    font-size: 16px;
+}
+
+.page > .page-home > .container > .content > .edit-notification > p > strong::before {
+    color: #555;
+    font-size: 16px;
+    content: '\27A2';
+    margin-right: 7px;
+}
+
+.page > .page-home > .container > .content > .edit-notification {
+    display: none;
+}
+
+.page > .page-home > .container > .content > .edit-notification > button:last-child {
+    background-color: #df3e3e;
+    margin-left: 15px;
+}
+
+.page > .page-home > .container > .content > .edit-notification > button:last-child:hover {
+    background-color: #f75454;
+}
+
+/* Danh sách thông báo */
+
+.page > .page-home > .container > .content > .list-notification {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.page > .page-home > .container > .content > .list-notification > .item {
+    padding: 7px 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    color: #555;
+    margin: 5px;
+}
+
+.page > .page-home > .container > .content > .list-notification > .item > strong {
+    margin-right: 10px;
+}
+
+.page > .page-home > .container > .content > .list-notification > .item > i {
+    padding: 0 7px;
+    cursor: pointer;
+}
+
+.page > .page-home > .container > .content > .list-notification > .item > i:hover {
+    color: #f86019;
+}
+
+/* Banner */
+
+.page > .page-home > .container > .content > .list-banner {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.page > .page-home > .container > .content > .info-file {
+    margin-bottom: 40px;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.page > .page-home > .container > .content > .info-file > #name-file {
+    font-size: 16px;
+    color: #444;
+    font-weight: 600;
+}
+
+.page > .page-home > .container > .content > .info-file > .item > button {
+    background-color: #38c733;
+    padding: 7px 20px;
+    color: white;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.page > .page-home > .container > .content > .info-file > .item > button:hover{
+    background-color: #45d440;
+}
+
+.page > .page-home > .container > .content > .upload {
+    margin-bottom: 40px;
+    text-align: center;
+} 
+
+.page > .page-home > .container > .content > .upload > label {
+    font-size: 60px;
+    border: 3px dotted #ccc;
+    border-radius: 10px;
+    padding: 20px 100px;
+    cursor: pointer;
+}
+
+.page > .page-home > .container > .content > .list-banner > .item {
+    margin: 10px;
+    display: flex;
+    position: relative;
+    width: 300px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.page > .page-home > .container > .content > .list-banner > .item > img{
+    width: 300px;
+}
+
+.page > .page-home > .container > .content > .list-banner > .item > label {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    font-size: 24px;
+    color: #f86019;
+}
+
+.page > .page-home > .container > .content > .list-banner > .item > label:hover {
+    background-color: #cccccc57;
+}
+
+.page > .page-home > .container > .content > .list-banner > .item > label:last-child {
+    margin-left: 50%;
+}
+
+/* Zoom image */
+
+.page > .img-show {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #cccccc69;
+    text-align: center;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.page > .img-show > .content {
+    width: 80%;
+}
+
+.page > .img-show > .content > img {
+    width: 100%;
+}
+
+.page > .img-show > .content  > label {
+    position: absolute;
+    border-top: 30px solid #cccccc69;
+    border-left: 30px solid #cccccc69;
+    border-bottom: 30px solid transparent;
+    border-right: 30px solid transparent;
+    cursor: pointer;
+}
+
+.page > .img-show > .content  > label > i {
+    font-size: 24px;
+    position: absolute;
+    background-color: transparent;
+    margin-left: -20px;
+    margin-top: -23px;
+    color: #f86019;
+}

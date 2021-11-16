@@ -54,9 +54,6 @@
 
 /* CSS thông báo */
 
-.notification > .container {
-    
-}
 
 .notification > .container > .item {
     font-size: 20px;
@@ -254,7 +251,7 @@
 }
 .row-notification > .container > .news-item >.content{
     width: 100%;
-    width: object-fit: cover;
+    object-fit: cover;
     padding: 5px 10px;
 }
 .row-notification > .container > .news-item >.content >.content-1{

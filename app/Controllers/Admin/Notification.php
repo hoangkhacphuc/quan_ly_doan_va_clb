@@ -15,9 +15,14 @@ class Notification extends BaseController
 
     public function add()
     {
+        if (!$this->load_Permissions(2))
+        {
+            echo json_encode(array("Error" => "Không đủ quyền truy cập !"));
+            return;
+        }
         if (!isset($_POST['Content']))
         {
-            echo "Thêm thất bại !";
+            echo json_encode(array("Error" => "Thêm thất bại !"));
             return;
         }
         $content = $_POST['Content'];
@@ -26,9 +31,14 @@ class Notification extends BaseController
 
     public function update()
     {
+        if (!$this->load_Permissions(2))
+        {
+            echo json_encode(array("Error" => "Không đủ quyền truy cập !"));
+            return;
+        }
         if (!isset($_POST['ID']) && !isset($_POST['Content']) && !isset($_POST['Status']))
         {
-            echo "Cập nhật thất bại !";
+            echo json_encode(array("Error" => "Cập nhật thất bại !"));
             return;
         }
         $ID = $_POST['ID'];
@@ -40,9 +50,14 @@ class Notification extends BaseController
 
     public function delete()
     {
+        if (!$this->load_Permissions(2))
+        {
+            echo json_encode(array("Error" => "Không đủ quyền truy cập !"));
+            return;
+        }
         if (!isset($_POST['ID']))
         {
-            echo "Xóa thất bại !";
+            echo json_encode(array("Error" => "Xóa thất bại !"));
             return;
         }
         $ID = $_POST['ID'];
