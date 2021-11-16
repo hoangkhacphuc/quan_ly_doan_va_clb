@@ -248,7 +248,7 @@
                 </div>
             
             </div>
-            <div class="xemthem"> <a href="#">Xem Thêm </a>  </div> 
+
 </div>
        
 
