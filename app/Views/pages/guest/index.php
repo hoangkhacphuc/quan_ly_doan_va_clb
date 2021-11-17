@@ -36,12 +36,17 @@
     <?= $header ?>
 
     <div class="body">
-        <div class="row">
+        <div class="row notification">
             <div class="title">Thông Báo</div>
             <div class="container">
-                <?php foreach ($notification as $value) : ?>
+                <?php 
+                if ($notification != "" && $notification != [])
+                    foreach ($notification as $value) : ?>
                     <div class="item"><i class="fa fa-bell-o"></i> <?php echo $value['Content']; ?></div>
-                <?php endforeach; ?>
+                <?php endforeach;
+                else { ?>
+                    <div class="item"><i class="fa fa-bell-o"></i> Chưa có thông báo nào !</div>
+                    <?php } ?>
             </div>
         </div>
         <div class="row event">
@@ -132,32 +137,29 @@
                 </div>
             </div>
         </div>
-<div class="row-notification">
+        <div class="row post">
             <div class="title">Bài Đăng</div>
-            
             <div class="container">
                 <div class="news-item">
-                        <div class="logo-notification">
+                        <div class="logo-post">
                             <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/dsc8958.JPG" alt=""> 
                                 </div>
                     
                     <div class="content">
                  	    <div class="content-1"><a href=""> Giải mã “sức hút” của trường Đại học Phenikaa với sinh viên 2k3 </a></div>
                         <div class="gc"> </div>
-                            <p> Chất lượng đào tạo và uy tín của một trường đại học được phản ánh dựa trên “sức hút” đối với tân sinh viên của trường qua các năm.
-                            Chất lượng đào tạo và uy tín của một trường đại học được phản ánh dựa trên “sức hút” đối với tân sinh viên của trường qua các năm.
-                            </p>
+                        <p> Chất lượng đào tạo và uy tín của một trường đại học được phản ánh dựa trên “sức hút” đối với tân sinh viên của trường qua các năm.</p>
                         <div class="content-2">
                             <p><i class="fa fa-paper-plane-o"></i> Nguyễn Văn A</p>
                             <p><i class="fa fa-calendar"></i> 15/11/2021</p>
                         </div>
                         <div class="more"> 
-                            <a href=""> Xem thêm <i class="fa fa-long-arrow-right"></i></a> 
+                        <a href=""> Xem thêm <i class="fa fa-long-arrow-right"></i></a> 
                         </div>
                     </div>
                 </div>
                 <div class="news-item">
-                    <div class="logo-notification">
+                    <div class="logo-post">
                             <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/dsc8958.JPG" alt=""> 
                     </div>
                     
@@ -175,7 +177,7 @@
                     </div>
                 </div>
                 <div class="news-item">
-                    <div class="logo-notification">
+                    <div class="logo-post">
                             <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/dsc8958.JPG" alt=""> 
                     </div>
                     
@@ -193,7 +195,7 @@
                     </div>
                 </div>
                 <div class="news-item">
-                    <div class="logo-notification">
+                    <div class="logo-post">
                             <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/dsc8958.JPG" alt=""> 
                     </div>
                     
@@ -211,7 +213,7 @@
                     </div>
                 </div>
                 <div class="news-item">
-                    <div class="logo-notification">
+                    <div class="logo-post">
                         <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/dsc8958.JPG" alt=""> 
                     </div>
                     
@@ -229,7 +231,7 @@
                 </div>
                 </div>
                 <div class="news-item">
-                    <div class="logo-notification">
+                    <div class="logo-post">
                         <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/dsc8958.JPG" alt=""> 
                     </div>
                     
@@ -239,7 +241,7 @@
                         <p> Chất lượng đào tạo và uy tín của một trường đại học được phản ánh dựa trên “sức hút” đối với tân sinh viên của trường qua các năm.</p>
                     <div class="content-2">
                         <p><i class="fa fa-paper-plane-o"></i> Nguyễn Văn A</p>
-                        <p><i class="fa fa-caleIndar"></i> 15/11/2021</p>
+                        <p><i class="fa fa-calendar"></i> 15/11/2021</p>
                     </div>
                     <div class="more"> 
                         <a href=""> Xem thêm <i class="fa fa-long-arrow-right"></i></a> 
@@ -248,21 +250,16 @@
                 </div>
             
             </div>
-
-</div>
+            <div class="xemthem"> <a href="#">Xem Thêm </a>  </div> 
+        </div>
        
-
-
         <div class="row">
             <div class="title">Câu lạc bộ</div>
             <div class="container">
 
             </div>
         </div>
-        <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-        <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> -->
-    </div>
+   </div>
 
     <?= $footer ?>
 </body>

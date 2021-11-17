@@ -101,7 +101,7 @@ class HomeController extends BaseController
 
     public function upload_banner()
     {
-        if (!$this->load_Permissions(4))
+        if (!$this->load_Permissions(1))
         {
             echo json_encode(array("Error" => "Không đủ quyền truy cập !"));
             return;
@@ -134,6 +134,57 @@ class HomeController extends BaseController
             return;
         }
         echo json_encode(array("Error" => "File tải lên không phải ảnh !"));
+    }
+
+    public function upload_Image_Post()
+    {
+        if (!$this->load_Permissions(2))
+        {
+            echo json_encode(array("Error" => "Không đủ quyền truy cập !"));
+            return;
+        }
+        if (!isset($_FILES['upload']['name']) || empty($_FILES['upload']['name']))
+        {
+            echo json_encode(array("Error" => "Không có dữ liệu !"));
+            return;
+        }
+        if (intval($_FILES['upload']['size']) > 10485760)
+        {
+            echo json_encode(array("Error" => "Kích thước file quá lớn. Vui lòng chọn file nhỏ hơn 10MB !"));
+            return;
+        }
+        $location = $_FILES['upload']['name'];
+        $imageFileType = pathinfo($location,PATHINFO_EXTENSION);
+        $imageFileType = strtolower($imageFileType);
+        
+        $valid = array("jpg","jpeg","png");
+
+        if (in_array(strtolower($imageFileType), $valid))
+        {
+            $model = model('App\Models\Guest\GuestModel');
+            $name = $this->randomString().".".strtolower($imageFileType);
+            while(file_exists($name))
+            {
+                $name = $this->randomString().".".strtolower($imageFileType);
+            }
+            if(move_uploaded_file($_FILES['upload']['tmp_name'],'Image/Post/'.$name)){
+                // echo json_encode(array("Error" => "", "Done" => $name));
+                echo json_encode(array("uploaded" => true, "url" => base_url()."/Image/Post/".$name));
+                return;
+            }
+            echo json_encode(array("Error" => "Xảy ra lỗi trong quá trình lưu file. Vui lòng thử lại !"));
+            return;
+        }
+        echo json_encode(array("Error" => "File tải lên không phải ảnh !"));
+    }
+
+    public function randomString()
+    {
+        $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        $str = "";
+        while (strlen($str) < 20)
+            $str .= $chars[rand(0,20)];
+        return $str;
     }
 
     public function KyTuDacBiet($str)
