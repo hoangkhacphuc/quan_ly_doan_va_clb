@@ -1,0 +1,238 @@
+.page-home {
+    padding: 30px 20px;
+}
+
+.page-home > .head-home {
+
+}
+
+/* Ô search */
+
+.page-home > .head-home > .search {
+    width: 400px;
+    max-width: 100%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+
+.page-home > .head-home > .search > input {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 18px;
+    outline: 0;
+    border: none;
+    border-bottom: 1px solid orange;
+    color: #333;
+}
+
+.page-home > .head-home > .search > label {
+    border-bottom: 1px solid orange;
+    color: #333;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.page-home > .head-home > .search > label > i {
+    border-radius: 50px;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.page-home > .head-home > .search > label > i:hover {
+    background-color: #eee;
+}
+
+.page-home > .head-home > .search > .line {
+    width: 0;
+    height: 1px;
+    background-color: orange;
+    position: absolute;
+    bottom: -1px;
+}
+
+@keyframes select_Input_Search {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes unselect_Input_Search {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 0;
+    }
+}
+
+/* Công cụ */
+
+.page-home > .head-home > .manager {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    font-size: 18px;
+}
+
+.page-home > .head-home > .manager > .container > span {
+    cursor: pointer;
+    color: #00838f;
+}
+
+.page-home > .head-home > .manager > .container > .type-current {
+    color: #555;
+    cursor: pointer;
+}
+
+.page-home > .head-home > .manager > .container > .type-current > i {
+    padding-left: 20px;
+}
+
+.page-home > .head-home > .manager > .container > .dropdown {
+    color: #555;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 0 5px 5px #eee;
+    display: none;
+}
+
+.page-home > .head-home > .manager > .container > .dropdown > .item {
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.page-home > .head-home > .manager > .container > .dropdown > .item:hover {
+    background-color: #eee;
+}
+
+.page-home > .head-home > .manager > .container > .setting-more > .check > i {
+    font-size: 16px;
+}
+
+.page-home > .head-home > .manager > .container > .setting-more {
+    display: none;
+    align-items: center;
+}
+
+.page-home > .head-home > .manager > .container > .setting-more > span {
+    color: #444;
+    font-size: 20px;
+}
+
+.page-home > .head-home > .manager > .container > .setting-more > i {
+    margin-left: 20px;
+    border-radius: 40px;
+    padding: 7px;
+    font-size: 24px;
+    cursor: pointer;
+    width: 24px;
+    text-align: center;
+    transition: 0.5s;
+    color: #444;
+}
+
+.page-home > .head-home > .manager > .container > .setting-more > i:hover {
+    background-color: #eee;
+}
+
+/* Danh sách bài đăng */
+
+.page-home > .body-home {
+    margin-top: 40px;
+}
+
+.page-home > .body-home > .item {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.page-home > .body-home > .item:hover {
+    border: 1px solid transparent;
+    box-shadow: 0 0 5px 5px #eee;
+}
+
+.page-home > .body-home > .item > .head {
+    display: flex;
+}
+
+.page-home > .body-home > .item > .head > img {
+    width: 70px;
+    height: 70px;
+    margin-right: 15px;
+    border-radius: 5px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.page-home > .body-home > .item > .head > .container {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+
+.page-home > .body-home > .item > .head > .container > .title {
+    font-size: 20px;
+    color: #555;
+}
+
+.page-home > .body-home > .item > .head > .container > .info {
+    font-size: 14px;
+    color: #777;
+}
+
+.page-home > .body-home > .item > .author {
+    font-size: 20px;
+    color: #444;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+
+.page-home > .body-home > .item > .author > .container > i {
+    margin-right: 15px;
+    border-radius: 40px;
+    padding: 7px;
+    font-size: 24px;
+}
+
+.page-home > .body-home > .item > .author > .container > i:hover {
+    background-color: #eee;
+}
+
+.page-home > .body-home > .item > .author > .container.setting-post {
+    display: none;
+}
+
+.page-home > .body-home > .item:hover > .author > .container.setting-post {
+    display: flex;
+}
+
+/* Nút checkbox */
+
+.page-home .check {
+    border: 2px solid #777;
+    border-radius: 5px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    align-self: center;
+    margin-right: 20px;
+    display: none;
+}
+
+.page-home .uncheck {
+    background-color: white;
+}

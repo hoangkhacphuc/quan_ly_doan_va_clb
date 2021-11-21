@@ -38,7 +38,7 @@ $(document).ready(function(){
         select_Page = $(this).attr('id');
         $('.menu-dashboard>.container:last-child>#'+select_Page).css('color', '#f86019');
 
-        $('.page').html("<div style='width: 100%; text-align: center; margin-top: 50px'><img src='Image/loading.gif' style='width: 200px;'></img><br><strong style='color: #777'>No data. Please reload the page !</strong></div>");
+        $('.page').html("<div style='width: 100%; text-align: center; margin-top: 50px'><img src='Image/loading.gif' style='width: 200px;'></img></div>");
         
         getPage(select_Page);
     });
@@ -46,7 +46,8 @@ $(document).ready(function(){
     function getPage(page) {
         if (page === "page-1")
             page = "home";
-
+        if (page === "page-2")
+            page = "thanhvien";
         $.get('admin/'+page)
         .done(function (data) {
             $('.page').html(data);
@@ -74,7 +75,6 @@ $(document).ready(function(){
             });
         }
     });
-    
 
     // System Notification
     

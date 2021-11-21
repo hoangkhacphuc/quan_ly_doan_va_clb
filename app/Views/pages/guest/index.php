@@ -140,7 +140,11 @@
         <div class="row post">
             <div class="title">Bài Đăng</div>
             <div class="container">
-                <div class="news-item">
+                <div class="item"><div class="title">This is item</div></div>
+                <div class="item"><div class="title">This is item</div></div>
+                <div class="item"><div class="title">This is item</div></div>
+                <div class="item"><div class="title">This is item</div></div>
+                <!-- <div class="news-item">
                         <div class="logo-post">
                             <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/dsc8958.JPG" alt=""> 
                                 </div>
@@ -250,7 +254,8 @@
                 </div>
             
             </div>
-            <div class="xemthem"> <a href="#">Xem Thêm </a>  </div> 
+            <div class="xemthem"> <a href="#">Xem Thêm </a>  </div>  -->
+                </div> 
         </div>
        
         <div class="row">

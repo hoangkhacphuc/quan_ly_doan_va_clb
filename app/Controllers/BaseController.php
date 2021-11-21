@@ -93,4 +93,13 @@ class BaseController extends Controller
         }
         return true;
     }
+
+    public function randomString()
+    {
+        $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        $str = "";
+        while (strlen($str) < 20)
+            $str .= $chars[rand(0,20)];
+        return $str;
+    }
 }

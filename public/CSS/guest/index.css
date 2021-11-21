@@ -199,7 +199,24 @@
 /* End sự kiện */
 
 /*Start bài đăng*/
-.post {
+
+.post > .container {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+}
+
+.post > .container  > .item {
+    border: 1px solid green;
+    width: calc(50% - 15px);
+    box-sizing: border-box;
+    margin-bottom: 30px;
+}
+
+
+/* .post {
     background-color: rgba(255, 255, 255, 0.034);
 }
 
@@ -226,16 +243,16 @@
 
 .post>.container>.news-item>.logo-post {
     overflow: hidden;
-}
+} */
 
 .post>.container>.news-item>.logo-post img {
-    opacity: 1;
+    /* opacity: 1;
     overflow: hidden;
-    width: 100%;
+    width: 100%; */
 
     /* object-fit: cover; */
 }
-
+/* 
 .post>.container>.news-item img {
     width: 100%;
     object-fit: cover;
@@ -361,6 +378,6 @@
     .post>.container {
         grid-template-columns: repeat(1, 1fr);
     }
-}
+} */
   /* end bài đăng  
  

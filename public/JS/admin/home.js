@@ -213,7 +213,7 @@ $(document).ready(function(){
         var files = $('#upload-file')[0].files;
         
         fd.append('file',files[0]);
-
+        
         $.ajax({
             url: 'admin/banner/upload',
             type: 'post',

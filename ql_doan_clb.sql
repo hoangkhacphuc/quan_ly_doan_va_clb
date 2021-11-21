@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 14, 2021 lúc 04:32 AM
+-- Thời gian đã tạo: Th10 21, 2021 lúc 04:10 PM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 7.4.25
 
@@ -60,7 +60,9 @@ INSERT INTO `banner` (`ID`, `Image`) VALUES
 (1, 'img1.jpg'),
 (2, 'img2.jpg'),
 (3, 'img3.jpg'),
-(4, 'img4.jpg');
+(4, 'img4.jpg'),
+(9, 'dbpkijoindbgujkkjflg.png'),
+(10, 'ugfggephpslmunjlubjr.png');
 
 -- --------------------------------------------------------
 
@@ -229,8 +231,19 @@ CREATE TABLE `post` (
   `Type` int(11) DEFAULT NULL,
   `Hide` int(11) DEFAULT NULL,
   `Image` varchar(100) DEFAULT NULL,
-  `Privacy` int(11) DEFAULT NULL
+  `Position` varchar(20) DEFAULT '0,0,0' COMMENT 'Điểm chức vụ',
+  `MaxPlayer` varchar(30) DEFAULT '0,0,0',
+  `SelectPosition` varchar(10) DEFAULT '0,0,0' COMMENT 'Checkbox'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `post`
+--
+
+INSERT INTO `post` (`ID`, `Title`, `Content`, `Author`, `Posting`, `Type`, `Hide`, `Image`, `Position`, `MaxPlayer`, `SelectPosition`) VALUES
+(1, '123', '<p>123</p>\n', 1, '2021-11-20', 0, 1, 'Image/Upload/csmgrnsqhrjnqdoecoaj.jpg', '0|0|0', '0|0|0', '0|0|0'),
+(2, '123', '<p>123</p>\n', 1, '2021-11-20', 0, 1, 'Image/Upload/jtnadaarpnqmiglnpmso.jpg', '0|0|0', '0|0|0', '0|0|0'),
+(3, 'Đây là tiêu đề', '<p><img alt=\"\" src=\"http://localhost:8080/Image/Upload/aotmqjuqiapppilspbgm.jpg\" style=\"height:2513px; width:8000px\" />ĐĐ&acirc;y l&agrave; nội dung</p>\n', 1, '2021-11-20', 0, 1, 'Image/Upload/sihmkfgdcfnchqpdlagt.jpg', '88|0|0', '100|0|0', '1|1|0');
 
 -- --------------------------------------------------------
 
@@ -363,7 +376,7 @@ ALTER TABLE `student`
 -- AUTO_INCREMENT cho bảng `banner`
 --
 ALTER TABLE `banner`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT cho bảng `chidoan`
@@ -399,7 +412,7 @@ ALTER TABLE `position`
 -- AUTO_INCREMENT cho bảng `post`
 --
 ALTER TABLE `post`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT cho bảng `student`

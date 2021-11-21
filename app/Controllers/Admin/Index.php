@@ -16,7 +16,6 @@ class Index extends BaseController
         if (!$this->load_Permissions(1))
             return redirect("/");
 
-        
         $data = array(
             'Title' => "Super Admin - Dashboard",
         );
@@ -26,7 +25,10 @@ class Index extends BaseController
     public function home()
     {
         if (!$this->load_Permissions(1))
-            return redirect("/");
+        {
+            echo "<div style='width: 100%; text-align: center; margin-top: 50px'><img src='Image/empty_box.png' style='width: 200px;'></img><br><strong style='color: #777'>No data. Please reload the page !</strong></div>";
+            return;
+        }
         $model = model('App\Models\Guest\GuestModel');
         $data = array(
             'Banner' => $model->getBanner(),

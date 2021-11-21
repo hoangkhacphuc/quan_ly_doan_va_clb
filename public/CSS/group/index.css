@@ -208,7 +208,8 @@ header > .search > input:focus, header > .search > button:focus{
     top: 15px;
     display: flex;
     flex-flow: column-reverse;
-    z-index: -999;
+    z-index: 9999;
+    pointer-events: none;
 }
 
 .system-notification > .item {
