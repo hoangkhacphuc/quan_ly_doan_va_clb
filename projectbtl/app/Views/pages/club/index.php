@@ -1,1 +1,0 @@
-This is page index of the club
