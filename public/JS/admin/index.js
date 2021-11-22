@@ -46,8 +46,8 @@ $(document).ready(function(){
     function getPage(page) {
         if (page === "page-1")
             page = "home";
-        if (page === "page-2")
-            page = "thanhvien";
+        else if (page === "page-2")
+            page = "member";
         $.get('admin/'+page)
         .done(function (data) {
             $('.page').html(data);

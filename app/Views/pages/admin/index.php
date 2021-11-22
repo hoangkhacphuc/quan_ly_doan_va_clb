@@ -17,6 +17,8 @@
     <!-- Tài nguyên -->
     <link rel="stylesheet" href="CSS/admin/index.css">
     <link rel="stylesheet" href="CSS/admin/home.css">
+    <link rel="stylesheet" href="CSS/admin/member.css">
+
     <script src="JS/admin/index.js"></script>
 </head>
 <body>
@@ -25,10 +27,7 @@
         <div class="item">
             <a href="/"><img src="Image/logo.png" alt="Trang chủ"></a>
         </div>
-        <div class="item search">
-            <input autocomplete="off" type="text" id="search" placeholder="Tìm kiếm ...">
-            <button id='btn-search'><i class="fa fa-search"></i></button>
-        </div>
+        
     </header>
     <div class="dashboard">
         <div class="menu-dashboard">

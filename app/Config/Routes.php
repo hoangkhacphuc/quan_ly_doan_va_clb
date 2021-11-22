@@ -49,6 +49,8 @@ $routes->group('group', function($routes) {
 $routes->group('admin', function($routes) {
     $routes->get('/', 'Admin\Index::index');
     $routes->get('home', 'Admin\Index::home');
+    $routes->get('member', 'Admin\Index::member');
+
     $routes->group('banner', function ($routes)
     {
         $routes->post('upload', 'Guest\HomeController::upload_banner');
