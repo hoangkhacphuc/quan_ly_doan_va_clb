@@ -140,71 +140,14 @@
         <div class="row post">
             <div class="title">Bài Đăng</div>
             <div class="container">
-                <div class="item"><div class="title">This is item</div></div>
-                <div class="item"><div class="title">This is item</div></div>
-                <div class="item"><div class="title">This is item</div></div>
-                <div class="item"><div class="title">This is item</div></div>
-                <!-- <div class="news-item">
-                        <div class="logo-post">
-                            <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/dsc8958.JPG" alt=""> 
-                                </div>
-                    
+                <div class="news-item">
+                    <div class="logo-post">
+                        <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/dsc8958.JPG" alt=""> 
+                    </div>
                     <div class="content">
-                 	    <div class="content-1"><a href=""> Giải mã “sức hút” của trường Đại học Phenikaa với sinh viên 2k3 </a></div>
-                        <div class="gc"> </div>
-                        <p> Chất lượng đào tạo và uy tín của một trường đại học được phản ánh dựa trên “sức hút” đối với tân sinh viên của trường qua các năm.</p>
-                        <div class="content-2">
-                            <p><i class="fa fa-paper-plane-o"></i> Nguyễn Văn A</p>
-                            <p><i class="fa fa-calendar"></i> 15/11/2021</p>
+                 	<div class="content-1">
+                         <a href=""> Giải mã “sức hút” của trường Đại học Phenikaa với sinh viên 2k3 </a>
                         </div>
-                        <div class="more"> 
-                        <a href=""> Xem thêm <i class="fa fa-long-arrow-right"></i></a> 
-                        </div>
-                    </div>
-                </div>
-                <div class="news-item">
-                    <div class="logo-post">
-                            <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/dsc8958.JPG" alt=""> 
-                    </div>
-                    
-                    <div class="content">
-                 	<div class="content-1"><a href=""> Giải mã “sức hút” của trường Đại học Phenikaa với sinh viên 2k3 </a></div>
-                    <div class="gc"> </div>
-                        <p> Chất lượng đào tạo và uy tín của một trường đại học được phản ánh dựa trên “sức hút” đối với tân sinh viên của trường qua các năm.</p>
-                    <div class="content-2">
-                        <p><i class="fa fa-paper-plane-o"></i> Nguyễn Văn A</p>
-                        <p><i class="fa fa-calendar"></i> 15/11/2021</p>
-                    </div>
-                    <div class="more"> 
-                        <a href=""> Xem thêm <i class="fa fa-long-arrow-right"></i></a> 
-                    </div>
-                    </div>
-                </div>
-                <div class="news-item">
-                    <div class="logo-post">
-                            <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/dsc8958.JPG" alt=""> 
-                    </div>
-                    
-                    <div class="content">
-                 	<div class="content-1"><a href=""> Giải mã “sức hút” của trường Đại học Phenikaa với sinh viên 2k3 </a></div>
-                    <div class="gc"> </div>
-                        <p> Chất lượng đào tạo và uy tín của một trường đại học được phản ánh dựa trên “sức hút” đối với tân sinh viên của trường qua các năm.</p>
-                    <div class="content-2">
-                        <p><i class="fa fa-paper-plane-o"></i> Nguyễn Văn A</p>
-                        <p><i class="fa fa-calendar"></i> 15/11/2021</p>
-                    </div>
-                    <div class="more"> 
-                        <a href=""> Xem thêm <i class="fa fa-long-arrow-right"></i></a> 
-                    </div>
-                    </div>
-                </div>
-                <div class="news-item">
-                    <div class="logo-post">
-                            <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/dsc8958.JPG" alt=""> 
-                    </div>
-                    
-                    <div class="content">
-                 	<div class="content-1"><a href=""> Giải mã “sức hút” của trường Đại học Phenikaa với sinh viên 2k3 </a></div>
                     <div class="gc"> </div>
                         <p> Chất lượng đào tạo và uy tín của một trường đại học được phản ánh dựa trên “sức hút” đối với tân sinh viên của trường qua các năm.</p>
                     <div class="content-2">
@@ -220,27 +163,10 @@
                     <div class="logo-post">
                         <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/dsc8958.JPG" alt=""> 
                     </div>
-                    
-                 <div class="content">
-                 	<div class="content-1"><a href=""> Giải mã “sức hút” của trường Đại học Phenikaa với sinh viên 2k3 </a></div>
-                    <div class="gc"> </div>
-                    <p> Chất lượng đào tạo và uy tín của một trường đại học được phản ánh dựa trên “sức hút” đối với tân sinh viên của trường qua các năm.</p>
-                    <div class="content-2">
-                        <p><i class="fa fa-paper-plane-o"></i> Nguyễn Văn A</p>
-                        <p><i class="fa fa-calendar"></i> 15/11/2021</p>
-                    </div>
-                    <div class="more"> 
-                        <a href=""> Xem thêm <i class="fa fa-long-arrow-right"></i></a> 
-                    </div>
-                </div>
-                </div>
-                <div class="news-item">
-                    <div class="logo-post">
-                        <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/dsc8958.JPG" alt=""> 
-                    </div>
-                    
                     <div class="content">
-                 	<div class="content-1"><a href=""> Giải mã “sức hút” của trường Đại học Phenikaa với sinh viên 2k3 </a></div>
+                 	<div class="content-1">
+                         <a href=""> Giải mã “sức hút” của trường Đại học Phenikaa với sinh viên 2k3 </a>
+                        </div>
                     <div class="gc"> </div>
                         <p> Chất lượng đào tạo và uy tín của một trường đại học được phản ánh dựa trên “sức hút” đối với tân sinh viên của trường qua các năm.</p>
                     <div class="content-2">
@@ -252,20 +178,100 @@
                     </div>
                     </div>
                 </div>
-            
-            </div>
-            <div class="xemthem"> <a href="#">Xem Thêm </a>  </div>  -->
-                </div> 
-        </div>
-       
-        <div class="row">
+                <div class="news-item">
+                    <div class="logo-post">
+                        <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/dsc8958.JPG" alt=""> 
+                    </div>
+                    <div class="content">
+                 	<div class="content-1">
+                         <a href=""> Giải mã “sức hút” của trường Đại học Phenikaa với sinh viên 2k3 </a>
+                        </div>
+                    <div class="gc"> </div>
+                        <p> Chất lượng đào tạo và uy tín của một trường đại học được phản ánh dựa trên “sức hút” đối với tân sinh viên của trường qua các năm.</p>
+                    <div class="content-2">
+                        <p><i class="fa fa-paper-plane-o"></i> Nguyễn Văn A</p>
+                        <p><i class="fa fa-calendar"></i> 15/11/2021</p>
+                    </div>
+                    <div class="more"> 
+                        <a href=""> Xem thêm <i class="fa fa-long-arrow-right"></i></a> 
+                    </div>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="logo-post">
+                        <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/dsc8958.JPG" alt=""> 
+                    </div>
+                    <div class="content">
+                 	<div class="content-1">
+                         <a href=""> Giải mã “sức hút” của trường Đại học Phenikaa với sinh viên 2k3 </a>
+                        </div>
+                    <div class="gc"> </div>
+                        <p> Chất lượng đào tạo và uy tín của một trường đại học được phản ánh dựa trên “sức hút” đối với tân sinh viên của trường qua các năm.</p>
+                    <div class="content-2">
+                        <p><i class="fa fa-paper-plane-o"></i> Nguyễn Văn A</p>
+                        <p><i class="fa fa-calendar"></i> 15/11/2021</p>
+                    </div>
+                    <div class="more"> 
+                        <a href=""> Xem thêm <i class="fa fa-long-arrow-right"></i></a> 
+                    </div>
+                    </div>
+                </div>
+    
+        <div class="more">
+                    <a href="#">Xem Thêm</a>
+                </div>
+                </div>
+                </div>
+        <div class="row group">
             <div class="title">Câu lạc bộ</div>
-            <div class="container">
+                <div class="container">
+            <section class="clb" id="clb">
+    <div class="box-container">
 
+        <div class="box">
+            <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/qualcom.jpg" alt="">
+            <p>Lễ ký kết hợp tác chiến lược xây dựng tiểu đô thị đại học thông minh đầu tiên tại Việt Nam</p>
+            <div class="content">
+                <h3>sắc hồng phenikaa</h3>
+                <p><marquee>Lễ ký kết hợp tác chiến lược xây dựng tiểu đô thị đại học thông minh đầu tiên tại Việt Nam.</marquee></p>
+                <a href="#" class="xtm">xem thêm</a>
             </div>
         </div>
-   </div>
-
+        <div class="box">
+            <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/qualcom.jpg" alt="">
+            <p>Lễ ký kết hợp tác chiến lược xây dựng tiểu đô thị đại học thông minh đầu tiên tại Việt Nam</p>
+            <div class="content">
+                <h3>sắc hồng phenikaa</h3>
+                <p><marquee>Lễ ký kết hợp tác chiến lược xây dựng tiểu đô thị đại học thông minh đầu tiên tại Việt Nam.</marquee></p>
+                <a href="#" class="xtm">xem thêm</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/qualcom.jpg" alt="">
+            <p>Lễ ký kết hợp tác chiến lược xây dựng tiểu đô thị đại học thông minh đầu tiên tại Việt Nam</p>
+            <div class="content">
+                <h3>sắc hồng phenikaa</h3>
+                <p><marquee>Lễ ký kết hợp tác chiến lược xây dựng tiểu đô thị đại học thông minh đầu tiên tại Việt Nam.</marquee></p>
+                <a href="#" class="xtm">xem thêm</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/qualcom.jpg" alt="">
+            <p>Lễ ký kết hợp tác chiến lược xây dựng tiểu đô thị đại học thông minh đầu tiên tại Việt Nam</p>
+            <div class="content">
+                <h3>sắc hồng phenikaa</h3>
+                <p><marquee>Lễ ký kết hợp tác chiến lược xây dựng tiểu đô thị đại học thông minh đầu tiên tại Việt Nam.</marquee></p>
+                <a href="#" class="xtm">xem thêm</a>
+            </div>
+        </div>
+    </div>
+</section>
+        <div class="more">
+            <a href="#">Xem Thêm</a>
+        </div>
+            </div>
+    </div>  
+                
     <?= $footer ?>
 </body>
 

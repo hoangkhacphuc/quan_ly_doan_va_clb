@@ -199,6 +199,10 @@
 /* End sự kiện */
 
 /*Start bài đăng*/
+.post {
+    background-color: rgba(255, 255, 255, 0.034);
+    box-sizing: border-box;
+}
 
 .post > .container {
     box-sizing: border-box;
@@ -208,51 +212,26 @@
     justify-content: space-between;
 }
 
-.post > .container  > .item {
-    border: 1px solid green;
+.post > .container  > .news-item {
     width: calc(50% - 15px);
     box-sizing: border-box;
     margin-bottom: 30px;
-}
-
-
-/* .post {
-    background-color: rgba(255, 255, 255, 0.034);
-}
-
-.post>.container {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 12PX;
-    width: 100%;
-    margin: auto;
-}
-
-.post>.container>.news-item {
-    width: auto;
-    height: auto;
-    padding: 1%;
-    display: grid;
-    grid-template-columns: 379px 1fr;
-    border-style: solid;
-    border-width: 1px;
-    border-color: rgba(255, 255, 255, 0.034);
-    cursor: pointer;
+    display: flex;
 }
 
 .post>.container>.news-item>.logo-post {
     overflow: hidden;
-} */
+}
 
 .post>.container>.news-item>.logo-post img {
-    /* opacity: 1;
+    opacity: 1;
     overflow: hidden;
-    width: 100%; */
-
-    /* object-fit: cover; */
+    max-height: 300px;
+    /* max-width: 600px; */
+    min-height: 260px;
+    min-width: 300px;
 }
-/* 
+
 .post>.container>.news-item img {
     width: 100%;
     object-fit: cover;
@@ -262,8 +241,6 @@
 }
 
 .post>.container>.news-item img:hover {
-
-    border: 1px solid rgb(240, 156, 87);
     -webkit-transform: scale(1.2);
     transform: scale(1.2);
     opacity: 0.7;
@@ -285,7 +262,6 @@
     flex-direction: column;
     justify-content: space-between;
 }
-
 .post>.container>.news-item>.content>.gc {
     width: 80px;
     height: 2px;
@@ -302,6 +278,7 @@
     padding: 5px 8px;
     width: 100px;
     height: 28px;
+    margin-bottom: 30px;
 }
 
 .post>.container>.news-item>.content>.more a {
@@ -369,15 +346,207 @@
     font-size: 18px;
     background-color: #e94b00;
 }
+/* phần nút xem thêm */
+.post > .container > .more {
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+}
 
+.post > .container > .more > a {
+    padding: 15px 40px;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    background-color: #e94b00;
+}
+
+.post > .container > .more > a:hover {
+    background-color: #c04004;
+}
+/* end nút xem thêm */
 .post>.xemthem>a:hover {
     background-color: #c04004;
 }
 
-@media screen and (max-width:1023px) {
+@media screen and (max-width:1200px) {
     .post>.container {
         grid-template-columns: repeat(1, 1fr);
     }
-} */
-  /* end bài đăng  
- 
+    .post>.container>.news-item {
+        width:100%;
+        box-sizing: border-box;
+        margin-bottom: 30px;
+    }
+    .post > .container {
+        box-sizing: border-box;
+        width: 100%;
+        display: flex;
+    }
+}
+@media screen and (max-width:980px) {
+    .post>.container>.news-item {
+        width:100%;
+        box-sizing: border-box;
+        margin-bottom: 30px;
+    }
+    .post > .container {
+        box-sizing: border-box;
+        width: 100%;
+        display: flex;
+    }
+    
+}
+@media screen and (max-width:768px) {
+    .post>.container>.news-item {
+        width:100%
+        box-sizing: border-box;
+        margin-bottom: 30px;
+    }
+    .post > .container {
+        box-sizing: border-box;
+        width: 100%;
+        display: flex;
+    }
+    
+}
+ /* end bài đăng   */
+ /* start clb */
+ :root{
+    --orange:#ffa500;
+  }
+  
+  .group{
+    font-family: 'Nunito', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    outline: none; border:none;
+    text-decoration: none;
+    transition: all .2s linear;
+  }
+  
+  *::selection{
+    background:var(--orange);
+    color:#fff;
+  }
+  
+ .group>.container>.clb>.box-container>.box>.content> .xtm{
+    display: inline-block;
+    margin-top: 1rem;
+    background:var(--orange);
+    color:#fff;
+    padding:.8rem 3rem;
+    border:.2rem solid var(--orange);
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
+  
+  .group>.container>.clb>.box-container>.box>.content>.xtm:hover{
+    background:rgba(255, 165, 0,.2);
+    color:var(--orange);
+  }
+  .group>.container> .clb .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap:1.5rem;
+  }
+  
+  .group>.container>.clb .box-container .box{
+    overflow: hidden;
+    box-shadow: 0 1rem 2rem rgba(0,0,0,.1);
+    border:1rem solid #fff;
+    border-radius: .5rem;
+    flex:1 1 30rem;
+    height: 25rem;
+    position: relative;
+  }
+  
+  .group>.container>.clb .box-container .box img{
+    height: 100%;
+    width:100%;
+    object-fit: cover;
+  }
+  .group>.container>.clb .box-container .box{
+      overflow: hidden;
+  }
+  .group>.container>.clb .box-container .box:hover > img{
+    -webkit-transform: scale(1.2);
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+  .group>.container>.clb .box-container .box .content{
+    position: absolute;
+    top:-100%; left:0;
+    height: 100%;
+    width:100%;
+    text-align: center;
+    background:rgba(0,0,0,.7);
+    padding:2rem;
+    padding-top: 5rem;
+  }
+  
+  .group>.container>.clb .box-container .box:hover .content{
+    top:0;
+  }
+  
+  .group>.container> .clb .box-container .box .content h3{
+    font-size: 2.5rem;
+    color:var(--orange);
+  }
+  
+  .group>.container> .clb .box-container .box .content p{
+    font-size: 1.3rem;
+    color:#eee;
+    padding:.5rem 0;
+  }
+  .group>.container> .clb .box-container .box >p{
+    bottom: 18px;
+    position:absolute;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    border-left: 3px solid #fff;
+    margin-left: 10px;
+    }
+  /* phần nút xem thêm */
+    .group > .container > .more {
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.group> .container > .more > a {
+    padding: 15px 40px;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    background-color: #e94b00;
+}
+
+.group > .container > .more > a:hover {
+    background-color: #c04004;
+}
+/* end nút xem thêm */
+
+@media (max-width:1190px){
+    .group{
+      font-size: 50%;
+    }
+  
+  }
+  
+  @media (max-width:980px){
+    .group>section{
+      padding:2rem;
+    }
+  
+  }
+  
+  @media (max-width:768px){
+    .group{
+        font-size: 50%;
+    }
+  }
+  
+ /* end clb */
