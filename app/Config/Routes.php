@@ -87,6 +87,10 @@ $routes->group('admin', function($routes) {
         $routes->post('/update', 'Admin\Post::update');
         $routes->post('/delete', 'Admin\Post::delete');
     });
+    $routes->group('member', function ($routes)
+    {
+        $routes->post('/add', 'Admin\Member::add');
+    });
 });
 
 $routes->post('login', 'Guest\HomeController::login');
