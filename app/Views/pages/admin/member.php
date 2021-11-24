@@ -79,5 +79,48 @@
             </div>
         </div>
     </div>
+
+    <div class="member-add">
+        <h3>Thêm thành viên</h3>
+        <table class="inp">
+            <tr>
+                <td><label for="name">Họ và tên:</label></td>
+                <td><input type="text" id="inp-add-notification-name" placeholder="Nhập họ và tên . . ."></td>
+            </tr>
+            <tr>
+                <td><label for="msv">Mã Sinh Viên:</label></td>
+                <td><input type="text" id="inp-add-notification-msv" placeholder="Nhập mã sinh viên . . ."></td>
+            </tr>
+            <tr>
+                <td><label for="sdt">Số Điện Thoại:</label></td>
+                <td><input type="text" id="inp-add-notification-sdt" placeholder="Nhập số điện thoại . . ."></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email:</label></td>
+                <td><input type="text" id="inp-add-notification-email" placeholder="Nhập email . . ."></td>
+            </tr>
+            <tr>
+                <td><label for="dob">Ngày Sinh:</label></td>
+                <td><input type="date" id="inp-add-notification-dob" placeholder=""></td>
+            </tr>
+            <tr>
+                <td><label for="sex">Giới Tính:</label></td>
+                <td class="gender-radio">
+                    <input type="radio" id="" name="gender" value="male">Nam  </br>
+                    <input type="radio" id="" name="gender" value="female">Nữ  
+                </td>
+            </tr>
+            <tr>
+                <td><label for="addr">Địa chỉ:</label></td>
+                <td><input type="text" id="inp-add-notification-addr" placeholder="Nhập địa chỉ . . ."></td>
+            </tr>
+            <tr>
+                <td><label for="group">Chi đoàn:</label></td>
+                <td><input type="text" id="inp-add-notification-group" placeholder="Nhập chi đoàn . . ."></td>
+            </tr>
+        </table>
+        <button id="btn-add" >Thêm thành viên</button>
+    </div>
+    
         
 </div>
