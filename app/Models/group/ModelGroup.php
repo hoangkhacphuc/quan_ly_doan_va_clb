@@ -32,18 +32,59 @@ class ModelGroup extends HomeModel {
         echo $query ? json_encode(array("status" => true, "message" => "Thêm thành công !")) : json_encode(array("status" => false, 'message' => "Thêm thất bại !"));
     }
 
-    public function get_post($limit, $type = null)
+    public function get_post()
     {
-        $query = "";
-        if ($type != null)
-            $query = $this->dbTable('post')->select('*')->join('student', 'post.Author = student.ID')->where('Hide', $type)->limit(intval($limit)*20, intval($limit+1)*20)->get()->getResultArray();
-        else
-            $query = $this->dbTable('post')->select('*')->limit(intval($limit)*20, intval($limit+1)*20)->get()->getResultArray();
+        $query = $this->dbTable('post')->select('*')->get()->getResultArray();
         if (count($query) > 0)
         {
-            echo json_encode(array("status" => true, "message" => json_encode($query)));
+            for ($i=0; $i < count($query); $i++)
+            {
+                $data_author = $this->dbTable('student')->select('*')->where('ID', $query[$i]['Author'])->get()->getResultArray();
+                $query[$i]['Author'] = $data_author[0]['Name'];
+                $query[$i]['Posting'] = date('d/m/Y', strtotime($query[$i]['Posting']));
+            }
+            return array("status" => true, "message" => $query);
+        }
+        return (array('status' => false, 'message' => "<div style='width: 100%; text-align: center; margin-top: 50px'><img src='Image/empty_box.png' style='width: 200px;'></img><br><strong style='color: #777'>No data. Please reload the page !</strong></div>"));
+    }
+
+    public function change_Hide($id, $hide)
+    {
+        $query = $this->dbTable('post')->select('*')->where('ID', $id)->get()->getResultArray();
+        if (count($query) > 0)
+        {
+            $this->dbTable('post')->select('*')->where('ID', $id)->update(array('Hide' => $hide));
+            echo json_encode(array('status' => true, 'message' => "Đã ".($hide == 1 ? 'xuất bản' : 'ẩn').' bài viết !'));
             return;
         }
-        echo json_encode(array('status' => false, 'message' => "<div style='width: 100%; text-align: center; margin-top: 50px'><img src='Image/empty_box.png' style='width: 200px;'></img><br><strong style='color: #777'>No data. Please reload the page !</strong></div>"));
+        echo json_encode(array('status' => false, 'message' => "Không tìm thấy bài viết !"));
+    }
+
+    public function delete_Post($id)
+    {
+        $responses = [];
+        if (is_array($_POST['Hide']))
+        {
+            $result = $_POST['Hide'];
+            foreach ($result as $key ) {
+                $query = $this->dbTable('post')->select('*')->where('ID', $key)->get()->getResultArray();
+                if (count($query) > 0)
+                {
+                    $this->dbTable('post')->where('ID', $id)->delete();
+                    array_push($responses ,array('status' => true, 'message' => "Đã xóa bài viết !"));
+                }
+                array_push($responses ,array('status' => false, 'message' => "Không tìm thấy bài viết !"));
+            }
+            echo json_encode($responses);
+            return;
+        }
+        $query = $this->dbTable('post')->select('*')->where('ID', $id)->get()->getResultArray();
+        if (count($query) > 0)
+        {
+            $this->dbTable('post')->where('ID', $id)->delete();
+            echo json_encode(array('status' => true, 'message' => "Đã xóa bài viết !"));
+            return;
+        }
+        echo json_encode(array('status' => false, 'message' => "Không tìm thấy bài viết !"));
     }
 }

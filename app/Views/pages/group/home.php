@@ -1,9 +1,23 @@
 <div class="page-home">
     <script src="JS/group/home.js"></script>
+    <?php
+        $xb = 0;
+        $all = 0;
+        $nhap = 0;
+        if ($List_Post['status'])
+        {
+            $all = count($List_Post['message']);
+            foreach ($List_Post['message'] as $data){
+                if ($data['Hide'] == 1)
+                    $xb++;
+                else $nhap++;
+            }
+        }
+    ?>
     <div class="head-home">
         <div class="search">
             <input type="text" id="inp-search-post" placeholder="Tìm kiếm bài đăng ...">
-            <label for=""><i class="fa fa-search"></i></label>
+            <label for="" id="btn-search"><i class="fa fa-search"></i></label>
             <div class="line"></div>
         </div>
         <div class="manager">
@@ -14,74 +28,48 @@
                     <i class="fa fa-unlock"></i>
                     <i class="fa fa-unlock-alt"></i>
                     <i class="fa fa-trash-o"></i>
-                    <i class="fa fa-eye"></i>
                 </div>
                 <div class="dropdown">
-                    <div class="item" id="select-all">Tất cả (3)</div>
-                    <div class="item" id="select-posted">Đã xuất bản (3)</div>
-                    <div class="item" id="select-draft">Bài đăng nháp (0)</div>
+                    <div class="item" id="select-all">Tất cả (<?= $all ?>)</div>
+                    <div class="item" id="select-posted">Đã xuất bản (<?= $xb ?>)</div>
+                    <div class="item" id="select-draft">Bài đăng nháp (<?= $nhap ?>)</div>
                 </div>
-                <div class="type-current">Tất cả (3)<i class="fa fa-sort-down"></i></div>
+                <div class="type-current">Tất cả (<?= $all ?>)<i class="fa fa-sort-down"></i></div>
             </div>
             <div class="container">
                 <span id="onSettingMore">TÙY CHỌN</span>
             </div>
         </div>
     </div>
-    <div class="body-home">
-        <div class="item">
-            <div class="head">
-                <div class="check"><i class="fa fa-check"></i></div>
-                <img src="Image/Banner/img1.jpg" alt="">
-                <div class="container">
-                    <div class="title">This is tiêu đề</div>
-                    <div class="info"><span>Đã xuất bản</span> • <span>27/09/2021</span></div>
+    <div class="body-home" id="show-list-post">
+        <?php
+            if (!$List_Post['status'])
+            {
+                echo "<div style='width: 100%; text-align: center; margin-top: 50px'><img src='Image/empty_box.png' style='width: 200px;'></img><br><strong style='color: #777'>No data. Please reload the page !</strong></div>";
+                return;
+            }
+            $id_post = 0;
+            foreach ($List_Post['message'] as $data):
+                $id_post++;
+        ?>
+                <div class="item" id="post-<?= $id_post ?>">
+                    <div class="head">
+                        <div class="check"><i class="fa fa-check"></i></div>
+                        <img src="<?php echo $data['Image']; ?>" alt="">
+                        <div class="container">
+                            <div class="title"><?php echo $data['Title']; ?></div>
+                            <div class="info"><?php echo !$data['Hide'] ? "<span>Bản nháp" : "<span style='color: orange'>Đã xuất bản"; ?></span> • <span><?php echo $data['Posting']; ?></span></div>
+                        </div>
+                    </div>
+                    <div class="author">
+                        <div class="container" id="name-author"><?php echo $data['Author']; ?></div>
+                        <div class="container setting-post">
+                            <i class="fa fa-unlock<?= !$data['Hide'] ? '-alt' : '' ?>" id="unlock-<?= $id_post ?>" name="unlock-<?= $data['ID'] ?>"></i>
+                            <i class="fa fa-trash-o" id="trash-<?= $id_post ?>" name="trash-<?= $data['ID'] ?>"></i>
+                            <i class="fa fa-eye" id="eye-<?= $id_post ?>" name="eye-<?= $data['ID'] ?>"></i>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="author">
-                <div class="container">Hoàng Khắc Phúc</div>
-                <div class="container setting-post">
-                    <i class="fa fa-unlock"></i>
-                    <i class="fa fa-trash-o"></i>
-                    <i class="fa fa-eye"></i>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="head">
-                <div class="check"><i class="fa fa-check"></i></div>
-                <img src="Image/Banner/img1.jpg" alt="">
-                <div class="container">
-                    <div class="title">This is tiêu đề</div>
-                    <div class="info"><span>Đã xuất bản</span> • <span>27/09/2021</span></div>
-                </div>
-            </div>
-            <div class="author">
-                <div class="container">Hoàng Khắc Phúc</div>
-                <div class="container setting-post">
-                    <i class="fa fa-unlock"></i>
-                    <i class="fa fa-trash-o"></i>
-                    <i class="fa fa-eye"></i>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="head">
-                <div class="check"><i class="fa fa-check"></i></div>
-                <img src="Image/Banner/img1.jpg" alt="">
-                <div class="container">
-                    <div class="title">This is tiêu đề</div>
-                    <div class="info"><span>Đã xuất bản</span> • <span>27/09/2021</span></div>
-                </div>
-            </div>
-            <div class="author">
-                <div class="container">Hoàng Khắc Phúc</div>
-                <div class="container setting-post">
-                    <i class="fa fa-unlock"></i>
-                    <i class="fa fa-trash-o"></i>
-                    <i class="fa fa-eye"></i>
-                </div>
-            </div>
-        </div>
-    </div>
+        <?php endforeach; ?>
+    </div
 </div>

@@ -75,7 +75,6 @@ $(document).ready(function () {
         var cb2 = $('#inp-checkbox-2:checked').val() === "on" ? 1 : 0;
         var cb3 = $('#inp-checkbox-3:checked').val() === "on" ? 1 : 0;
         var show = $('#show-post').attr('class').search('fa-toggle-on') != -1 ? 1 : 0;
-        console.log(content_html);
         if (!url_Avatar)
         {
             system_Notification("Chưa chọn ảnh đại diện !", 1);
@@ -135,6 +134,17 @@ $(document).ready(function () {
         }).fail(function() {
             system_Notification("Xảy ra lỗi trong quá trình truyền tin. Vui lòng thử lại !", 1);
         });
+    });
+
+    $('#select-type-post').change(function (e) { 
+        if ($(this).val() == "Bài viết")
+        {
+            $('#on-position').css('display', 'none');
+            $('.list-position').css('display', 'none');
+        }
+        else {
+            $('#on-position').css('display', 'block');
+        }
     });
 
     function system_Notification(param1, param2 = 0) {

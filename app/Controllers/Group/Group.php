@@ -38,27 +38,11 @@
                 echo "<div style='width: 100%; text-align: center; margin-top: 50px'><img src='Image/empty_box.png' style='width: 200px;'></img><br><strong style='color: #777'>No data. Please reload the page !</strong></div>";
                 return;
             }
-            return view('pages/group/home');
-        }
 
-        public function get_post()
-        {
-            if (!$this->load_Permissions(2))
-            {
-                echo json_encode(array('status' => false, 'message' => "<div style='width: 100%; text-align: center; margin-top: 50px'><img src='Image/empty_box.png' style='width: 200px;'></img><br><strong style='color: #777'>No data. Please reload the page !</strong></div>"));
-                return;
-            }
-            if (!isset($_POST['limit']))
-            {
-                echo json_encode(array('status' => false, 'message' => "<div style='width: 100%; text-align: center; margin-top: 50px'><img src='Image/empty_box.png' style='width: 200px;'></img><br><strong style='color: #777'>No data. Please reload the page !</strong></div>"));
-                return;
-            }
-            if (isset($_POST['type']) && !in_array(intval($_POST['type']), [0,1]))
-            {
-                echo json_encode(array('status' => false, 'message' => "<div style='width: 100%; text-align: center; margin-top: 50px'><img src='Image/empty_box.png' style='width: 200px;'></img><br><strong style='color: #777'>No data. Please reload the page !</strong></div>"));
-                return;
-            }
-            $this->group_model->get_post($_POST['limit']);
+            $data = array(
+                'List_Post' => $this->group_model->get_post(),
+            );
+            return view('pages/group/home', $data);
         }
 
         public function create_Post()
@@ -140,6 +124,43 @@
                 return;
             }
             echo json_encode(array("status" => false, "message" => "File tải lên không phải ảnh !"));
+        }
+
+        public function change_Hide_Post()
+        {
+            if (!$this->load_Permissions(2))
+            {
+                echo json_encode(array('status' => false, 'message' => "Không đủ quyền truy cập !"));
+                return;
+            }
+            if (!isset($_POST['ID']) || !isset($_POST['Hide']) )
+            {
+                echo json_encode(array('status' => false, 'message' => "Thông tin cung cấp không đủ !"));
+                return;
+            }
+            if (!in_array(intval($_POST['Hide']), [0,1]) && !is_array($_POST['Hide']))
+            {
+                echo json_encode(array('status' => false, 'message' => "Thông tin cung cấp không đúng định dạng !"));
+                return;
+            }
+            
+            $this->group_model->change_Hide($_POST['ID'], $_POST['Hide']);
+        }
+
+        public function delete_Post()
+        {
+            if (!$this->load_Permissions(2))
+            {
+                echo json_encode(array('status' => false, 'message' => "Không đủ quyền truy cập !"));
+                return;
+            }
+            if (!isset($_POST['ID']))
+            {
+                echo json_encode(array('status' => false, 'message' => "Thông tin cung cấp không đủ !"));
+                return;
+            }
+            
+            $this->group_model->delete_Post($_POST['ID']);
         }
     }
 
