@@ -41,9 +41,10 @@ $routes->group('group', function($routes) {
     $routes->get('/', 'Group\Group::index');
     $routes->get('new_post', 'Group\Group::new_post');
     $routes->get('home', 'Group\Group::home');
-    $routes->post('get_post', 'Group\Group::get_post');
     $routes->post('create_Post', 'Group\Group::create_Post');
     $routes->post('upload', 'Guest\HomeController::upload_Image_Post');
+    $routes->post('change_Hide', 'Group\Group::change_Hide_Post');
+    $routes->post('delete_Post', 'Group\Group::delete_Post');
 });
 
 $routes->group('admin', function($routes) {

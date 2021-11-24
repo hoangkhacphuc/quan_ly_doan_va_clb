@@ -193,16 +193,41 @@ $(document).ready(function () {
                 if (json["status"])
                 {
                     system_Notification(json["message"]);
+                    let str = $('.type-current').html();
                     if (data_popup[0]['status'] == 1)
                     {
                         $('#'+data_popup[0]['id']).addClass('fa-unlock-alt');
                         $('#'+data_popup[0]['id']).removeClass('fa-unlock');
                         $('#post-'+data_popup[0]['id_num']+'>.head>.container>.info').html('<span>Bản nháp</span>');
+                        if (str.search("Đã xuất bản") != -1)
+                        {
+                            let num4 = $('.type-current').html().slice(13, $('.type-current').html().length-32);
+                            let str2 = $('.type-current').html().slice(0, 13);
+                            $('.type-current').html(str2+(num4 - 1)+')<i class="fa fa-sort-down"></i>');
+                            $('#post-'+data_popup[0]['id_num']).css('display', 'none');
+                        }
+                        let num2 = $('#select-posted').html().slice(13, $('#select-posted').html().length-1);
+                        $('#select-posted').html('Đã xuất bản ('+(parseInt(num2) - 1)+')');
+                        let num3 = $('#select-draft').html().slice(15, $('#select-draft').html().length-1);
+                        $('#select-draft').html('Bài đăng nháp ('+(parseInt(num3) + 1)+')');
+
                     }
                     else {
                         $('#'+data_popup[0]['id']).addClass('fa-unlock');
                         $('#'+data_popup[0]['id']).removeClass('fa-unlock-alt');
                         $('#post-'+data_popup[0]['id_num']+'>.head>.container>.info').html("<span style='color: orange'>Đã xuất bản</span>");
+                        if (str.search("Bài đăng nháp") != -1)
+                        {
+                            let num4 = $('.type-current').html().slice(15, $('.type-current').html().length-32);
+                            let str2 = $('.type-current').html().slice(0, 15);
+                            $('.type-current').html(str2+(num4 - 1)+')<i class="fa fa-sort-down"></i>');
+                            $('#post-'+data_popup[0]['id_num']).css('display', 'none');
+                        }
+
+                        let num2 = $('#select-posted').html().slice(13, $('#select-posted').html().length-1);
+                        $('#select-posted').html('Đã xuất bản ('+(parseInt(num2) + 1)+')');
+                        let num3 = $('#select-draft').html().slice(15, $('#select-draft').html().length-1);
+                        $('#select-draft').html('Bài đăng nháp ('+(parseInt(num3) - 1)+')');
                     }
                 }
                 else system_Notification(json["message"],1);
@@ -232,39 +257,36 @@ $(document).ready(function () {
                     num_Check--;
 
                     let num = $('#select-all').html().slice(8, $('#select-all').html().length-1);
-                    $('#select-all').html('Tất cả ('+(num - 1)+')');
+                    $('#select-all').html('Tất cả ('+(parseInt(num) - 1)+')');
 
                     let str = $('.type-current').html();
-                    let str2 = "";
                     if (str.search("Tất cả") != -1)
                     {
                         let num4 = $('.type-current').html().slice(8, $('.type-current').html().length-32);
-                        let str = $('.type-current').html().slice(0, 8);
-                        $('.type-current').html(str+(num4 - 1)+')<i class="fa fa-sort-down"></i>');
+                        let str2 = $('.type-current').html().slice(0, 8);
+                        $('.type-current').html(str2+(parseInt(num4) - 1)+')<i class="fa fa-sort-down"></i>');
                     }
                     else if (str.search("Đã xuất bản") != -1)
                     {
                         let num4 = $('.type-current').html().slice(13, $('.type-current').html().length-32);
-                        let str = $('.type-current').html().slice(0, 13);
-                        $('.type-current').html(str+(num4 - 1)+')<i class="fa fa-sort-down"></i>');
+                        let str2 = $('.type-current').html().slice(0, 13);
+                        $('.type-current').html(str2+(parseInt(num4) - 1)+')<i class="fa fa-sort-down"></i>');
                     }
                     else if (str.search("Bài đăng nháp") != -1)
                     {
                         let num4 = $('.type-current').html().slice(15, $('.type-current').html().length-32);
-                        let str = $('.type-current').html().slice(0, 15);
-                        $('.type-current').html(str+(num4 - 1)+')<i class="fa fa-sort-down"></i>');
+                        let str2 = $('.type-current').html().slice(0, 15);
+                        $('.type-current').html(str2+(parseInt(num4) - 1)+')<i class="fa fa-sort-down"></i>');
                     }
                     
                     if (data_popup[0]['status'] == 1)
                     {
                         let num2 = $('#select-posted').html().slice(13, $('#select-posted').html().length-1);
-                        $('#select-posted').html('Đã xuất bản ('+(num2 - 1)+')');
-                        console.log(num2, data_popup[0]['status']);
+                        $('#select-posted').html('Đã xuất bản ('+(parseInt(num2) - 1)+')');
                     }
                     else {
                         let num3 = $('#select-draft').html().slice(15, $('#select-draft').html().length-1);
-                        $('#select-draft').html('Bài đăng nháp ('+(num3 - 1)+')');
-                        console.log(num3 , data_popup[0]['status']);
+                        $('#select-draft').html('Bài đăng nháp ('+(parseInt(num3) - 1)+')');
                     }
                 }
                 else system_Notification(json["message"],1);
