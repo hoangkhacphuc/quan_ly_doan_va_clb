@@ -119,7 +119,7 @@
                 <td><input type="text" id="inp-add-notification-group" placeholder="Nhập chi đoàn . . ."></td>
             </tr>
         </table>
-        <button id="submit" >Thêm thành viên</button>
+        <button id="btn-add" >Thêm thành viên</button>
     </div>
     
         
