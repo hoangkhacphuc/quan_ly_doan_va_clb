@@ -10,7 +10,7 @@ $(document).ready(function(){
         let group = $('#inp-add-notification-group').val();
         let sex = 1;
 
-        if (content === "")
+        if (name === "")
         {
             system_Notification("Chưa nhập nội dung !", 1);
             return;
