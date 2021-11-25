@@ -91,6 +91,24 @@
                 <td><label for="msv">Mã Sinh Viên:</label></td>
                 <td><input type="text" id="inp-add-notification-msv" placeholder="Nhập mã sinh viên . . ."></td>
             </tr>
+            <!-- <tr>
+                <td><label for="msv">Liên chi đoàn:</label></td>
+                <td>
+                    <select name="" id="inp-add-notification-party">
+                        <option value="">CNTT-VJ</option>
+                        <option value="">CNTT-VJ</option>
+                    </select>
+                </td>
+            </tr> -->
+            <tr>
+                <td><label for="msv">Chi đoàn:</label></td>
+                <td>
+                    <select name="" id="inp-add-notification-group">
+                        <option value="">CNTT</option>
+                        <option value="">CNTT</option>
+                    </select>
+                </td>
+            </tr>
             <tr>
                 <td><label for="sdt">Số Điện Thoại:</label></td>
                 <td><input type="text" id="inp-add-notification-sdt" placeholder="Nhập số điện thoại . . ."></td>
@@ -106,20 +124,47 @@
             <tr>
                 <td><label for="sex">Giới Tính:</label></td>
                 <td class="gender-radio">
-                    <input type="radio" id="" name="gender" value="male">Nam  </br>
-                    <input type="radio" id="" name="gender" value="female">Nữ  
+                    <select name="" id="gender">
+                        <option value="male">Nam</option>
+                        <option value="female">Nữ</option>
+                    </select> 
                 </td>
             </tr>
             <tr>
                 <td><label for="addr">Địa chỉ:</label></td>
-                <td><input type="text" id="inp-add-notification-addr" placeholder="Nhập địa chỉ . . ."></td>
+                <td><textarea name="" id="inp-add-notification-addr" cols="45" rows="7"></textarea></td>
             </tr>
             <tr>
-                <td><label for="group">Chi đoàn:</label></td>
-                <td><input type="text" id="inp-add-notification-group" placeholder="Nhập chi đoàn . . ."></td>
+                <td><label for="dob">Ngày vào đoàn:</label></td>
+                <td><input type="date" id="inp-add-notification-union" placeholder=""></td>
+            </tr>
+            <tr>
+                <td><label for="msv">Nơi vào đoàn:</label></td>
+                <td><input type="text" id="inp-add-notification-addr-union" placeholder="Nơi kết nạp đoàn . . ."></td>
+            </tr>
+
+            <tr>
+                <td><label for="dob">Ngày vào đảng:</label></td>
+                <td><input type="date" id="inp-add-notification-party" placeholder=""></td>
+            </tr>
+            <tr>
+                <td><label for="">Nơi kết nạp đảng:</label></td>
+                <td><input type="text" id="inp-add-notification-addr-party" placeholder="Nơi kết nạp đảng . . ."></td>
+            </tr>
+
+            <tr>
+                <td><label for="award">Khen thưởng:</label></td>
+                <td><textarea name="" id="inp-add-notification-award" cols="45" rows="7"></textarea></td>
+            </tr>
+            <tr>
+                <td><label for="punishment">Kỷ luật:</label></td>
+                <td><textarea name="" id="inp-add-notification-punishment" cols="45" rows="7"></textarea></td>
             </tr>
         </table>
-        <button id="btn-add" >Thêm thành viên</button>
+        <div class="btn">
+            <button id="btn-add" >Thêm thành viên</button>
+            <button id="btn-add-more" >Thêm tiếp thành viên</button>
+        </div>
     </div>
     
         

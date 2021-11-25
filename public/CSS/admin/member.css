@@ -276,9 +276,21 @@
 .member-add > .inp  .gender-radio > input{
     width: 2rem;
 }
-.member-add >  button{
+.member-add > .inp select{
+    outline: 0;
+    font-size: 18px;
+    color: #555;
+    padding: 5px 15px;
+    border: 1px solid #777;
+    cursor: pointer;
+}
+.member-add >  .btn{
     padding: 6px 15px;
     margin-left: 70px;
+}
+.member-add >  .btn > #btn-add,#btn-add-more{
+    padding: 6px 15px;
+    margin: 0 30px;
     font-size: 16px;
     outline: 0;
     border: none;
@@ -289,7 +301,8 @@
 }
 
 
-.member-add >   button:hover
+
+.member-add >  .btn > #btn-add:hover,#btn-add-more:hover
 {
     background-color: #45d440;
 } 
