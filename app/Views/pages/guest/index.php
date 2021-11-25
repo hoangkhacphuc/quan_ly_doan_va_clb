@@ -27,6 +27,8 @@
     <link rel="stylesheet" href="CSS/templates/header.css">
     <link rel="stylesheet" href="CSS/templates/footer.css">
     <link rel="stylesheet" href="CSS/guest/index.css">
+    <link rel="stylesheet" href="CSS/guest/post.css">
+
     <script src="JS/templates/header.js"></script>
     <script src="JS/guest/index.js"></script>
 
