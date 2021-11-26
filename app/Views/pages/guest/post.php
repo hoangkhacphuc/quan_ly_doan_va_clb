@@ -27,7 +27,9 @@
     <link rel="stylesheet" href="CSS/templates/header.css">
     <link rel="stylesheet" href="CSS/templates/footer.css">
     <link rel="stylesheet" href="CSS/guest/index.css">
-    <script src="JS/templates/header.js"></script>
+    <link rel="stylesheet" href="CSS/guest/post.css">
+
+    <script src="JS/templates/header.js"></script> 
     <script src="JS/guest/index.js"></script>
 
 </head>
@@ -40,7 +42,7 @@
                 <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/thumbnail-le-kick-off-02.jpg" alt="">
                 <div class="post-content">
                     <div class="post-title">
-                        <p class="post-title-date">tháng 11 18, 2021</p>
+                        <p class="post-title-date"><i class="fa fa-calendar"></i> Tháng 11 18, 2021</p>
                         <h2>Lễ kick off Dự án "Tam giác hướng nghiệp hiệu quả"</h2>
                     </div>
                     <div class="post-main-content">
@@ -95,7 +97,7 @@
                             <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/thumbnail-le-kick-off-02.jpg" alt="">
                         </div>
                         <div class="side-post-text">
-                            <p class="post-title-date">tháng 11 18, 2021</p>
+                            <p class="post-title-date"><i class="fa fa-calendar"></i> Tháng 11 18, 2021</p>
                             <a href="#">Lễ kick off Dự án "Tam giác hướng nghiệp hiệu quả"</a>
                         </div>
                     </div>
@@ -105,7 +107,7 @@
                             <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/thumbnail-le-kick-off-02.jpg" alt="">
                         </div>
                         <div class="side-post-text">
-                            <p class="post-title-date">tháng 11 18, 2021</p>
+                            <p class="post-title-date"><i class="fa fa-calendar"></i> Tháng 11 18, 2021</p>
                             <a href="#">Lễ kick off Dự án "Tam giác hướng nghiệp hiệu quả"</a>
                         </div>
                     </div>
@@ -115,7 +117,7 @@
                             <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/thumbnail-le-kick-off-02.jpg" alt="">
                         </div>
                         <div class="side-post-text">
-                            <p class="post-title-date">tháng 11 18, 2021</p>
+                            <p class="post-title-date"><i class="fa fa-calendar"></i> Tháng 11 18, 2021</p>
                             <a href="#">Lễ kick off Dự án "Tam giác hướng nghiệp hiệu quả"</a>
                         </div>
                     </div>
@@ -125,7 +127,7 @@
                             <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/thumbnail-le-kick-off-02.jpg" alt="">
                         </div>
                         <div class="side-post-text">
-                            <p class="post-title-date">tháng 11 18, 2021</p>
+                            <p class="post-title-date"><i class="fa fa-calendar"></i> Tháng 11 18, 2021</p>
                             <a href="#">Lễ kick off Dự án "Tam giác hướng nghiệp hiệu quả"</a>
                         </div>
                     </div>
@@ -135,7 +137,7 @@
                             <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/thumbnail-le-kick-off-02.jpg" alt="">
                         </div>
                         <div class="side-post-text">
-                            <p class="post-title-date">tháng 11 18, 2021</p>
+                            <p class="post-title-date"><i class="fa fa-calendar"></i> Tháng 11 18, 2021</p>
                             <a href="#">Lễ kick off Dự án "Tam giác hướng nghiệp hiệu quả"</a>
                         </div>
                     </div>
@@ -148,7 +150,7 @@
                             <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/thumbnail-le-kick-off-02.jpg" alt="">
                         </div>
                         <div class="side-post-text">
-                            <p class="post-title-date">tháng 11 18, 2021</p>
+                            <p class="post-title-date"><i class="fa fa-calendar"></i> Tháng 11 18, 2021</p>
                             <a href="#">Lễ kick off Dự án "Tam giác hướng nghiệp hiệu quả"</a>
                         </div>
                     </div>
@@ -158,7 +160,7 @@
                             <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/thumbnail-le-kick-off-02.jpg" alt="">
                         </div>
                         <div class="side-post-text">
-                            <p class="post-title-date">tháng 11 18, 2021</p>
+                            <p class="post-title-date"><i class="fa fa-calendar"></i> Tháng 11 18, 2021</p>
                             <a href="#">Lễ kick off Dự án "Tam giác hướng nghiệp hiệu quả"</a>
                         </div>
                     </div>
@@ -168,7 +170,7 @@
                             <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/thumbnail-le-kick-off-02.jpg" alt="">
                         </div>
                         <div class="side-post-text">
-                            <p class="post-title-date">tháng 11 18, 2021</p>
+                            <p class="post-title-date"><i class="fa fa-calendar"></i> Tháng 11 18, 2021</p>
                             <a href="#">Lễ kick off Dự án "Tam giác hướng nghiệp hiệu quả"</a>
                         </div>
                     </div>
@@ -178,7 +180,7 @@
                             <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/thumbnail-le-kick-off-02.jpg" alt="">
                         </div>
                         <div class="side-post-text">
-                            <p class="post-title-date">tháng 11 18, 2021</p>
+                            <p class="post-title-date"><i class="fa fa-calendar"></i> Tháng 11 18, 2021</p>
                             <a href="#">Lễ kick off Dự án "Tam giác hướng nghiệp hiệu quả"</a>
                         </div>
                     </div>
@@ -188,7 +190,7 @@
                             <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/thumbnail-le-kick-off-02.jpg" alt="">
                         </div>
                         <div class="side-post-text">
-                            <p class="post-title-date">tháng 11 18, 2021</p>
+                            <p class="post-title-date"><i class="fa fa-calendar"></i> Tháng 11 18, 2021</p>
                             <a href="#">Lễ kick off Dự án "Tam giác hướng nghiệp hiệu quả"</a>
                         </div>
                     </div>
@@ -198,7 +200,8 @@
                             <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/thumbnail-le-kick-off-02.jpg" alt="">
                         </div>
                         <div class="side-post-text">
-                            <p class="post-title-date">tháng 11 18, 2021</p>
+                            <p class="post-title-date"><i class="fa fa-calendar"></i> tháng 11 18, 2021</p>
+                            <p class="post-title-date">Tháng 11 18, 2021</p>
                             <a href="#">Lễ kick off Dự án "Tam giác hướng nghiệp hiệu quả"</a>
                         </div>
                     </div>
