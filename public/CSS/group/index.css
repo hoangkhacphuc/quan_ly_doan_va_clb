@@ -147,6 +147,7 @@ header > .search > input:focus, header > .search > button:focus{
 
     .dashboard > .menu-dashboard {
         margin-left: -300px;
+        z-index: 10000;
     }
 
     .dashboard > .page {
@@ -162,6 +163,7 @@ header > .search > input:focus, header > .search > button:focus{
     .dashboard > .menu-dashboard {
         position: absolute;
         background: white;
+        z-index: 10000;
     }
 }
 

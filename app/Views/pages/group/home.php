@@ -1,19 +1,6 @@
 <div class="page-home">
     <script src="JS/group/home.js"></script>
-    <?php
-        $xb = 0;
-        $all = 0;
-        $nhap = 0;
-        if ($List_Post['status'])
-        {
-            $all = count($List_Post['message']);
-            foreach ($List_Post['message'] as $data){
-                if ($data['Hide'] == 1)
-                    $xb++;
-                else $nhap++;
-            }
-        }
-    ?>
+
     <div class="head-home">
         <div class="search">
             <input type="text" id="inp-search-post" placeholder="Tìm kiếm bài đăng ...">
@@ -24,17 +11,16 @@
             <div class="container">
                 <div class="setting-more">
                     <div class="check" id="check-all"><i class="fa fa-check"></i></div>
-                    <span>0/3</span>
-                    <i class="fa fa-unlock"></i>
-                    <i class="fa fa-unlock-alt"></i>
-                    <i class="fa fa-trash-o"></i>
+                    <i class="fa fa-unlock" id="unlock-all"></i>
+                    <i class="fa fa-unlock-alt" id="lock-all"></i>
+                    <i class="fa fa-trash-o" id="trash-all"></i>
                 </div>
                 <div class="dropdown">
-                    <div class="item" id="select-all">Tất cả (<?= $all ?>)</div>
-                    <div class="item" id="select-posted">Đã xuất bản (<?= $xb ?>)</div>
-                    <div class="item" id="select-draft">Bài đăng nháp (<?= $nhap ?>)</div>
+                    <div class="item" id="select-all">Tất cả</div>
+                    <div class="item" id="select-posted">Đã xuất bản</div>
+                    <div class="item" id="select-draft">Bài đăng nháp</div>
                 </div>
-                <div class="type-current">Tất cả (<?= $all ?>)<i class="fa fa-sort-down"></i></div>
+                <div class="type-current">Tất cả<i class="fa fa-sort-down"></i></div>
             </div>
             <div class="container">
                 <span id="onSettingMore">TÙY CHỌN</span>
@@ -52,7 +38,7 @@
             foreach ($List_Post['message'] as $data):
                 $id_post++;
         ?>
-                <div class="item" id="post-<?= $id_post ?>">
+                <div class="item" id="post-<?= $id_post ?>" name="post-<?= $data['ID'] ?>">
                     <div class="head">
                         <div class="check"><i class="fa fa-check"></i></div>
                         <img src="<?php echo $data['Image']; ?>" alt="">
@@ -71,5 +57,5 @@
                     </div>
                 </div>
         <?php endforeach; ?>
-    </div
+    </div>
 </div>

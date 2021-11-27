@@ -11,6 +11,8 @@ class HomeController extends BaseController
 
     public function index()
     {
+        if (isset($_GET['ID']))
+        
         $model = model('App\Models\Guest\GuestModel');
         $data = [];
         if (!$this->load_Permissions())

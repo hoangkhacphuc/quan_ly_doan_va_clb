@@ -31,6 +31,22 @@
             return view('pages/group/new_post');
         }
 
+        public function edit_Post()
+        {
+            if (!$this->load_Permissions(1))
+            {
+                echo "<div style='width: 100%; text-align: center; margin-top: 50px'><img src='Image/empty_box.png' style='width: 200px;'></img><br><strong style='color: #777'>No data. Please reload the page !</strong></div>";
+                return;
+            }
+            if (!isset($_GET['ID']))
+            {
+                echo "<div style='width: 100%; text-align: center; margin-top: 50px'><img src='Image/empty_box.png' style='width: 200px;'></img><br><strong style='color: #777'>No data. Please reload the page !</strong></div>";
+                return;
+            }
+            
+            return view('pages/group/edit_Post');
+        }
+
         public function home()
         {
             if (!$this->load_Permissions(1))
@@ -138,12 +154,6 @@
                 echo json_encode(array('status' => false, 'message' => "Thông tin cung cấp không đủ !"));
                 return;
             }
-            if (!in_array(intval($_POST['Hide']), [0,1]) && !is_array($_POST['Hide']))
-            {
-                echo json_encode(array('status' => false, 'message' => "Thông tin cung cấp không đúng định dạng !"));
-                return;
-            }
-            
             $this->group_model->change_Hide($_POST['ID'], $_POST['Hide']);
         }
 
@@ -159,8 +169,14 @@
                 echo json_encode(array('status' => false, 'message' => "Thông tin cung cấp không đủ !"));
                 return;
             }
+            if (intval($_POST['ID']) == -1 && !isset($_POST['Delete']))
+            {
+                echo json_encode(array('status' => false, 'message' => "Thông tin cung cấp không đủ !"));
+                return;
+            }
+            $delete = isset($_POST['Delete']) ? $_POST['Delete'] : false;
             
-            $this->group_model->delete_Post($_POST['ID']);
+            $this->group_model->delete_Post($_POST['ID'], $delete);
         }
     }
 

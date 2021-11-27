@@ -50,6 +50,28 @@ class ModelGroup extends HomeModel {
 
     public function change_Hide($id, $hide)
     {
+        $responses = [];
+        if (intval($id) == -1)
+        {
+            $hide = json_decode($hide);
+            foreach ($hide as $key) {
+                $query = $this->dbTable('post')->select('*')->where('ID', $key->{'ID'})->get()->getResultArray();
+                if (count($query) > 0)
+                {
+                    $this->dbTable('post')->select('*')->where('ID', $key->{'ID'})->update(array('Hide' => $key->{'Hide'}));
+                    array_push($responses ,array('status' => true, 'message' => "Đã ".($key->{'Hide'} == '1' ? 'xuất bản' : 'ẩn')." bài viết !"));
+                }
+                else array_push($responses ,array('status' => false, 'message' => "Không tìm thấy bài viết !"));
+            }
+            echo json_encode(array('status' => true, 'message' => json_encode($responses)));
+            return;
+        }
+        if (!in_array(intval($hide), [0,1]))
+        {
+            echo json_encode(array('status' => false, 'message' => "Thông tin cung cấp không đúng định dạng !"));
+            return;
+        }
+
         $query = $this->dbTable('post')->select('*')->where('ID', $id)->get()->getResultArray();
         if (count($query) > 0)
         {
@@ -60,22 +82,22 @@ class ModelGroup extends HomeModel {
         echo json_encode(array('status' => false, 'message' => "Không tìm thấy bài viết !"));
     }
 
-    public function delete_Post($id)
+    public function delete_Post($id, $list)
     {
         $responses = [];
-        if (is_array($_POST['Hide']))
+        if ($list != false)
         {
-            $result = $_POST['Hide'];
-            foreach ($result as $key ) {
-                $query = $this->dbTable('post')->select('*')->where('ID', $key)->get()->getResultArray();
+            $list = json_decode($list);
+            foreach ($list as $key) {
+                $query = $this->dbTable('post')->select('*')->where('ID', $key->{'ID'})->get()->getResultArray();
                 if (count($query) > 0)
                 {
-                    $this->dbTable('post')->where('ID', $id)->delete();
+                    $this->dbTable('post')->where('ID', $key->{'ID'})->delete();
                     array_push($responses ,array('status' => true, 'message' => "Đã xóa bài viết !"));
                 }
-                array_push($responses ,array('status' => false, 'message' => "Không tìm thấy bài viết !"));
+                else array_push($responses ,array('status' => false, 'message' => "Không tìm thấy bài viết !"));
             }
-            echo json_encode($responses);
+            echo json_encode(array('status' => true, 'message' => json_encode($responses)));
             return;
         }
         $query = $this->dbTable('post')->select('*')->where('ID', $id)->get()->getResultArray();

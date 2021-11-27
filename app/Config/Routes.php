@@ -32,14 +32,13 @@ $routes->setAutoRoute(true);
 
 $routes->get('/', 'Guest\HomeController::index');
 
-
-$session = session();
-
 $routes->get('logout', 'Guest\HomeController::logout');
+$routes->post('login', 'Guest\HomeController::login');
 
 $routes->group('group', function($routes) {
     $routes->get('/', 'Group\Group::index');
     $routes->get('new_post', 'Group\Group::new_post');
+    $routes->get('edit_post', 'Group\Group::edit_post');
     $routes->get('home', 'Group\Group::home');
     $routes->post('create_Post', 'Group\Group::create_Post');
     $routes->post('upload', 'Guest\HomeController::upload_Image_Post');
@@ -94,7 +93,7 @@ $routes->group('admin', function($routes) {
     });
 });
 
-$routes->post('login', 'Guest\HomeController::login');
+
 
 
 /*
