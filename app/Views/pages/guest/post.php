@@ -79,7 +79,15 @@
                             <li>ThS. B&ugrave;i Th&aacute;i Học &ndash; Ph&oacute; Hiệu trưởng Trường THPT Chuy&ecirc;n L&ecirc; Hồng Phong, Nam Định.</li>
                         </ul>
                     </div>
-                    
+                    <div class="register-event">
+                        <h3>Đăng ký tham gia sự kiện</h3>
+                        <label for="regis">Chức vụ</label>
+                        <select name="" id="">
+                            <option value="reg-event">Quản lý</option>
+                        </select>
+                        <h4>Đã đăng ký: </h4>
+                        <a href="#">Đăng ký</a>
+                    </div>
                 </div>
             </div>
 

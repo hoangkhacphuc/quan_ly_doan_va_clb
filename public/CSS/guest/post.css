@@ -39,10 +39,6 @@ body{
     border-left: 3px solid #E94B00;
     margin-top: 25px;
 }
-.post-contain > .content-contain > .post-content > .post-title i{
-    color: #E94B00;
-    margin-right: 5px;
-}
 .post-contain > .content-contain > .post-content{
     padding: 0 10px 0 30px;
     background: #eee;
@@ -53,14 +49,14 @@ body{
 
 .post-contain > .content-contain > .post-content li{
     padding: 0 10px 0 0px;
-    background: #eee;
+    /* background: #eee; */
     margin-top: -4px;
     padding-top: 15px;
     margin-left: 70px;
 }
 .post-contain > .content-contain > .post-content .post-main-content p{
     padding: 0 10px 10px 0px;
-    background: #eee;
+    /* background: #eee; */
     margin-top: -4px;
     padding-top: 15px;
     margin-left: 20px;
@@ -133,10 +129,6 @@ body{
     height: 102px;
     background-color: #f7f7f7;
 }
-.post-contain > .side-post > .list-item >.list-item-tag i{
-    color: #E94B00;
-    margin-right: 5px;
-}
 .post-contain > .side-post> .list-item  > .list-item-tag .side-post-text a{
     text-decoration: none;
     color: #2f2424;
@@ -152,4 +144,73 @@ body{
 }
 .post-contain > .side-post> .list-item  > .list-item-tag .side-post-text:hover{
     cursor: pointer;
+}
+/* register */
+.post-contain > .content-contain > .post-content > .register-event{
+    padding: 0 10px 0 30px;
+    background: #eee;
+    margin-top: 30px;
+    padding-top: 15px;
+    padding-bottom: 30px;
+    border-top: 3px solid rgba(0,0,0,.11);
+}
+.post-contain > .content-contain > .post-content > .register-event p{
+
+}
+.post-contain > .content-contain > .post-content > .register-event h4{
+    padding-top: 20px;
+
+}
+.post-contain > .content-contain > .post-content > .register-event label{
+    color: #2f2424;
+    padding: 10px 0px;
+    padding-bottom: 20px;
+    border-radius: 0;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 15px;
+    margin-top: 15px;
+}
+.post-contain > .content-contain > .post-content > .register-event select{
+    outline: 0;
+    font-size: 15px;
+    color: #555;
+    margin-left: 6px;
+    border: 1px solid #777;
+    cursor: pointer;
+    padding: 5px;
+}
+.post-contain > .content-contain > .post-content > .register-event h3:first-child{
+    color: #2f2424;
+    padding: 10px 0px;
+    padding-bottom: 20px;
+    display: block;
+    border-radius: 0;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 15px;
+    margin-top: 15px;
+}
+.post-contain > .content-contain > .post-content > .register-event a{
+    text-decoration: none;
+    background:#e94b00 ;
+    color: #2f2424;
+    padding: 10px 0px;
+    display: block;
+    padding-left: 13px;
+    border-radius: 0;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 15px;
+    margin-top: 15px;
+    width: 90px;
+    color: #fff;
+    
+}
+
+.post-contain > .content-contain > .post-content > .register-event a:hover{
+
+    box-shadow: 0 2px 4px rgb(0 0 0 / 20%);
+    opacity: 0.8;
 }
