@@ -39,6 +39,7 @@ $routes->group('group', function($routes) {
     $routes->get('/', 'Group\Group::index');
     $routes->get('new_post', 'Group\Group::new_post');
     $routes->get('edit_post', 'Group\Group::edit_post');
+    $routes->post('save_edit', 'Group\Group::save_Edit_Post');
     $routes->get('home', 'Group\Group::home');
     $routes->post('create_Post', 'Group\Group::create_Post');
     $routes->post('upload', 'Guest\HomeController::upload_Image_Post');

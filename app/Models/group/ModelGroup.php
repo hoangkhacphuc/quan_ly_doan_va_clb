@@ -32,6 +32,29 @@ class ModelGroup extends HomeModel {
         echo $query ? json_encode(array("status" => true, "message" => "Thêm thành công !")) : json_encode(array("status" => false, 'message' => "Thêm thất bại !"));
     }
 
+    public function save_Edit_Post($id, $title, $content, $avatar, $type, $cv1, $cv2, $cv3, $gh1, $gh2, $gh3, $cb1, $cb2, $cb3, $show)
+    {
+        $cv = $cv1."|".$cv2."|".$cv3;
+        $gh = $gh1."|".$gh2."|".$gh3;
+        $cb = $cb1."|".$cb2."|".$cb3;
+        $data = array(
+            'Title' => $title,
+            'Content' => $content,
+            'Author' => $this->student_data['User_ID'],
+            'Posting' => date('Y-m-d'),
+            'Type' => $type,
+            'Hide' => $show,
+            'Position' => $cv,
+            'MaxPlayer' => $gh,
+            'SelectPosition' => $cb,
+        );
+        if (!empty($avatar))
+            $data['Image'] = $avatar;
+
+        $query = $this->dbTable('post')->where('ID', $id)->update($data);
+        echo $query ? json_encode(array("status" => true, "message" => "Cập nhật thành công !")) : json_encode(array("status" => false, 'message' => "Cập nhật thất bại !"));
+    }
+
     public function get_post()
     {
         $query = $this->dbTable('post')->select('*')->get()->getResultArray();
@@ -42,6 +65,20 @@ class ModelGroup extends HomeModel {
                 $data_author = $this->dbTable('student')->select('*')->where('ID', $query[$i]['Author'])->get()->getResultArray();
                 $query[$i]['Author'] = $data_author[0]['Name'];
                 $query[$i]['Posting'] = date('d/m/Y', strtotime($query[$i]['Posting']));
+            }
+            return array("status" => true, "message" => $query);
+        }
+        return (array('status' => false, 'message' => "<div style='width: 100%; text-align: center; margin-top: 50px'><img src='Image/empty_box.png' style='width: 200px;'></img><br><strong style='color: #777'>No data. Please reload the page !</strong></div>"));
+    }
+
+    public function get_Post_ID($id)
+    {
+        $query = $this->dbTable('post')->select('*')->where('ID', $id)->get()->getResultArray();
+        if (count($query) > 0)
+        {
+            for ($i=0; $i < count($query); $i++)
+            {
+                $data_author = $this->dbTable('student')->select('*')->where('ID', $query[$i]['Author'])->get()->getResultArray();
             }
             return array("status" => true, "message" => $query);
         }

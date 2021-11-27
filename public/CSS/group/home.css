@@ -152,7 +152,6 @@
     margin-bottom: 20px;
     display: flex;
     justify-content: space-between;
-    cursor: pointer;
     box-sizing: border-box;
 }
 
@@ -182,6 +181,11 @@
 
 .page-home > .body-home > .item > .head > .container > .title {
     font-size: 20px;
+    cursor: pointer;
+    color: #333;
+}
+
+.page-home > .body-home > .item > .head > .container > .title:hover {
     color: #555;
 }
 
