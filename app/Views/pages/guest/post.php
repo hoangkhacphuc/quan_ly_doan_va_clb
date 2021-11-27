@@ -83,9 +83,11 @@
                         <h3>Đăng ký tham gia sự kiện</h3>
                         <label for="regis">Chức vụ</label>
                         <select name="" id="">
-                            <option value="reg-event">Quản lý</option>
+                            <option value="reg-event">Quản lý 5 điểm Tối đã 5 người </option>
+                            <option value="reg-event">Quản lý 5 điểm Tối đã 5 người </option>
+                            <option value="reg-event">Quản lý 5 điểm Tối đã 5 người </option>
                         </select>
-                        <h4>Đã đăng ký: </h4>
+                        <h4>Đã đăng ký: Quản lý </h4>
                         <a href="#">Đăng ký</a>
                     </div>
                 </div>
