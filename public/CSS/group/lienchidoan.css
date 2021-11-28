@@ -1,0 +1,219 @@
+.page-lienchidoan {
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.page-lienchidoan > .container {
+    border-bottom: 1px solid #ddd;
+    box-sizing: border-box;
+    padding-bottom: 30px;
+}
+
+.page-lienchidoan > .container:last-child {
+    border: none;
+}
+
+.page-lienchidoan > .container > .title {
+    color: #333;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 30px 0;
+}
+
+/* Quản lý */
+
+.page-lienchidoan > .container > .quanly > .box {
+    padding-bottom: 20px;
+}
+
+.page-lienchidoan > .container > .quanly > .box > span {
+    color: #555;
+    font-size: 18px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* Liên chi đoàn */
+
+.page-lienchidoan > .container > .quanly > .box > .content > input {
+    outline: 0;
+    padding: 7px 10px;
+    width: 350px;
+    max-width: 50%;
+    font-size: 16px;
+    border: 1px solid #aaa;
+    color: #555;
+}
+
+.page-lienchidoan > .container > .quanly > .box > .content > button {
+    padding: 7px 15px;
+    outline: 0;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #1db610;
+    border: 1px solid transparent;
+    color: white;
+    border-radius: 5px;
+    margin-left: 15px;
+}
+
+.page-lienchidoan > .container > .quanly > .box > .content > button:hover {
+    background-color: #3ac92e;
+}
+
+/* chi đoàn */
+
+.page-lienchidoan > .container > .quanly > .box > input {
+    outline: 0;
+    padding: 7px 10px;
+    width: 350px;
+    max-width: 50%;
+    font-size: 16px;
+    border: 1px solid #aaa;
+    color: #555;
+}
+
+.page-lienchidoan > .container > .quanly > .box > select {
+    padding: 7px 15px;
+    outline: 0;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid #aaa;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* Danh sách */
+
+.page-lienchidoan > .container > .danhsach > .search > select {
+    padding: 7px 15px;
+    outline: 0;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid #aaa;
+    color: #555;
+}
+
+.page-lienchidoan > .container > .danhsach > .search > button {
+    padding: 7px 15px;
+    outline: 0;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #1db610;
+    border: 1px solid transparent;
+    color: white;
+    border-radius: 5px;
+    margin-left: 15px;
+}
+
+.page-lienchidoan > .container > .danhsach > .search > button:hover {
+    background-color: #3ac92e;
+}
+
+/* View */
+
+.page-lienchidoan > .container > .danhsach > .view {
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.page-lienchidoan > .container > .danhsach > .view > table {
+    width: 100%;
+    border-spacing: 0;
+}
+
+.page-lienchidoan > .container > .danhsach > .view > table > tbody > tr > td {
+    padding: 15px;
+    font-size: 16px;
+}
+
+.page-lienchidoan > .container > .danhsach > .view > table > tbody > tr:first-child {
+    font-weight: 600;
+    background-color: #313a46;
+    color: white;
+    font-size: 18px;
+}
+
+.page-lienchidoan > .container > .danhsach > .view > table > tbody > tr:not(:first-child):nth-child(odd) {
+    background-color: #f1f3fa;
+}
+
+.page-lienchidoan > .container > .danhsach > .view > table > tbody > tr:not(:first-child) > td:last-child {
+    font-size: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.page-lienchidoan > .container > .danhsach > .view > table > tbody > tr > td > i {
+    cursor: pointer;
+}
+
+.page-lienchidoan > .container > .danhsach > .view > table > tbody > tr > td > i:hover {
+    color: orange;
+}
+
+/* Model edit  */
+
+.page-lienchidoan > .container > .danhsach > .edit {
+    margin-top: 30px;
+    box-sizing: border-box;
+}
+
+.page-lienchidoan > .container > .danhsach > .edit > .head {
+    text-align: center;
+    padding-bottom: 20px;
+    color: #333;
+    font-size: 22px;
+    font-weight: 600px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+}
+
+.page-lienchidoan > .container > .danhsach > .edit > table {
+    width: 600px;
+    max-width: 90%;
+    box-sizing: border-box;
+}
+
+.page-lienchidoan > .container > .danhsach > .edit > table > tbody > tr > td {
+    padding: 7px 0;
+    font-size: 16px;
+}
+
+.page-lienchidoan > .container > .danhsach > .edit > table > tbody > tr > td > input,
+.page-lienchidoan > .container > .danhsach > .edit > table > tbody > tr > td > select {
+    outline: 0;
+    width: 100%;
+    padding: 7px 10px;
+    font-size: 16px;
+    border: 1px solid #aaa;
+    color: #555;
+    margin-left: 20px;
+}
+
+.page-lienchidoan > .container > .danhsach > .edit > button {
+    padding: 7px 15px;
+    outline: 0;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #1db610;
+    border: 1px solid transparent;
+    color: white;
+    border-radius: 5px;
+    margin-left: 15px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.page-lienchidoan > .container > .danhsach > .edit > button:hover {
+    background-color: #3ac92e;
+}
+
+.page-lienchidoan > .container > .danhsach > .edit > button:last-child {
+    background-color: rgb(235, 61, 17);
+}
+
+.page-lienchidoan > .container > .danhsach > .edit > button:last-child:hover {
+    background-color: rgb(241, 96, 59);
+}

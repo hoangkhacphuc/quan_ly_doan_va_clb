@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="CSS/group/index.css">
     <link rel="stylesheet" href="CSS/group/home.css">
     <link rel="stylesheet" href="CSS/group/new_post.css">
+    <link rel="stylesheet" href="CSS/group/lienchidoan.css">
     <script src="JS/group/index.js"></script>
 </head>
 <body>

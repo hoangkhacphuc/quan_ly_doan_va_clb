@@ -3,6 +3,7 @@
 namespace App\Models\admin;
 
 use App\Models\HomeModel;
+use CodeIgniter\Database\Query;
 
 class ModelChiDoan extends HomeModel {
     public $database;
@@ -14,13 +15,18 @@ class ModelChiDoan extends HomeModel {
 
     public function add($param1,$param2)
     {
+        $query = $this->dbTable('lienchidoan')->where('Name', $param2)->get()->getResultArray();
+        if (!$query)
+        {
+            echo json_encode(array('status' => false, "message" => "Không tìm thấy Liên chi Đoàn !"));
+            return;
+        }
         $data = array(
             'Name' => $param1,
-            'LienChiDoan' => $param2
-
+            'LienChiDoan' => $query[0]['ID']
         );
         $query = $this->database->insert($data);
-        echo $query ? json_encode(array("Error" => "", "Done" => "Thêm thành công !")) : json_encode(array("Error" => "Thêm thất bại !"));
+        echo $query ? json_encode(array('status' => true, "message" => "Thêm thành công !")) : json_encode(array('status' => false, "message" => "Thêm thất bại !"));
     }
 
     public function update($param1, $param2, $param3)

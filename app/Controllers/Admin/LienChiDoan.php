@@ -17,12 +17,12 @@ class LienChiDoan extends BaseController
     {
         if (!$this->load_Permissions(2))
         {
-            echo json_encode(array("Error" => "Không đủ quyền truy cập !"));
+            echo json_encode(array('status' => false, "message" => "Không đủ quyền truy cập !"));
             return;
         }
-        if (!isset($_POST['Name']) && !isset($_POST['ID']))
+        if (!isset($_POST['Name']))
         {
-            echo json_encode(array("Error" => "Thêm thất bại !"));
+            echo json_encode(array('status' => false, "message" => "Chưa nhập tên Liên chi Đoàn !"));
             return;
         }
         
