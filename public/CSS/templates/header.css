@@ -296,6 +296,12 @@ header > .model > .container {
     padding: 0 30px;
 }
 
+@media only screen and (max-width: 800px){
+    header > .model > .container {
+        width: 80%;
+    }
+}
+
 /* header model */
 
 header > .model > .container > .header-model {

@@ -50,7 +50,23 @@
             </div>
             <div class="edit" style="display: none" id="edit-info">
                 <input type="hidden" id="inp-edit-id">
-                <table>
+                <table id="table-info-lcd">
+                    <tbody>
+                        <tr>
+                            <td>Liên chi Đoàn</td>
+                            <td><input type="text" id="inp-name-lcd"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table id="table-info-cd">
+                    <tbody>
+                        <tr>
+                            <td>Chi Đoàn</td>
+                            <td><input type="text" id="inp-name-cd"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table id="table-info-student">
                     <tbody>
                         <tr>
                             <td>Họ và tên</td>
@@ -148,13 +164,14 @@
                         foreach ($LienChiDoan as $key ) {
                             $num++;
                          ?>
-                            <tr>
-                                <td><?= $key['Name'] ?></td>
-                                <td><i class="fa fa-edit" id="btn-edit-<?= $key['ID'] ?>"></i><i class="fa fa-trash-o" id="btn-trash-1"></i></td>
+                            <tr id="lcd-<?= $key['ID'] ?>">
+                                <td id="name-lcd-<?= $key['ID'] ?>"><?= $key['Name'] ?></td>
+                                <td><i class="fa fa-edit" id="btn-edit-<?= $key['ID'] ?>"></i><i class="fa fa-trash-o" id="btn-trash-<?= $key['ID'] ?>"></i></td>
                             </tr>
                         <?php } ?>
                     <tbody>
-                    <tbody  id="table-info" style="display: none">
+                    <tbody id="table-cd"></tbody>
+                    <tbody id="table-info" style="display: none">
                     </tbody>
                 </table>
             </div>

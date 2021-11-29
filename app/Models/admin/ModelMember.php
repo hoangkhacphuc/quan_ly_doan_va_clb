@@ -61,4 +61,16 @@ class ModelMember extends HomeModel {
         echo $query ? json_encode(array('status' => true, "message" => "Cập nhật thành công !")) : json_encode(array('status' => false, "message" => "Cập nhật thất bại !"));
     }
 
+    public function deleteMember($id)
+    {
+        $query = $this->database->select('*')->where('ID', $id)->get()->getResultArray();
+        if (empty($query) || count($query) == 0)
+        {
+            echo json_encode(array('status' => false, "message" => "Không tìm thấy tài khoản !"));
+            return;
+        }
+        $query = $this->database->where('ID', $id)->delete();
+        echo $query ? json_encode(array('status' => true, "message" => "Đã xóa tài khoản này !")) : json_encode(array('status' => false, "message" => "Xóa thất bại !"));
+    }
+
 }

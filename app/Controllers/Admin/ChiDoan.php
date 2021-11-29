@@ -105,31 +105,30 @@ class ChiDoan extends BaseController
     {
         if (!$this->load_Permissions(2))
         {
-            echo json_encode(array("Error" => "Không đủ quyền truy cập !"));
+            echo json_encode(array('status' => false, "message" => "Không đủ quyền truy cập !"));
             return;
         }
-        if (!isset($_POST['ID']) && !isset($_POST['Name']) && !isset($_POST['LienChiDoan']))
+        if (!isset($_POST['ID']) && !isset($_POST['Name']))
         {
-            echo json_encode(array("Error" => "Cập nhật thất bại !"));
+            echo json_encode(array('status' => false, "message" => "Chưa đủ thông tin !"));
             return;
         }
         $ID = $_POST['ID'];
         $name = $_POST['Name'];
-        $lienchidoan = $_POST['LienChiDoan'];
         
-        $this->model->update($ID, $name, $lienchidoan);
+        $this->model->update($ID, $name);
     }
 
     public function delete()
     {
         if (!$this->load_Permissions(2))
         {
-            echo json_encode(array("Error" => "Không đủ quyền truy cập !"));
+            echo json_encode(array('status' => false, "message" => "Không đủ quyền truy cập !"));
             return;
         }
         if (!isset($_POST['ID']))
         {
-            echo json_encode(array("Error" => "Xóa thất bại !"));
+            echo json_encode(array('status' => false, "message" => "Chưa đủ thông tin !"));
             return;
         }
         $ID = $_POST['ID'];

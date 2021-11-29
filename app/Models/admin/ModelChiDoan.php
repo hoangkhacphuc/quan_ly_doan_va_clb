@@ -29,22 +29,21 @@ class ModelChiDoan extends HomeModel {
         echo $query ? json_encode(array('status' => true, "message" => "Thêm thành công !")) : json_encode(array('status' => false, "message" => "Thêm thất bại !"));
     }
 
-    public function update($param1, $param2, $param3)
+    public function update($param1, $param2)
     {
         $data = array(
             'Name' => $param2,
-            'LienChiDoan' => $param3,
         );
         $this->database->where('ID', $param1);
         $query = $this->database->get();
         if ($query->getRow() == 0)
         {
-            echo json_encode(array("Error" => "Kiểm tra lại thông tin !"));
+            echo json_encode(array('status' => false, "message" => "Không tìm thấy Chi Đoàn !"));
             return;
         }
         $this->database->where('ID', $param1);
         $query = $this->database->update($data);
-        echo $query ? json_encode(array("Error" => "", "Done" => "Cập nhật thành công !")) : json_encode(array("Error" => "Cập nhật thất bại !"));
+        echo $query ? json_encode(array('status' => true, "message" => "Cập nhật thành công !")) : json_encode(array('status' => false, "message" => "Cập nhật thất bại !"));
     }
 
     public function delete($param1)
@@ -53,11 +52,17 @@ class ModelChiDoan extends HomeModel {
         $query = $this->database->get();
         if ($query->getRow() == 0)
         {
-            echo json_encode(array("Error" => "Kiểm tra lại thông tin !"));
+            echo json_encode(array('status' => false, "message" => "Không tìm thấy Chi Đoàn !"));
+            return;
+        }
+        $query = $this->dbTable('student')->where('ChiDoan', $param1)->get()->getResultArray();
+        if (!empty($query) && count($query) > 0)
+        {
+            echo json_encode(array('status' => false, "message" => "Có thành viên trong Chi Đoàn, không thể xóa !"));
             return;
         }
         $this->database->where('ID', $param1);
         $query = $this->database->delete();
-        echo $query ? json_encode(array("Error" => "", "Done" => "Xóa thành công !")) : json_encode(array("Error" => "Xóa thất bại !"));
+        echo $query ? json_encode(array('status' => true, "message" => "Xóa thành công !")) : json_encode(array('status' => false, "message" => "Xóa thất bại !"));
     }
 }

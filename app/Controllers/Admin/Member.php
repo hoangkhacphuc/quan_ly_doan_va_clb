@@ -74,4 +74,18 @@ class Member extends BaseController
         $this->model->updateInfo($name,$lienchidoan,$chidoan, $id ,$email,$dob,$sex,$addr,$dateunion,$addrunion,$dateparty,$addrparty,$award,$punishment);
     }
 
+    public function delete()
+    {
+        if (!$this->load_Permissions(2))
+        {
+            echo json_encode(array('status' => false, "message" => "Không đủ quyền truy cập !"));
+            return;
+        }
+        if (!isset($_POST['ID']))
+        {
+            echo json_encode(array('status' => false, "message" => "Chưa đủ thông tin !"));
+            return;
+        }
+    }
+    
 }

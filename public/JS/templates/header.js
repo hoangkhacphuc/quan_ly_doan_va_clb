@@ -78,7 +78,7 @@ $(document).ready(function(){
                 document.getElementById('errorLogin').style = "display: inline-block; border: 1px solid #2bb157; background-color: #d6f7e1; color: #2bb157;";
                 setTimeout(() => {
                     window.location.replace("/");
-                }, 2000);
+                }, 1000);
             }
         }).fail(function() {
             document.getElementById('errorLogin').innerHTML = "Xảy ra lỗi trong quá trình truyền tin. Vui lòng thử lại !";

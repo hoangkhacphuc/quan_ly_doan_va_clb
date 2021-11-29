@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 21, 2021 lúc 04:10 PM
+-- Thời gian đã tạo: Th10 29, 2021 lúc 10:56 AM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 7.4.25
 
@@ -60,9 +60,7 @@ INSERT INTO `banner` (`ID`, `Image`) VALUES
 (1, 'img1.jpg'),
 (2, 'img2.jpg'),
 (3, 'img3.jpg'),
-(4, 'img4.jpg'),
-(9, 'dbpkijoindbgujkkjflg.png'),
-(10, 'ugfggephpslmunjlubjr.png');
+(4, 'img4.jpg');
 
 -- --------------------------------------------------------
 
@@ -81,12 +79,19 @@ CREATE TABLE `chidoan` (
 --
 
 INSERT INTO `chidoan` (`ID`, `Name`, `LienChiDoan`) VALUES
-(41, 'dtn', 2),
-(42, 'Doan Thanh Nien1', 2),
-(44, 'Doan Thanh Nien1', 3),
-(45, 'Doan Thanh Nien1', 3),
-(46, '', 3),
-(48, 'dtn', 4);
+(50, 'K13 CNTT VJ', 5),
+(56, 'K13-KTCĐT', 15),
+(57, 'K14-CĐT', 15),
+(58, 'K14-CNSH', 16),
+(59, 'K14-KTHH', 16),
+(60, 'K11-KHMT', 5),
+(61, 'K12-KHMT', 5),
+(62, 'K13-CNTT', 5),
+(63, 'K14-CNTT1', 5),
+(64, 'K14-CNTT2', 5),
+(65, 'K14-CNTT3', 5),
+(66, 'K14-CNTT4', 5),
+(67, 'K14-CNTTVJ', 5);
 
 -- --------------------------------------------------------
 
@@ -139,9 +144,17 @@ CREATE TABLE `lienchidoan` (
 --
 
 INSERT INTO `lienchidoan` (`ID`, `Name`) VALUES
-(2, 'Doan Thanh Nien'),
-(3, 'Doan Thanh Nien1'),
-(4, 'Doan Thanh Nien1');
+(5, 'Khoa Công nghệ thông tin'),
+(15, 'Khoa Cơ khí - Cơ điện tử'),
+(16, 'Khoa Công nghệ SH - HH - MT'),
+(17, 'Khoa Điện - Điện tử'),
+(18, 'Khoa Điều dưỡng'),
+(19, 'Khoa Dược'),
+(20, 'Khoa KH-KT Vật liệu'),
+(21, 'Khoa Kỹ thuật y học'),
+(22, 'Khoa Kinh tế - Kinh doanh'),
+(23, 'Khoa Kỹ thuật ô tô và năng lượng'),
+(24, 'Khoa Tiếng anh');
 
 -- --------------------------------------------------------
 
@@ -241,9 +254,9 @@ CREATE TABLE `post` (
 --
 
 INSERT INTO `post` (`ID`, `Title`, `Content`, `Author`, `Posting`, `Type`, `Hide`, `Image`, `Position`, `MaxPlayer`, `SelectPosition`) VALUES
-(1, '123', '<p>123</p>\n', 1, '2021-11-20', 0, 1, 'Image/Upload/csmgrnsqhrjnqdoecoaj.jpg', '0|0|0', '0|0|0', '0|0|0'),
-(2, '123', '<p>123</p>\n', 1, '2021-11-20', 0, 1, 'Image/Upload/jtnadaarpnqmiglnpmso.jpg', '0|0|0', '0|0|0', '0|0|0'),
-(3, 'Đây là tiêu đề', '<p><img alt=\"\" src=\"http://localhost:8080/Image/Upload/aotmqjuqiapppilspbgm.jpg\" style=\"height:2513px; width:8000px\" />ĐĐ&acirc;y l&agrave; nội dung</p>\n', 1, '2021-11-20', 0, 1, 'Image/Upload/sihmkfgdcfnchqpdlagt.jpg', '88|0|0', '100|0|0', '1|1|0');
+(22, 'Đây là tiêu đề', '<p>rtneuertu</p>\n', 1, '2021-11-26', 0, 1, 'Image/Upload/erhukqtorcbiolfpmhlg.jpg', '0|0|0', '0|0|0', '0|0|0'),
+(23, 'Đây là tiêu đề  123', '<p>c2v12ubmbb<img src=\"http://localhost:8080/Image/Upload/lgjkfoeksoklqfhbcejt.png\" style=\"height:225px; width:466px\" /></p>\n', 1, '2021-11-27', 1, 0, 'Image/Upload/ajocbkdjiaadqaomsgsk.jpg', '1|0|0', '10|0|0', '1|0|0'),
+(24, 'Đây là tiêu đề  123', '<p>c2v12ubmbb<img src=\"http://localhost:8080/Image/Upload/lgjkfoeksoklqfhbcejt.png\" style=\"height:225px; width:466px\" /></p>\n', 1, '2021-11-27', 1, 0, 'Image/Upload/prmhfbshtidbmiraphsn.jpg', '1|0|0', '10|0|0', '1|0|0');
 
 -- --------------------------------------------------------
 
@@ -279,7 +292,7 @@ CREATE TABLE `student` (
 --
 
 INSERT INTO `student` (`ID`, `Name`, `StudentID`, `Avatar`, `PhoneNumber`, `Email`, `DOB`, `Sex`, `Address`, `Language`, `DateJoinUnion`, `AddressJoinUnion`, `DateJoinParty`, `AddressJoinParty`, `ChiDoan`, `Grade`, `Award`, `Punishment`, `Notification`, `DOJ`) VALUES
-(1, 'Hoàng Khắc Phúc', '19010066', '1.jpg', '0563014144', 'nhockenxx2@gmail.com', '2001-02-24', 0, 'Kim Sơn-Ninh Bình', NULL, '0000-00-00', '', NULL, NULL, 0, 0, NULL, NULL, '', '2021-11-13');
+(1, 'Hoàng Khắc Phúc', '19010066', '1.jpg', '0563014144', 'nhockenxx2@gmail.com', '2001-02-24', 0, 'Kim Sơn-Ninh Bình', NULL, '2021-11-12', 'Trường THPT Kim Sơn B', '2021-11-13', '', 50, 0, '', '', '', '2021-11-13');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -382,7 +395,7 @@ ALTER TABLE `banner`
 -- AUTO_INCREMENT cho bảng `chidoan`
 --
 ALTER TABLE `chidoan`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- AUTO_INCREMENT cho bảng `club`
@@ -394,7 +407,7 @@ ALTER TABLE `club`
 -- AUTO_INCREMENT cho bảng `lienchidoan`
 --
 ALTER TABLE `lienchidoan`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT cho bảng `notification`
@@ -412,7 +425,7 @@ ALTER TABLE `position`
 -- AUTO_INCREMENT cho bảng `post`
 --
 ALTER TABLE `post`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT cho bảng `student`
