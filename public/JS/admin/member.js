@@ -40,10 +40,14 @@ $(document).ready(function(){
 
     $('#table-info').on('click', 'tr>td>i', function () {
         let select = $(this).attr('id').search('edit') != -1 ? 1 : 0;
-        let id = $(this).attr('id').slice(9, $(this).attr('id').length);
+        
         if (select == 1)
+        {
+            let id = $(this).attr('id').slice(9, $(this).attr('id').length);
             editInfo(id);
+        }
         else {
+            let id = $(this).attr('id').slice(10, $(this).attr('id').length);
             data_popup = {
                 'ID' : id,
             }
