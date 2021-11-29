@@ -147,10 +147,10 @@ $(document).ready(function () {
         if (lcd == 'Liên chi Đoàn')
         {
             table_info = 0;
+            changeTable();
             $('#ds-cd').html('<option value="Chi Đoàn">Chi Đoàn</option>');
             $('#table-lcd').css('display', 'table-row-group');
             $('#table-cd').css('display', 'none');
-            changeTable();
             return;
         }
         table_info = 1;
