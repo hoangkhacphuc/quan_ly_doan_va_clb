@@ -6,9 +6,11 @@ use App\Controllers\BaseController;
 class Index extends BaseController
 {
     public $model_index;
+    public $lienchidoan_model;
     public function __construct()
     {
         $this->model_index = model('App\Models\admin\ModelIndex');
+        $this->lienchidoan_model = model('App\Models\admin\ModelLienChiDoan');
     }
 
     public function index()
@@ -36,6 +38,7 @@ class Index extends BaseController
         );
         return view('pages/admin/home', $data);
     }
+
     public function member()
     {
         if (!$this->load_Permissions(1))
@@ -43,13 +46,14 @@ class Index extends BaseController
             echo "<div style='width: 100%; text-align: center; margin-top: 50px'><img src='Image/empty_box.png' style='width: 200px;'></img><br><strong style='color: #777'>No data. Please reload the page !</strong></div>";
             return;
         }
-        $model = model('App\Models\Guest\GuestModel');
+
         $data = array(
-            'Banner' => $model->getBanner(),
-            'notification' => $this->model_index->getNotification()
+            'LienChiDoan' => $this->lienchidoan_model->getLCD(),
+            'Position' => $this->model_index->getPosition(),
         );
         return view('pages/admin/member', $data);
     }
+
     public function banner_delete()
     {
         if (!$this->load_Permissions(2))

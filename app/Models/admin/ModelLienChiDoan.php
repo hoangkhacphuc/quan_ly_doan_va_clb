@@ -59,7 +59,7 @@ class ModelLienChiDoan extends HomeModel {
         foreach ($dataStudent as $key ) {
             
             $id_position = $this->dbTable('account')->select('*')->where('ID', $key['ID'])->get()->getResultArray();
-            $position = $this->dbTable('position')->select('*')->where('ID', $id_position[0]['ID'])->get()->getResultArray();
+            $position = $this->dbTable('position')->select('*')->where('ID', $id_position[0]['Position'])->get()->getResultArray();
             $dataStudent[$num]['Position'] = $position[0]['Name'];
             $num++;
         }
@@ -79,6 +79,9 @@ class ModelLienChiDoan extends HomeModel {
         $dataLCD = $this->dbTable('lienchidoan')->select('*')->where('ID', $dataCD[0]['LienChiDoan'])->get()->getResultArray();
         $dataStudent[0]['LCD'] = $dataLCD[0]['Name'];
         $dataStudent[0]['ChiDoan'] = $dataCD[0]['Name'];
+        $id_position = $this->dbTable('account')->select('*')->where('ID', $dataStudent[0]['ID'])->get()->getResultArray();
+        $position = $this->dbTable('position')->select('*')->where('ID', $id_position[0]['Position'])->get()->getResultArray();
+        $dataStudent[0]['Position'] = $position[0]['Name'];
         echo json_encode(array('status' => true, "message" => json_encode($dataStudent[0])));
     }
 

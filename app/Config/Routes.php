@@ -99,7 +99,9 @@ $routes->group('admin', function($routes) {
     });
     $routes->group('member', function ($routes)
     {
-        $routes->post('/add', 'Admin\Member::add');
+        $routes->post('create', 'Admin\Member::add');
+        $routes->post('search', 'Admin\Member::search');
+        $routes->post('delete', 'Admin\Member::delete');
     });
 });
 

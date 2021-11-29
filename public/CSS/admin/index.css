@@ -29,7 +29,7 @@ header > .btn-menu-dashboard {
 
 header > .item > a > img {
     height: 50px;
-    margin-top: 5px;
+    margin-top: -1px;
 }
 
 /* seach */
@@ -91,7 +91,6 @@ header > .search > input:focus, header > .search > button:focus{
 
 .dashboard > .menu-dashboard > .container:first-child {
     border-bottom: 1px solid #eee;
-    text-align: center;
 }
 
 .dashboard > .menu-dashboard > .container:first-child > strong {
@@ -162,6 +161,7 @@ header > .search > input:focus, header > .search > button:focus{
     .dashboard > .menu-dashboard {
         position: absolute;
         background: white;
+        z-index: 1000;
     }
 }
 
@@ -208,7 +208,8 @@ header > .search > input:focus, header > .search > button:focus{
     top: 15px;
     display: flex;
     flex-flow: column-reverse;
-    z-index: -999;
+    z-index: 2000;
+    pointer-events: none;
 }
 
 .system-notification > .item {
@@ -221,4 +222,58 @@ header > .search > input:focus, header > .search > button:focus{
     color: white;
     opacity: 0;
     animation: system_Notification 4s;
+}
+
+#popup {
+    position: fixed;
+    background-color: rgba(238, 238, 238, 0.507);
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+#popup > .container {
+    padding: 20px;
+    background-color: white;
+    text-align: center;
+}
+
+#popup > .container > .head {
+    color: #333;
+    font-size: 18px;
+}
+
+#popup > .container > .foot {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+}
+
+#popup > .container > .foot > button {
+    margin: 0 15px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    padding: 7px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    color: white;
+}
+
+#popup > .container > .foot > #popup-ok {
+    background-color: #1db610;
+}
+
+#popup > .container > .foot > #popup-ok:hover {
+    background-color: #3ac92e;
+}
+
+#popup > .container > .foot > #popup-cancel {
+    background-color: rgb(235, 61, 17);
+}
+
+#popup > .container > .foot > #popup-cancel:hover {
+    background-color: rgb(241, 96, 59);
 }

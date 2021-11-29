@@ -1,171 +1,178 @@
 <div class="page-member">
-    <script src="Lib/ckeditor/ckeditor.js"></script>
     <script src="JS/admin/member.js"></script>
-    <div class="head-member">
-        <div class="search">
-                <input type="text" id="inp-search-post" placeholder="Tìm kiếm thành viên ...">
-                <label for=""><i class="fa fa-search"></i></label>
+    <div class="container">
+        <div class="title">Thêm thành viên</div>
+        <div class="quanly">
+            <table id="table-add-student">
+                <tbody>
+                    <tr>
+                        <td>Họ và tên</td>
+                        <td><input type="text" id="inp-add-name"></td>
+                    </tr>
+                    <tr>
+                        <td>Mã sinh viên</td>
+                        <td><input type="text" id="inp-add-studentid"></td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td><input type="text" id="inp-add-email"></td>
+                    </tr>
+                    <tr>
+                        <td>Liên chi Đoàn</td>
+                        <td><select name="" id="inp-add-LCD">
+                        <option value="Liên chi Đoàn">Liên chi Đoàn</option>
+                            <?php
+                            if (count($LienChiDoan) > 0)
+                                foreach ($LienChiDoan as $key ) {
+                                    
+                                ?>
+                                <option value="<?= $key['Name'] ?>"><?= $key['Name'] ?></option>
+                            <?php } ?>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td>Chi Đoàn</td>
+                        <td><select name="" id="inp-add-CD">
+                            <option value="Chi Đoàn">Chi Đoàn</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td>Chức vụ</td>
+                        <td><select name="" id="inp-add-cv">
+                            <?php foreach ($Position as $key ) { ?>
+                                <option value="<?= $key['Name'] ?>"><?= $key['Name'] ?></option>
+                            <?php } ?>
+                        </select></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button id="btn-add-save">Thêm</button>
+        </div>
+    </div>
+    <div class="container">
+        <div class="title">Quản lý</div>
+        <div class="quanly">
+            <div class="search">
+                <input type="text" id="inp-search-member" placeholder="Tìm kiếm bài đăng ..." autocomplete = "off">
+                <label for="" id="btn-search"><i class="fa fa-search"></i></label>
                 <div class="line"></div>
-        </div>
-        <div class="head-choice setting-post">
-            <div class="item">
-                <!-- <label for="select-type-post">Thể loại</label> -->
-                <select name="" id="select-type-post">
-                    <option value="Bài viết">Liên chi đoàn</option>
+            </div>
+            
+            <div class="find">
+                <select name="" id="ds-lcd">
+                    <option value="Liên chi Đoàn">Liên chi Đoàn</option>
+                    <?php
+                    if (count($LienChiDoan) > 0)
+                        foreach ($LienChiDoan as $key ) {
+                            
+                         ?>
+                        <option value="<?= $key['Name'] ?>"><?= $key['Name'] ?></option>
+                    <?php } ?>
                 </select>
-                &emsp;
-                <select name="" id="select-type-post">
-                    <option value="Bài viết">Chi đoàn</option>
-                </select>        
+                <select name="" id="ds-cd">
+                    <option value="Chi Đoàn">Chi Đoàn</option>
+                </select>
+                <button id="btn-find">Tìm</button>
             </div>
-            <div class="find">Lọc</div>
-        </div>
-
-    </div>
-
-    <div class="body-member">
-        <div class="item">
-            <div class="author">
-                <div class="container">
-                   <p>Hoàng Khắc Phúc</p> 
-                   <p>Khoa Công Nghệ Thông Tin - K13 CNTT VJ</p> 
-                </div>
-                <div class="container setting-post">
-                    <div class="grade">
-                        <p>Điểm: 0</p>
-                    </div>
-                    <div class="member-edit">
-                        <i class="fa fa-pencil-square-o"></i>
-                        <!-- <i class="fa fa-trash-o"></i> -->
-                        <i class="fa fa-eye"></i>
-                    </div>
-                </div>
+            <div class="edit" style="display: none" id="edit-info">
+                <input type="hidden" id="inp-edit-id">
+                <table id="table-info-student">
+                    <tbody>
+                        <tr>
+                            <td>Họ và tên</td>
+                            <td><input type="text" id="inp-edit-name"></td>
+                        </tr>
+                        <tr>
+                            <td>Mã sinh viên</td>
+                            <td><input type="text" id="inp-edit-studentid"></td>
+                        </tr>
+                        <tr>
+                            <td>Số điện thoại</td>
+                            <td><input type="text" id="inp-edit-phone" disabled></td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td><input type="text" id="inp-edit-email"></td>
+                        </tr>
+                        <tr>
+                            <td>Ngày sinh</td>
+                            <td><input type="date" id="inp-edit-birth"></td>
+                        </tr>
+                        <tr>
+                            <td>Giới tính</td>
+                            <td><select name="" id="inp-edit-sex">
+                                <option value="Nam">Nam</option>
+                                <option value="Nữ">Nữ</option>
+                            </select></td>
+                        </tr>
+                        <tr>
+                            <td>Địa chỉ</td>
+                            <td><input type="text" id="inp-edit-address"></td>
+                        </tr>
+                        <tr>
+                            <td>Ngoại ngữ</td>
+                            <td><input type="text" id="inp-edit-language"></td>
+                        </tr>
+                        <tr>
+                            <td>Ngày vào Đoàn</td>
+                            <td><input type="date" id="inp-edit-union"></td>
+                        </tr>
+                        <tr>
+                            <td>Nơi kết nạp Đoàn</td>
+                            <td><input type="text" id="inp-edit-address-union"></td>
+                        </tr>
+                        <tr>
+                            <td>Ngày vào Đảng</td>
+                            <td><input type="date" id="inp-edit-party"></td>
+                        </tr>
+                        <tr>
+                            <td>Nơi kết nạp Đảng</td>
+                            <td><input type="text" id="inp-edit-address-party"></td>
+                        </tr>
+                        <tr>
+                            <td>Liên chi Đoàn</td>
+                            <td><select name="" id="inp-edit-LCD">
+                            <option value="Liên chi Đoàn">Liên chi Đoàn</option>
+                                <?php
+                                if (count($LienChiDoan) > 0)
+                                    foreach ($LienChiDoan as $key ) {
+                                        
+                                    ?>
+                                    <option value="<?= $key['Name'] ?>"><?= $key['Name'] ?></option>
+                                <?php } ?>
+                            </select></td>
+                        </tr>
+                        <tr>
+                            <td>Chi Đoàn</td>
+                            <td><select name="" id="inp-edit-CD">
+                                <option value="Chi Đoàn">Chi Đoàn</option>
+                            </select></td>
+                        </tr>
+                        <tr>
+                            <td>Khen thưởng</td>
+                            <td><input type="text" id="inp-edit-award"></td>
+                        </tr>
+                        <tr>
+                            <td>Kỷ luật</td>
+                            <td><input type="text" id="inp-edit-punish"></td>
+                        </tr>
+                        <tr>
+                            <td>Chức vụ</td>
+                            <td><select name="" id="inp-edit-cv">
+                                <?php foreach ($Position as $key ) { ?>
+                                    <option value="<?= $key['Name'] ?>"><?= $key['Name'] ?></option>
+                                <?php } ?>
+                            </select></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button id="btn-edit-save">Lưu</button>
+                <button id="btn-edit-cancel">Hủy</button>
             </div>
-        </div>
-        <div class="item">
-            <div class="author">
-                <div class="container">
-                   <p>Hoàng Khắc Phúc</p> 
-                   <p>Khoa Công Nghệ Thông Tin - K13 CNTT VJ</p> 
-                </div>
-                <div class="container setting-post">
-                    <div class="grade">
-                        <p>Điểm: 0</p>
-                    </div>
-                    <div class="member-edit">
-                        <i class="fa fa-pencil-square-o"></i>
-                        <!-- <i class="fa fa-trash-o"></i> -->
-                        <i class="fa fa-eye"></i>
-                    </div>
-                </div>
+            <div class="view">
+                <table><tbody id="table-info"></tbody></table>
             </div>
-        </div>
-        <div class="item">
-            <div class="author">
-                <div class="container">
-                   <p>Hoàng Khắc Phúc</p> 
-                   <p>Khoa Công Nghệ Thông Tin - K13 CNTT VJ</p> 
-                </div>
-                <div class="container setting-post">
-                    <div class="grade">
-                        <p>Điểm: 0</p>
-                    </div>
-                    <div class="member-edit">
-                        <i class="fa fa-pencil-square-o"></i>
-                        <!-- <i class="fa fa-trash-o"></i> -->
-                        <i class="fa fa-eye"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="member-add">
-        <h3>Thêm thành viên</h3>
-        <table class="inp">
-            <tr>
-                <td><label for="name">Họ và tên:</label></td>
-                <td><input type="text" id="inp-add-notification-name" placeholder="Nhập họ và tên . . ."></td>
-            </tr>
-            <tr>
-                <td><label for="msv">Mã Sinh Viên:</label></td>
-                <td><input type="text" id="inp-add-notification-msv" placeholder="Nhập mã sinh viên . . ."></td>
-            </tr>
-            <!-- <tr>
-                <td><label for="msv">Liên chi đoàn:</label></td>
-                <td>
-                    <select name="" id="inp-add-notification-party">
-                        <option value="">CNTT-VJ</option>
-                        <option value="">CNTT-VJ</option>
-                    </select>
-                </td>
-            </tr> -->
-            <tr>
-                <td><label for="msv">Chi đoàn:</label></td>
-                <td>
-                    <select name="" id="inp-add-notification-group">
-                        <option value="">CNTT</option>
-                        <option value="">CNTT</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td><label for="sdt">Số Điện Thoại:</label></td>
-                <td><input type="text" id="inp-add-notification-sdt" placeholder="Nhập số điện thoại . . ."></td>
-            </tr>
-            <tr>
-                <td><label for="email">Email:</label></td>
-                <td><input type="text" id="inp-add-notification-email" placeholder="Nhập email . . ."></td>
-            </tr>
-            <tr>
-                <td><label for="dob">Ngày Sinh:</label></td>
-                <td><input type="date" id="inp-add-notification-dob" placeholder=""></td>
-            </tr>
-            <tr>
-                <td><label for="sex">Giới Tính:</label></td>
-                <td class="gender-radio">
-                    <select name="" id="gender">
-                        <option value="male">Nam</option>
-                        <option value="female">Nữ</option>
-                    </select> 
-                </td>
-            </tr>
-            <tr>
-                <td><label for="addr">Địa chỉ:</label></td>
-                <td><textarea name="" id="inp-add-notification-addr" cols="45" rows="7"></textarea></td>
-            </tr>
-            <tr>
-                <td><label for="dob">Ngày vào đoàn:</label></td>
-                <td><input type="date" id="inp-add-notification-union" placeholder=""></td>
-            </tr>
-            <tr>
-                <td><label for="msv">Nơi vào đoàn:</label></td>
-                <td><input type="text" id="inp-add-notification-addr-union" placeholder="Nơi kết nạp đoàn . . ."></td>
-            </tr>
-
-            <tr>
-                <td><label for="dob">Ngày vào đảng:</label></td>
-                <td><input type="date" id="inp-add-notification-party" placeholder=""></td>
-            </tr>
-            <tr>
-                <td><label for="">Nơi kết nạp đảng:</label></td>
-                <td><input type="text" id="inp-add-notification-addr-party" placeholder="Nơi kết nạp đảng . . ."></td>
-            </tr>
-
-            <tr>
-                <td><label for="award">Khen thưởng:</label></td>
-                <td><textarea name="" id="inp-add-notification-award" cols="45" rows="7"></textarea></td>
-            </tr>
-            <tr>
-                <td><label for="punishment">Kỷ luật:</label></td>
-                <td><textarea name="" id="inp-add-notification-punishment" cols="45" rows="7"></textarea></td>
-            </tr>
-        </table>
-        <div class="btn">
-            <button id="btn-add" >Thêm thành viên</button>
-            <button id="btn-add-more" >Thêm tiếp thành viên</button>
         </div>
     </div>
     
-        
 </div>

@@ -22,6 +22,8 @@
     <script src="JS/admin/index.js"></script>
 </head>
 <body>
+    <div id="popup"><div class="container"><div class="head">Bạn có muốn xóa bài viết này không </div>
+    <div class="foot"><button id="popup-ok">Đồng ý</button><button id="popup-cancel">Hủy</button></div></div></div>
     <header>
         <div class="item btn-menu-dashboard"><i class="fa fa-bars"></i></div>
         <div class="item">

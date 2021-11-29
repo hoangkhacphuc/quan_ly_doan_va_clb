@@ -28,4 +28,9 @@ class ModelIndex extends HomeModel
         $query = $this->dbTable('banner')->where('Image', $img)->delete();
         echo $query ? json_encode(array("Error" => "", "Done" => "Xóa thành công !")) : json_encode(array("Error" => "Xóa thất bại !"));
     }
+
+    public function getPosition()
+    {
+        return $this->dbTable('position')->select('*')->get()->getResultArray();
+    }
 }
