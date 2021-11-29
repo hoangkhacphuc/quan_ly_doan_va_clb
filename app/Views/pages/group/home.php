@@ -43,7 +43,7 @@
                         <div class="check"><i class="fa fa-check"></i></div>
                         <img src="<?php echo $data['Image']; ?>" alt="">
                         <div class="container">
-                            <div class="title" name="post-<?= $data['ID'] ?>"><?php echo $data['Title']; ?></div>
+                            <div class="title"><i name="post-<?= $data['ID'] ?>"><?php echo $data['Title']; ?></i></div>
                             <div class="info"><?php echo !$data['Hide'] ? "<span>Bản nháp" : "<span style='color: orange'>Đã xuất bản"; ?></span> • <span><?php echo $data['Posting']; ?></span></div>
                         </div>
                     </div>

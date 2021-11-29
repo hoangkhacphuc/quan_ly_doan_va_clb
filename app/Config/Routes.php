@@ -35,6 +35,8 @@ $routes->get('/', 'Guest\HomeController::index');
 $routes->get('logout', 'Guest\HomeController::logout');
 $routes->post('login', 'Guest\HomeController::login');
 
+$routes->get('posts', 'Guest\Posts::index');
+
 $routes->group('group', function($routes) {
     $routes->get('/', 'Group\Group::index');
     $routes->get('new_post', 'Group\Group::new_post');

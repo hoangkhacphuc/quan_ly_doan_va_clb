@@ -148,11 +148,12 @@
 .page-home > .body-home > .item {
     border: 1px solid #ddd;
     border-radius: 5px;
-    padding: 15px;
+    padding: 10px;
     margin-bottom: 20px;
     display: flex;
     justify-content: space-between;
     box-sizing: border-box;
+    height: 90px;
 }
 
 .page-home > .body-home > .item:hover {
@@ -183,6 +184,8 @@
     font-size: 20px;
     cursor: pointer;
     color: #333;
+    max-height: 50px;
+    overflow: hidden;
 }
 
 .page-home > .body-home > .item > .head > .container > .title:hover {
@@ -207,7 +210,7 @@
     margin-right: 15px;
     border-radius: 40px;
     padding: 7px;
-    font-size: 24px;
+    font-size: 22px;
 }
 
 .page-home > .body-home > .item > .author > .container > i:hover {
@@ -220,6 +223,10 @@
 
 .page-home > .body-home > .item:hover > .author > .container.setting-post {
     display: flex;
+}
+
+.page-home > .body-home > .item:hover > .author > #name-author {
+    display: none;
 }
 
 /* Nút checkbox */

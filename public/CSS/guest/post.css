@@ -8,17 +8,49 @@ body{
 }
 .post-contain{
     width: 100%;
-    padding: 60px 13% 60px 13%;
+    padding: 30px 10%;
     display: flex;
-    gap: 30px;
 }
 .post-contain > .content-contain{
-    width: 100%;
+    width: 70%;
 }
 .post-contain > .side-post{
-    /* width: 60%; */
-    width: 100%;
+    width: 30%;
+    box-sizing: border-box;
+    padding-left: 30px;
     flex-shrink: 2;
+}
+
+@media only screen and (max-width: 1200px) {
+    .post-contain {
+        padding: 30px 20px;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .post-contain > .content-contain{
+        width: 65%;
+    }
+
+    .post-contain > .side-post {
+        width: 35%;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .post-contain {
+        flex-flow: column;
+    }
+
+    .post-contain > .content-contain{
+        width: 100%;
+    }
+
+    .post-contain > .side-post {
+        margin-top: 30px;
+        width: 100%;
+        padding-left: 0;
+    }
 }
 
 .post-contain > .content-contain .title{
@@ -33,14 +65,20 @@ body{
     width: 100%;
     object-fit: fill;
 }
-.post-contain > .content-contain > .post-content > .post-title{
+.post-contain > .content-contain > .post-content > .post-title {
     padding-left: 15px;
     margin-bottom: 20px;
     border-left: 3px solid #E94B00;
     margin-top: 25px;
 }
+
+.post-contain > .content-contain > .post-content > .post-title > .post-title-date {
+    font-size: 14px;
+    color: #e94b00;
+}
+
 .post-contain > .content-contain > .post-content{
-    padding: 0 10px 0 30px;
+    padding: 0 20px;
     background: #eee;
     margin-top: -17px;
     padding-top: 15px;
@@ -54,12 +92,25 @@ body{
     padding-top: 15px;
     margin-left: 70px;
 }
-.post-contain > .content-contain > .post-content .post-main-content p{
-    padding: 0 10px 10px 0px;
-    /* background: #eee; */
-    margin-top: -4px;
-    padding-top: 15px;
-    margin-left: 20px;
+
+.post-contain > .content-contain > .post-content .post-main-content {
+    box-sizing: border-box;
+    color: #555;
+
+}
+
+.post-contain > .content-contain > .post-content .post-main-content > p{
+    padding: 10px 0;
+    width: 100%;
+    font-size: 15px;
+}
+
+.post-contain > .content-contain > .post-content .post-main-content > p strong{
+    font-size: 16px;
+}
+
+.post-contain > .content-contain > .post-content .post-main-content img {
+    width: 100%;
 }
 
 .post-contain > .side-post{
@@ -102,7 +153,6 @@ body{
     /* min-height: 82px; */
     transition: all .3s;
     object-fit: cover;
-    transform: scale(1.1);
     height: 82px;
     width: 100px;
     overflow: hidden;
@@ -114,7 +164,7 @@ body{
     width: 100%;
     height: 100%;
     min-height: 82px;
-
+    
 }
 .post-contain > .side-post > .list-item >.list-item-tag .list-item-img:hover{
     opacity: .8;
@@ -123,24 +173,39 @@ body{
 .post-contain > .side-post > .list-item >.list-item-tag{
     display: flex;
     flex-direction: row;
-    margin: 10px;
-    padding-left: 10px;
+    margin: 10px 0;
+    padding: 10px;
     width: 100%;
     height: 102px;
     background-color: #f7f7f7;
 }
+
+.post-contain > .side-post > .list-item >.list-item-tag > .side-post-text > .post-title-date {
+    font-size: 14px;
+    color: #e94b00;
+}
+
+
+.post-contain > .side-post> .list-item  > .list-item-tag .side-post-text > h4 {
+    max-height: 59px;
+    overflow: hidden;
+}
+
 .post-contain > .side-post> .list-item  > .list-item-tag .side-post-text a{
     text-decoration: none;
     color: #2f2424;
     font-size: 16px;
-    font-weight: bold;
+}
+.post-contain > .side-post> .list-item  > .list-item-tag .side-post-text a:hover {
+    color: #555;
 }
 .post-contain > .side-post> .list-item  > .list-item-tag .side-post-text{
     margin:0 15px;
     flex-shrink: 4;
 }
 .post-contain > .side-post> .list-item  > .list-item-tag .side-post-text p{
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+    font-size: 14px;
 }
 .post-contain > .side-post> .list-item  > .list-item-tag .side-post-text:hover{
     cursor: pointer;

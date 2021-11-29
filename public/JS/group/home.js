@@ -176,7 +176,7 @@ $(document).ready(function () {
         }
     });
 
-    $('#show-list-post>.item>.head>.container>.title').click(function (e) { 
+    $('#show-list-post>.item>.head>.container>.title>i').click(function (e) { 
         let item = $(this).attr('name');
         let id_post = parseInt(item.slice(5, item.length));
         edit_Post(id_post);

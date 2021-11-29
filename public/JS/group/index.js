@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    let select_Page = 'page-2';
+    let select_Page = 'page-1';
     $('.menu-dashboard>.container:last-child>#page-1').css('color', '#f86019');
     $('.page').html("<div style='width: 100%; text-align: center; margin-top: 50px'><img src='Image/empty_box.png' style='width: 200px;'></img><br><strong style='color: #777'>No data. Please reload the page !</strong></div>");
     getPage(select_Page);
