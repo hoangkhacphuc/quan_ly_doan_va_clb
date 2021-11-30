@@ -77,7 +77,7 @@
                         endforeach; ?>
                 </section>
                 <div class="more">
-                    <a href="#">Xem Thêm</a>
+                    <a href="/moreevent">Xem Thêm</a>
                 </div>
             </div>
         </div>
@@ -106,8 +106,8 @@
                     </div>
                 <?php endforeach; ?>
     
-        <div class="more">
-                    <a href="#">Xem Thêm</a>
+                <div class="more">
+                    <a href="/moreposts">Xem Thêm</a>
                 </div>
                 </div>
                 </div>

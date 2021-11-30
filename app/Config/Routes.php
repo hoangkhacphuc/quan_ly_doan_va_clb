@@ -37,6 +37,9 @@ $routes->post('login', 'Guest\HomeController::login');
 
 $routes->get('posts', 'Guest\Posts::index');
 
+$routes->get('moreposts', 'Guest\ViewMore::viewPosts');
+$routes->get('moreevent', 'Guest\ViewMore::viewEvent');
+
 $routes->group('post', function($routes) {
     $routes->post('join', 'Guest\Posts::joinEvent');
     $routes->post('cancel', 'Guest\Posts::cancelEvent');

@@ -54,7 +54,7 @@
             </li>
             <li>
                 <div class="item">
-                    <a href="/">Bài Đăng</a>
+                    <a href="/moreposts">Bài Đăng</a>
                 </div>
             </li>
             <li>
@@ -62,9 +62,10 @@
                     <span>Hoạt Động</span>
                     <div class="drop">
                         <div class="dropdown">
-                            <a href="">Đang diễn ra</a>
-                            <a href="">Đã diễn ra</a>
-                            <a href="">Giftcode</a>
+                            <a href="/moreevent">Tất cả</a>
+                            <a href="/moreevent?Status=now">Đang diễn ra</a>
+                            <a href="/moreevent?Status=late">Đã diễn ra</a>
+                            <a href="#">Giftcode</a>
                         </div>
                     </div>
                 </div>
@@ -74,8 +75,8 @@
                     <span>Cộng Đồng</span>
                     <div class="drop">
                         <div class="dropdown">
-                            <a href="">Fanpage</a>
-                            <a href="">Group</a>
+                            <a href="https://www.facebook.com/Doantruongphenikaa/">Fanpage</a>
+                            <a href="https://www.phenikaa-uni.edu.vn/">Trang chủ</a>
                         </div>
                     </div>
                 </div>
@@ -85,9 +86,9 @@
                     <span>Câu Lạc Bộ</span>
                     <div class="drop">
                         <div class="dropdown">
-                            <a href="">Bài viết</a>
-                            <a href="">Hoạt động</a>
-                            <a href="">Danh sách</a>
+                            <a href="#">Bài viết</a>
+                            <a href="#">Hoạt động</a>
+                            <a href="#">Danh sách</a>
                         </div>
                     </div>
                 </div>
@@ -97,9 +98,9 @@
                     <span>Hỗ Trợ</span>
                     <div class="drop">
                         <div class="dropdown">
-                            <a href="">Hướng dẫn</a>
-                            <a href="">Thông Tin</a>
-                            <a href="">Báo Lỗi</a>
+                            <a href="#">Hướng dẫn</a>
+                            <a href="#">Thông Tin</a>
+                            <a href="#">Báo Lỗi</a>
                         </div>
                     </div>
                 </div>
