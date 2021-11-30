@@ -33,6 +33,9 @@
                     <span class="point"><i class="fa fa-heartbeat"></i>&nbsp;<?= $Point ?></span>
                 </div>
                 <div class="menu-box">
+                    <?= $Position == 'Super Admin' ? '<a href="/admin">Super Admin</a>' : '' ?>
+                    <?= $Position == 'Quản Lý Đoàn' || $Position == 'Super Admin' ? '<a href="/group">Quản lý Đoàn</a>' : '' ?>
+                    <?= $Position == 'Quản Lý Câu Lạc Bộ' ? '<a href="#">Quản lý CLB</a>' : '' ?>
                     <a href="#">Thông tin</a>
                     <a href="#">Cài đặt</a>
                     <a href="#">Thông báo</a>

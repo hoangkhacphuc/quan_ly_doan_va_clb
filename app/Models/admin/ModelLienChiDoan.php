@@ -55,14 +55,14 @@ class ModelLienChiDoan extends HomeModel {
             return;
         }
         $dataStudent = $this->dbTable('student')->select('*')->where('ChiDoan', $query[0]['ID'])->get()->getResultArray();
-        $num = 0;
-        foreach ($dataStudent as $key ) {
-            
-            $id_position = $this->dbTable('account')->select('*')->where('ID', $key['ID'])->get()->getResultArray();
+        for ($i=0; $i < count($dataStudent); $i++) { 
+            $id_position = $this->dbTable('account')->select('*')->where('ID', $dataStudent[$i]['ID'])->get()->getResultArray();
             $position = $this->dbTable('position')->select('*')->where('ID', $id_position[0]['Position'])->get()->getResultArray();
-            $dataStudent[$num]['Position'] = $position[0]['Name'];
-            $num++;
+            $dataStudent[$i]['Position'] = $position[0]['Name'];
+            echo $position[0]['Name']." - ".$dataStudent[$i]['ID']." - ".$dataStudent[$i]['Position'].'
+            ';
         }
+        
         echo json_encode(array('status' => true, "message" => json_encode($dataStudent)));
     }
 

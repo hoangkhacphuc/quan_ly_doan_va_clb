@@ -20,7 +20,8 @@ class HomeController extends BaseController
                 'Point' => $this->student_data['Grade'],
                 'Title' => 'Trang chủ',
                 'Login' => $this->student_data['User_ID'] ? true : false,
-                'Banner' => $model->getBanner()
+                'Banner' => $model->getBanner(),
+                'Position' => $this->student_data['Position'],
             );
         else 
             $dataHeader = array(

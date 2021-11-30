@@ -88,10 +88,6 @@
                         color: white !important;
                     }
                 </style>
-                <?php
-                    $Count = 76;
-                    $Current = 5;
-                ?>
                 <div class="more">
                     <?php
                         if ($Count > 10)

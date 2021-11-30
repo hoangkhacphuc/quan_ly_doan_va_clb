@@ -125,8 +125,8 @@
             <div class="side-post">
                 <div class="title">Danh mục</div>
                 <div class="list">
-                    <a href="#">Bài viết</a>
-                    <a href="#">Sự kiện</a>
+                    <a href="/moreposts">Bài viết</a>
+                    <a href="/moreevent">Sự kiện</a>
                 </div>
 
                 <div class="title">Bài viết gần đây</div>
