@@ -75,6 +75,9 @@ $(document).ready(function () {
         var cb2 = $('#inp-checkbox-2:checked').val() === "on" ? 1 : 0;
         var cb3 = $('#inp-checkbox-3:checked').val() === "on" ? 1 : 0;
         var show = $('#show-post').attr('class').search('fa-toggle-on') != -1 ? 1 : 0;
+        var start = $('#inp-date-start').val();
+        var end = $('#inp-date-end').val();
+
         if (!url_Avatar)
         {
             system_Notification("Chưa chọn ảnh đại diện !", 1);
@@ -105,8 +108,10 @@ $(document).ready(function () {
         fd.append('gh3', mp3);
         fd.append('cb1', cb1);
         fd.append('cb2', cb2);
-        fd.append('cb2', cb3);
+        fd.append('cb3', cb3);
         fd.append('show', show);
+        fd.append('start', start);
+        fd.append('end', end);
 
         $.ajax({
             url: 'group/create_Post',
@@ -141,9 +146,11 @@ $(document).ready(function () {
         {
             $('#on-position').css('display', 'none');
             $('.list-position').css('display', 'none');
+            $('#date-event').css('display', 'none');
         }
         else {
             $('#on-position').css('display', 'block');
+            $('#date-event').css('display', 'block');
         }
     });
 

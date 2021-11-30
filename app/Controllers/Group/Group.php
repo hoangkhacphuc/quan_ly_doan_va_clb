@@ -25,7 +25,7 @@ class Group extends BaseController
 
     public function new_post()
     {
-        if (!$this->load_Permissions(1))
+        if (!$this->load_Permissions(2))
         {
             echo "<div style='width: 100%; text-align: center; margin-top: 50px'><img src='Image/empty_box.png' style='width: 200px;'></img><br><strong style='color: #777'>No data. Please reload the page !</strong></div>";
             return;
@@ -35,7 +35,7 @@ class Group extends BaseController
 
     public function edit_post()
     {
-        if (!$this->load_Permissions(1))
+        if (!$this->load_Permissions(2))
         {
             echo "<div style='width: 100%; text-align: center; margin-top: 50px'><img src='Image/empty_box.png' style='width: 200px;'></img><br><strong style='color: #777'>No data. Please reload the page !</strong></div>";
             return;
@@ -54,7 +54,7 @@ class Group extends BaseController
 
     public function home()
     {
-        if (!$this->load_Permissions(1))
+        if (!$this->load_Permissions(2))
         {
             echo "<div style='width: 100%; text-align: center; margin-top: 50px'><img src='Image/empty_box.png' style='width: 200px;'></img><br><strong style='color: #777'>No data. Please reload the page !</strong></div>";
             return;
@@ -68,7 +68,7 @@ class Group extends BaseController
 
     public function lienchidoan()
     {
-        if (!$this->load_Permissions(1))
+        if (!$this->load_Permissions(2))
         {
             echo "<div style='width: 100%; text-align: center; margin-top: 50px'><img src='Image/empty_box.png' style='width: 200px;'></img><br><strong style='color: #777'>No data. Please reload the page !</strong></div>";
             return;
@@ -152,8 +152,11 @@ class Group extends BaseController
                 $cb1 = isset($_POST['cb1']) ? $_POST['cb1'] : 0;
                 $cb2 = isset($_POST['cb2']) ? $_POST['cb2'] : 0;
                 $cb3 = isset($_POST['cb3']) ? $_POST['cb3'] : 0;
+
+                $start = isset($_POST['start']) ? $_POST['start'] : 0;
+                $end = isset($_POST['end']) ? $_POST['end'] : 0;
                 $content = $_POST['content'];
-                $this->group_model->create_Post($title, $content, $url_Avatar, $type_Post, $cv1, $cv2, $cv3, $gh1, $gh2, $gh3, $cb1, $cb2, $cb3, $show);
+                $this->group_model->create_Post($title, $content, $url_Avatar, $type_Post, $cv1, $cv2, $cv3, $gh1, $gh2, $gh3, $cb1, $cb2, $cb3, $show, $start, $end);
                 return;
             }
             echo json_encode(array("status" => false, "message" => "Xảy ra lỗi trong quá trình lưu file. Vui lòng thử lại !"));
@@ -250,8 +253,11 @@ class Group extends BaseController
         $cb1 = isset($_POST['cb1']) ? $_POST['cb1'] : 0;
         $cb2 = isset($_POST['cb2']) ? $_POST['cb2'] : 0;
         $cb3 = isset($_POST['cb3']) ? $_POST['cb3'] : 0;
+
+        $start = isset($_POST['start']) ? $_POST['start'] : 0;
+        $end = isset($_POST['end']) ? $_POST['end'] : 0;
         $content = $_POST['content'];
-        $this->group_model->save_Edit_Post($_POST['ID'], $title, $content, $url_Avatar, $type_Post, $cv1, $cv2, $cv3, $gh1, $gh2, $gh3, $cb1, $cb2, $cb3, $show);
+        $this->group_model->save_Edit_Post($_POST['ID'], $title, $content, $url_Avatar, $type_Post, $cv1, $cv2, $cv3, $gh1, $gh2, $gh3, $cb1, $cb2, $cb3, $show, $start, $end);
         return;
     }
 

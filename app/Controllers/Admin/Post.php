@@ -11,9 +11,10 @@ class Post extends BaseController{
     {
         $this->model = new ModelPost();
     }
-    public function add()
+
+    public function createMember()
     {
-        if (!isset($_POST['Title']) && !isset($_POST['Content']) && !isset($_POST['Author']) && !isset($_POST['Posting']) && !isset($_POST['Type']) && !isset($_POST['Hide']) && !isset($_POST['Image']) && !isset($_POST['Privacy']))
+        if (!isset($_POST['Posts']))
         {
             echo "Thêm thất bại !";
             return;

@@ -37,6 +37,11 @@ $routes->post('login', 'Guest\HomeController::login');
 
 $routes->get('posts', 'Guest\Posts::index');
 
+$routes->group('post', function($routes) {
+    $routes->post('join', 'Guest\Posts::joinEvent');
+    $routes->post('cancel', 'Guest\Posts::cancelEvent');
+});
+
 $routes->group('group', function($routes) {
     $routes->get('/', 'Group\Group::index');
     $routes->get('new_post', 'Group\Group::new_post');
@@ -93,12 +98,6 @@ $routes->group('admin', function($routes) {
         $routes->post('/delete', 'Admin\Clb::delete');
     });
     
-    $routes->group('post', function ($routes)
-    {
-        $routes->post('/add', 'Admin\Post::add');
-        $routes->post('/update', 'Admin\Post::update');
-        $routes->post('/delete', 'Admin\Post::delete');
-    });
     $routes->group('member', function ($routes)
     {
         $routes->post('create', 'Admin\Member::add');

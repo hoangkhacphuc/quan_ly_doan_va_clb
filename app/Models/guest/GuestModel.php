@@ -36,4 +36,13 @@ class GuestModel extends HomeModel {
         $query = $this->dbTable('banner')->insert(array('Image' => $url));
         echo $query ? json_encode(array("Error" => "", "Done" => "Thêm thành công !")) : json_encode(array("Error" => "Thêm thất bại !"));
     }
+
+    public function getPosts($type = 0)
+    {
+        $data = $this->dbTable('post')->select('*')->where('Type', $type)->limit(6)->orderby('ID', 'DESC')->get()->getResultArray();
+        for ($i=0; $i < count($data); $i++) { 
+            $data[$i]['Author'] = $this->dbTable('student')->select('*')->where('ID', $data[$i]['Author'])->get()->getResultArray()[0]['Name'];
+        }
+        return $data;
+    }
 }

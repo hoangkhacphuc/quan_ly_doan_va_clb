@@ -10,7 +10,7 @@ class ModelGroup extends HomeModel {
         parent::__construct();
     }
 
-    public function create_Post($title, $content, $avatar, $type, $cv1, $cv2, $cv3, $gh1, $gh2, $gh3, $cb1, $cb2, $cb3, $show)
+    public function create_Post($title, $content, $avatar, $type, $cv1, $cv2, $cv3, $gh1, $gh2, $gh3, $cb1, $cb2, $cb3, $show, $start, $end)
     {
         $cv = $cv1."|".$cv2."|".$cv3;
         $gh = $gh1."|".$gh2."|".$gh3;
@@ -27,12 +27,20 @@ class ModelGroup extends HomeModel {
             'MaxPlayer' => $gh,
             'SelectPosition' => $cb,
         );
+        if ($type == 1 && ($start == 0 || $end == 0))
+        {
+            echo json_encode(array("status" => false, "message" => "Chưa chọn ngày diễn ra sự kiện !"));
+            return;
+        }
+
+        $data['Start'] = $start;
+        $data['End'] = $end;
 
         $query = $this->dbTable('post')->insert($data);
         echo $query ? json_encode(array("status" => true, "message" => "Thêm thành công !")) : json_encode(array("status" => false, 'message' => "Thêm thất bại !"));
     }
 
-    public function save_Edit_Post($id, $title, $content, $avatar, $type, $cv1, $cv2, $cv3, $gh1, $gh2, $gh3, $cb1, $cb2, $cb3, $show)
+    public function save_Edit_Post($id, $title, $content, $avatar, $type, $cv1, $cv2, $cv3, $gh1, $gh2, $gh3, $cb1, $cb2, $cb3, $show, $start, $end)
     {
         $cv = $cv1."|".$cv2."|".$cv3;
         $gh = $gh1."|".$gh2."|".$gh3;
@@ -48,6 +56,12 @@ class ModelGroup extends HomeModel {
             'MaxPlayer' => $gh,
             'SelectPosition' => $cb,
         );
+
+        if ($start != 0 && $end != 0)
+        {
+            $data['Start'] = $start;
+            $data['End'] = $end;
+        }
         if (!empty($avatar))
             $data['Image'] = $avatar;
 
@@ -57,7 +71,7 @@ class ModelGroup extends HomeModel {
 
     public function get_post()
     {
-        $query = $this->dbTable('post')->select('*')->get()->getResultArray();
+        $query = $this->dbTable('post')->select('*')->orderBy('ID', 'DESC')->get()->getResultArray();
         if (count($query) > 0)
         {
             for ($i=0; $i < count($query); $i++)

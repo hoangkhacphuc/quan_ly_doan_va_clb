@@ -93,6 +93,23 @@ body{
     margin-left: 70px;
 }
 
+.post-contain > .content-contain > .post-content .date-event {
+    padding: 15px;
+}
+
+.post-contain > .content-contain > .post-content .date-event > i {
+    font-size: 22px;
+    color: orange;
+}
+
+.post-contain > .content-contain > .post-content .date-event > span {
+    padding: 7px 15px;
+    background-color: #888;
+    color: #fff;
+    margin-left: 15px;
+    border-radius: 5px;
+}
+
 .post-contain > .content-contain > .post-content .post-main-content {
     box-sizing: border-box;
     color: #555;
@@ -164,6 +181,8 @@ body{
     width: 100%;
     height: 100%;
     min-height: 82px;
+    max-width: 82px;
+    object-fit: cover;
     
 }
 .post-contain > .side-post > .list-item >.list-item-tag .list-item-img:hover{
@@ -212,20 +231,17 @@ body{
 }
 /* register */
 .post-contain > .content-contain > .post-content > .register-event{
-    padding: 0 10px 0 30px;
     background: #eee;
     margin-top: 30px;
     padding-top: 15px;
     padding-bottom: 30px;
     border-top: 3px solid rgba(0,0,0,.11);
 }
-.post-contain > .content-contain > .post-content > .register-event p{
 
+.post-contain > .content-contain > .post-content > .register-event h3{
+    padding-bottom: 20px;
 }
-.post-contain > .content-contain > .post-content > .register-event h4{
-    padding-top: 20px;
 
-}
 .post-contain > .content-contain > .post-content > .register-event label{
     color: #2f2424;
     padding: 10px 0px;
@@ -236,46 +252,82 @@ body{
     line-height: 15px;
     margin-top: 15px;
 }
-.post-contain > .content-contain > .post-content > .register-event select{
-    outline: 0;
-    font-size: 15px;
-    color: #555;
-    margin-left: 6px;
-    border: 1px solid #777;
-    cursor: pointer;
-    padding: 5px;
+
+.post-contain > .content-contain > .post-content > .register-event > table {
+    width: 100%;
+    border-spacing: 0;
 }
-.post-contain > .content-contain > .post-content > .register-event h3:first-child{
-    color: #2f2424;
-    padding: 10px 0px;
-    padding-bottom: 20px;
-    display: block;
-    border-radius: 0;
-    font-style: normal;
-    font-weight: bold;
-    line-height: 15px;
-    margin-top: 15px;
-}
-.post-contain > .content-contain > .post-content > .register-event a{
-    text-decoration: none;
-    background:#e94b00 ;
-    color: #2f2424;
-    padding: 10px 0px;
-    display: block;
-    padding-left: 13px;
-    border-radius: 0;
-    font-style: normal;
-    font-weight: bold;
+
+.post-contain > .content-contain > .post-content > .register-event > table > tbody > tr > td {
+    padding: 10px 15px;
     font-size: 16px;
-    line-height: 15px;
-    margin-top: 15px;
-    width: 90px;
-    color: #fff;
-    
 }
 
-.post-contain > .content-contain > .post-content > .register-event a:hover{
+.post-contain > .content-contain > .post-content > .register-event > table > tbody > tr:first-child {
+    font-weight: 600;
+    background-color: #313a46;
+    color: white;
+    font-size: 18px;
+}
 
-    box-shadow: 0 2px 4px rgb(0 0 0 / 20%);
-    opacity: 0.8;
+.post-contain > .content-contain > .post-content > .register-event > table > tbody > tr:not(:first-child):nth-child(odd) {
+    background-color: #f1f3fa;
+}
+
+.post-contain > .content-contain > .post-content > .register-event > table > tbody > tr:not(:first-child):nth-child(even) {
+    background-color: white;
+}
+
+.post-contain > .content-contain > .post-content > .register-event > table > tbody > tr > td > button {
+    padding: 7px 15px;
+    outline: 0;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #1db610;
+    border: 1px solid transparent;
+    color: white;
+    border-radius: 5px;
+}
+
+.post-contain > .content-contain > .post-content > .register-event > table > tbody > tr > td > button:hover {
+    background-color: #3ac92e;
+}
+
+.post-contain > .content-contain > .post-content > .register-event > table > tbody > tr > td > button.red {
+    background-color: rgb(235, 61, 17);
+}
+
+.post-contain > .content-contain > .post-content > .register-event > table > tbody > tr > td > button.red:hover {
+    background-color: rgb(241, 96, 59);
+}
+
+.system-notification {
+    position: fixed;
+    right: 0;
+    top: 15px;
+    display: flex;
+    flex-flow: column-reverse;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+.system-notification > .item {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #29dd23;
+    margin-bottom: 15px;
+    margin-right: 15px;
+    color: white;
+    opacity: 0;
+    animation: system_Notification 4s;
+}
+
+@keyframes system_Notification {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }

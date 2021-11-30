@@ -55,84 +55,26 @@
             <div class="title">Sự Kiện</div>
             <div class="container">
                 <section class="autoplay slider">
-                    <div class="inner">
-                        <a href="#" id="event-1">
-                            <div class="logo-event">
-                                <img src="./Image/Event/img-1.jpg" alt="">
-                            </div>
-                            <span class="title">
-                                Phenikaa Anti Covid đồng hành cùng chiến dịch "Tuổi trẻ"
-                                <span><i class="fa fa-check-circle-o"></i> Hoạt động tích điểm</span>
-                                <span><i class="fa fa-paper-plane-o"></i> Nguyễn Văn A</span>
-                                <span><i class="fa fa-calendar"></i> 15/11/2021</span>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="inner">
-                        <a href="#" id="event-1">
-                            <div class="logo-event">
-                                <img src="./Image/Event/img-1.jpg" alt="">
-                            </div>
-                            <span class="title">
-                                Phenikaa Anti Covid đồng hành cùng chiến dịch "Tuổi trẻ"
-                                <span><i class="fa fa-check-circle-o"></i> Hoạt động tích điểm</span>
-                                <span><i class="fa fa-paper-plane-o"></i> Nguyễn Văn A</span>
-                                <span><i class="fa fa-calendar"></i> 15/11/2021</span>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="inner">
-                        <a href="#" id="event-1">
-                            <div class="logo-event">
-                                <img src="./Image/Event/img-1.jpg" alt="">
-                            </div>
-                            <span class="title">
-                                Phenikaa Anti Covid đồng hành cùng chiến dịch "Tuổi trẻ"
-                                <span><i class="fa fa-check-circle-o"></i> Hoạt động tích điểm</span>
-                                <span><i class="fa fa-paper-plane-o"></i> Nguyễn Văn A</span>
-                                <span><i class="fa fa-calendar"></i> 15/11/2021</span>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="inner">
-                        <a href="#" id="event-1">
-                            <div class="logo-event">
-                                <img src="./Image/Event/img-1.jpg" alt="">
-                            </div>
-                            <span class="title">
-                                Phenikaa Anti Covid đồng hành cùng chiến dịch "Tuổi trẻ"
-                                <span><i class="fa fa-check-circle-o"></i> Hoạt động tích điểm</span>
-                                <span><i class="fa fa-paper-plane-o"></i> Nguyễn Văn A</span>
-                                <span><i class="fa fa-calendar"></i> 15/11/2021</span>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="inner">
-                        <a href="#" id="event-1">
-                            <div class="logo-event">
-                                <img src="./Image/Event/img-1.jpg" alt="">
-                            </div>
-                            <span class="title">
-                                Phenikaa Anti Covid đồng hành cùng chiến dịch "Tuổi trẻ"
-                                <span><i class="fa fa-check-circle-o"></i> Hoạt động tích điểm</span>
-                                <span><i class="fa fa-paper-plane-o"></i> Nguyễn Văn A</span>
-                                <span><i class="fa fa-calendar"></i> 15/11/2021</span>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="inner">
-                        <a href="#" id="event-1">
-                            <div class="logo-event">
-                                <img src="./Image/Event/img-1.jpg" alt="">
-                            </div>
-                            <span class="title">
-                                Phenikaa Anti Covid đồng hành cùng chiến dịch "Tuổi trẻ"
-                                <span><i class="fa fa-check-circle-o"></i> Hoạt động tích điểm</span>
-                                <span><i class="fa fa-paper-plane-o"></i> Nguyễn Văn A</span>
-                                <span><i class="fa fa-calendar"></i> 15/11/2021</span>
-                            </span>
-                        </a>
-                    </div>
+                    <?php 
+                        $id= 1;
+                        foreach ($New_Event as $item): ?>
+                        <div class="inner">
+                            <a href="posts?ID=<?= $item['ID'] ?>" id="event-<?= $id ?>">
+                                <div class="logo-event">
+                                    <img src="<?= $item['Image'] ?>" alt="">
+                                </div>
+                                <span class="title">
+                                    <span><span><?= $item['Title'] ?></span></span>
+                                    <span><i class="fa fa-paper-plane-o"></i> <?= $item['Author'] ?></span>
+                                    <span><i class="fa fa-calendar"></i> <?php
+                                    $middle = strtotime($item['Posting']);
+                                    echo date('\N\g\à\y d m, Y', $middle); ?></span>
+                                </span>
+                            </a>
+                        </div>
+                    <?php
+                        $id++;
+                        endforeach; ?>
                 </section>
                 <div class="more">
                     <a href="#">Xem Thêm</a>
@@ -142,82 +84,27 @@
         <div class="row post">
             <div class="title">Bài Đăng</div>
             <div class="container">
-                <div class="news-item">
-                    <div class="logo-post">
-                        <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/dsc8958.JPG" alt=""> 
-                    </div>
-                    <div class="content">
-                 	<div class="content-1">
-                         <a href=""> Giải mã “sức hút” của trường Đại học Phenikaa với sinh viên 2k3 </a>
+                <?php foreach ($Posts as $item): ?>
+                    <div class="news-item">
+                        <div class="logo-post">
+                            <a href="posts?ID=<?= $item['ID'] ?>"><img src="<?= $item['Image'] ?>" alt=""></a>
                         </div>
-                    <div class="gc"> </div>
-                        <p> Chất lượng đào tạo và uy tín của một trường đại học được phản ánh dựa trên “sức hút” đối với tân sinh viên của trường qua các năm.</p>
-                    <div class="content-2">
-                        <p><i class="fa fa-paper-plane-o"></i> Nguyễn Văn A</p>
-                        <p><i class="fa fa-calendar"></i> 15/11/2021</p>
-                    </div>
-                    <div class="more"> 
-                        <a href=""> Xem thêm <i class="fa fa-long-arrow-right"></i></a> 
-                    </div>
-                    </div>
-                </div>
-                <div class="news-item">
-                    <div class="logo-post">
-                        <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/dsc8958.JPG" alt=""> 
-                    </div>
-                    <div class="content">
-                 	<div class="content-1">
-                         <a href=""> Giải mã “sức hút” của trường Đại học Phenikaa với sinh viên 2k3 </a>
+                        <div class="content">
+                        <div class="content-1">
+                            <a href="posts?ID=<?= $item['ID'] ?>"><?= $item['Title'] ?></a>
+                            </div>
+                        <div class="gc"> </div>
+                            <p><?= strip_tags(substr($item['Content'],0,300)) ?></p>
+                        <div class="content-2">
+                            <p><i class="fa fa-paper-plane-o"></i> <?= $item['Author'] ?></p>
+                            <p><i class="fa fa-calendar"></i> <?= $item['Posting'] ?></p>
                         </div>
-                    <div class="gc"> </div>
-                        <p> Chất lượng đào tạo và uy tín của một trường đại học được phản ánh dựa trên “sức hút” đối với tân sinh viên của trường qua các năm.</p>
-                    <div class="content-2">
-                        <p><i class="fa fa-paper-plane-o"></i> Nguyễn Văn A</p>
-                        <p><i class="fa fa-calendar"></i> 15/11/2021</p>
-                    </div>
-                    <div class="more"> 
-                        <a href=""> Xem thêm <i class="fa fa-long-arrow-right"></i></a> 
-                    </div>
-                    </div>
-                </div>
-                <div class="news-item">
-                    <div class="logo-post">
-                        <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/dsc8958.JPG" alt=""> 
-                    </div>
-                    <div class="content">
-                 	<div class="content-1">
-                         <a href=""> Giải mã “sức hút” của trường Đại học Phenikaa với sinh viên 2k3 </a>
+                        <div class="more"> 
+                            <a href="posts?ID=<?= $item['ID'] ?>"> Xem thêm <i class="fa fa-long-arrow-right"></i></a> 
                         </div>
-                    <div class="gc"> </div>
-                        <p> Chất lượng đào tạo và uy tín của một trường đại học được phản ánh dựa trên “sức hút” đối với tân sinh viên của trường qua các năm.</p>
-                    <div class="content-2">
-                        <p><i class="fa fa-paper-plane-o"></i> Nguyễn Văn A</p>
-                        <p><i class="fa fa-calendar"></i> 15/11/2021</p>
-                    </div>
-                    <div class="more"> 
-                        <a href=""> Xem thêm <i class="fa fa-long-arrow-right"></i></a> 
-                    </div>
-                    </div>
-                </div>
-                <div class="news-item">
-                    <div class="logo-post">
-                        <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/dsc8958.JPG" alt=""> 
-                    </div>
-                    <div class="content">
-                 	<div class="content-1">
-                         <a href=""> Giải mã “sức hút” của trường Đại học Phenikaa với sinh viên 2k3 </a>
                         </div>
-                    <div class="gc"> </div>
-                        <p> Chất lượng đào tạo và uy tín của một trường đại học được phản ánh dựa trên “sức hút” đối với tân sinh viên của trường qua các năm.</p>
-                    <div class="content-2">
-                        <p><i class="fa fa-paper-plane-o"></i> Nguyễn Văn A</p>
-                        <p><i class="fa fa-calendar"></i> 15/11/2021</p>
                     </div>
-                    <div class="more"> 
-                        <a href=""> Xem thêm <i class="fa fa-long-arrow-right"></i></a> 
-                    </div>
-                    </div>
-                </div>
+                <?php endforeach; ?>
     
         <div class="more">
                     <a href="#">Xem Thêm</a>

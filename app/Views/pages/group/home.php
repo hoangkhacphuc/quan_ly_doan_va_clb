@@ -44,7 +44,7 @@
                         <img src="<?php echo $data['Image']; ?>" alt="">
                         <div class="container">
                             <div class="title"><i name="post-<?= $data['ID'] ?>"><?php echo $data['Title']; ?></i></div>
-                            <div class="info"><?php echo !$data['Hide'] ? "<span>Bản nháp" : "<span style='color: orange'>Đã xuất bản"; ?></span> • <span><?php echo $data['Posting']; ?></span></div>
+                            <div class="info"><?php echo !$data['Type'] ? "<i>Bài viết" : "<i style='color: orange'>Sự kiện"; ?> • </i><?php echo !$data['Hide'] ? "<span>Bản nháp" : "<span style='color: orange'>Đã xuất bản"; ?></span> • <span><?php echo $data['Posting']; ?></span></div>
                         </div>
                     </div>
                     <div class="author">
@@ -52,7 +52,7 @@
                         <div class="container setting-post">
                             <i class="fa fa-unlock<?= !$data['Hide'] ? '-alt' : '' ?>" id="unlock-<?= $id_post ?>" name="unlock-<?= $data['ID'] ?>"></i>
                             <i class="fa fa-trash-o" id="trash-<?= $id_post ?>" name="trash-<?= $data['ID'] ?>"></i>
-                            <i class="fa fa-eye" id="eye-<?= $id_post ?>" name="eye-<?= $data['ID'] ?>"></i>
+                            <a href="posts?ID=<?= $data['ID'] ?>"><i class="fa fa-eye" id="eye-<?= $id_post ?>" name="eye-<?= $data['ID'] ?>"></i></a>
                         </div>
                     </div>
                 </div>

@@ -26,6 +26,10 @@
                 <option value="Sự kiện">Sự kiện</option>
             </select>
         </div>
+        <div class="item" id="date-event" style="display: none">
+            <div class="row"><label for="inp-date-start">Ngày bắt đầu</label><input type="date" id="inp-date-start"></div>
+            <div class="row"><label for="inp-date-end">Ngày kết thúc</label><input type="date" id="inp-date-end"></div>
+        </div>
         <div class="item" id="on-position" style="display: none"><label for="position-post">Chức vụ</label><i id="position-post" class="fa fa-toggle-off hide-post"></i></div>
         <div class="item list-position">
             <table>

@@ -109,4 +109,6 @@ class ModelMember extends HomeModel {
         echo json_encode(array('status' => true, "message" => json_encode($query)));
     }
 
+    
+
 }

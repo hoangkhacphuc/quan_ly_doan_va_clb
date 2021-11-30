@@ -24,7 +24,7 @@ $(document).ready(function () {
         show_Post ? $(this).addClass('hide-post') : $(this).removeClass('hide-post');
         show_Post = !show_Post;
     });
-
+    var position_Post = false;
     $('#position-post').click(function () {
         $(this).removeClass(position_Post ? 'fa-toggle-on' : 'fa-toggle-off');
         $(this).addClass(!position_Post ? 'fa-toggle-on' : 'fa-toggle-off');
@@ -73,6 +73,9 @@ $(document).ready(function () {
         var cb2 = $('#inp-checkbox-2:checked').val() === "on" ? 1 : 0;
         var cb3 = $('#inp-checkbox-3:checked').val() === "on" ? 1 : 0;
         var show = $('#show-post').attr('class').search('fa-toggle-on') != -1 ? 1 : 0;
+
+        var start = $('#inp-date-start').val();
+        var end = $('#inp-date-end').val();
         
         if (content_html === "")
         {
@@ -103,8 +106,11 @@ $(document).ready(function () {
         fd.append('gh3', mp3);
         fd.append('cb1', cb1);
         fd.append('cb2', cb2);
-        fd.append('cb2', cb3);
+        fd.append('cb3', cb3);
         fd.append('show', show);
+
+        fd.append('start', start);
+        fd.append('end', end);
         
         let ID = $('#inp-id').val();
         fd.append('ID', ID);
@@ -142,9 +148,11 @@ $(document).ready(function () {
         {
             $('#on-position').css('display', 'none');
             $('.list-position').css('display', 'none');
+            $('#date-event').css('display', 'none');
         }
         else {
             $('#on-position').css('display', 'block');
+            $('#date-event').css('display', 'block');
         }
     });
 

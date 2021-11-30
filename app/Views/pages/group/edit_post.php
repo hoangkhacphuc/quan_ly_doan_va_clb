@@ -17,6 +17,9 @@
     $maxplayer = explode('|', $List_Post['message'][0]['MaxPlayer']);
     $selectposition = explode('|', $List_Post['message'][0]['SelectPosition']);
     $onselect = in_array(1, $selectposition);
+
+    $start = $List_Post['message'][0]['Start'];
+    $end = $List_Post['message'][0]['End'];
     ?>
 
     <input type="hidden" id="inp-id" value="<?= $id ?>">
@@ -44,8 +47,12 @@
                 <option value="Sự kiện" <?= $type ? 'selected="selected"' : '' ?> >Sự kiện</option>
             </select>
         </div>
-        <div class="item" id="on-position" style="display: <?= $type ? 'block' : 'none' ?>"><label for="position-post">Chức vụ</label><i id="position-post" class="fa fa-toggle<?= $onselect ? '-on' : '-off hide-post' ?>"></i></div>
-        <div class="item list-position" style="display : <?= $onselect ? 'block' : 'none' ?>">
+        <div class="item" id="date-event" style="display: <?= $type ? 'block' : 'none' ?>">
+            <div class="row"><label for="inp-date-start">Ngày bắt đầu</label><input type="date" id="inp-date-start" value="<?= $start ?>"></div>
+            <div class="row"><label for="inp-date-end">Ngày kết thúc</label><input type="date" id="inp-date-end" value="<?= $end ?>"></div>
+        </div>
+        <div class="item" id="on-position" style="display: <?= $type && $onselect  ? 'block' : 'none' ?>"><label for="position-post">Chức vụ</label><i id="position-post" class="fa fa-toggle-off hide-post"></i></div>
+        <div class="item list-position" style="display : none">
             <table>
                 <tbody>
                     <tr>
@@ -83,6 +90,5 @@
 
     <script>
         show_Post = <?= $hide ? 'true' : 'false' ?>;
-        position_Post = <?= $onselect ? 'true' : 'false' ?>;
     </script>
 </div>

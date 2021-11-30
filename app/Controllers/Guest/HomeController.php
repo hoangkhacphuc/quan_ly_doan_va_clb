@@ -29,6 +29,10 @@ class HomeController extends BaseController
                 'Banner' => $model->getBanner()
             );
         $data = $this->loadHeader($data, $dataHeader);
+        $data = array_merge($data, array(
+            'Posts' => $model->getPosts(),
+            'New_Event' => $model->getPosts(1),
+        ));
         
         $data['notification'] = $model->getNotification();
         return view('pages/guest/index', $data);

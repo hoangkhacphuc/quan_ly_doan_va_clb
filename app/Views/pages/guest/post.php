@@ -31,6 +31,7 @@
 
     <script src="JS/templates/header.js"></script> 
     <script src="JS/guest/index.js"></script>
+    <script src="JS/guest/post.js"></script>
 
 </head>
 <style>
@@ -38,6 +39,22 @@
         display: none;
     }
 </style>
+
+<?php
+    $position = explode('|', $Posts['Position']);
+    $maxplayer = explode('|', $Posts['MaxPlayer']);
+    $onPosition = explode('|', $Posts['SelectPosition']);
+    $onEvent = false;
+    for ($i=0; $i < count($onPosition); $i++) { 
+        if ($onPosition[$i] == 1)
+            $onEvent = true;
+    }
+    $onJoin = (date('Y-m-d') >= $Posts['Start']) && (date('Y-m-d') <= $Posts['End']);
+    $joinEvent = 0;
+    if (isset($Join) && count($Join) > 0)
+        $joinEvent = $Join[0]['Position'];
+?>
+
 <body>
     <?= $header ?>
     <div class="post-contain">
@@ -52,20 +69,56 @@
                         ?></p>
                         <h2><?= $Posts['Title'] ?></h2>
                     </div>
+                    <div class="date-event">
+                        <i class="fa fa-clock-o"></i>
+                        <span><?php 
+                            $middle = strtotime($Posts['Start']);
+                            echo date('\N\g\à\y d m, Y', $middle); ?> • <?php $middle = strtotime($Posts['End']);
+                            echo date('\N\g\à\y d m, Y', $middle); ?></span>
+                    </div>
                     <div class="post-main-content">
                         <?= $Posts['Content'] ?>
                     </div>
-                    <div class="register-event">
-                        <h3>Đăng ký tham gia sự kiện</h3>
-                        <label for="regis">Chức vụ</label>
-                        <select name="" id="">
-                            <option value="reg-event">Quản lý 5 điểm Tối đã 5 người </option>
-                            <option value="reg-event">Quản lý 5 điểm Tối đã 5 người </option>
-                            <option value="reg-event">Quản lý 5 điểm Tối đã 5 người </option>
-                        </select>
-                        <h4>Đã đăng ký: Quản lý </h4>
-                        <a href="#">Đăng ký</a>
-                    </div>
+                    <?php if ($onJoin && $onEvent && $Posts['Type']): ?>
+                        <div class="register-event">
+                            <h3>Tham gia sự kiện</h3>
+                            <input type="hidden" id="inp-ID" value="<?= $Posts['ID'] ?>">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>Chức vụ</td>
+                                        <td>Điểm thành tích</td>
+                                        <td>Giới hạn</td>
+                                        <td>Đăng ký</td>
+                                    </tr>
+                                    <?php if ($onPosition[0]): ?>
+                                        <tr>
+                                            <td>Quản lý</td>
+                                            <td><?= $position[0] ?></td>
+                                            <td><?= $maxplayer[0] ?></td>
+                                            <td><button id="btn-event-1" <?= $joinEvent == 1 ? 'class="red"' : '' ?> ><?= $joinEvent == 1 ? 'Hủy tham gia' : 'Tham gia' ?></button></td>
+                                        </tr>
+                                    <?php endif; ?>
+                                    <?php if ($onPosition[1]): ?>
+                                        <tr>
+                                            <td>Tình nguyện viên</td>
+                                            <td><?= $position[1] ?></td>
+                                            <td><?= $maxplayer[1] ?></td>
+                                            <td><button id="btn-event-2" <?= $joinEvent == 2 ? 'class="red"' : '' ?> ><?= $joinEvent == 2 ? 'Hủy tham gia' : 'Tham gia' ?></button></td>
+                                        </tr>
+                                    <?php endif; ?>
+                                    <?php if ($onPosition[2]): ?>
+                                        <tr>
+                                            <td>Người tham gia</td>
+                                            <td><?= $position[2] ?></td>
+                                            <td><?= $maxplayer[2] ?></td>
+                                            <td><button id="btn-event-3" <?= $joinEvent == 3 ? 'class="red"' : '' ?> ><?= $joinEvent == 3 ? 'Hủy tham gia' : 'Tham gia' ?></button></td>
+                                        </tr>
+                                    <?php endif; ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
 
@@ -76,125 +129,44 @@
                     <a href="#">Sự kiện</a>
                 </div>
 
-                <div class="title">Bài viết mới</div>
+                <div class="title">Bài viết gần đây</div>
                 <div class="list-item">
-                    <div class="list-item-tag">
-                        <div class="list-item-img"> 
-                            <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/thumbnail-le-kick-off-02.jpg" alt="">
+                    <?php foreach ($New_Posts as $item): ?>
+                        <div class="list-item-tag">
+                            <div class="list-item-img"> 
+                                <a href="posts?ID=<?= $item['ID'] ?>"><img src="<?= $item['Image'] ?>" alt=""></a>
+                            </div>
+                            <div class="side-post-text">
+                                <p class="post-title-date">&#10147; <?php
+                                    $middle = strtotime($item['Posting']);
+                                    echo date('\N\g\à\y d m, Y', $middle); ?>
+                                </p>
+                                <h4><a href="posts?ID=<?= $item['ID'] ?>"><?= $item['Title'] ?></a></h4>
+                            </div>
                         </div>
-                        <div class="side-post-text">
-                            <p class="post-title-date">&#10147;  Tháng 11 18, 2021</p>
-                            <h4><a href="#">Lễ kick off Dự án "Tam giác hướng nghiệp hiệu quả"Lễ kick off Dự án "Tam giác hướng nghiệp hiệu quả"</a></h4>
-                        </div>
-                    </div>
-
-                    <div class="list-item-tag">
-                        <div class="list-item-img"> 
-                            <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/thumbnail-le-kick-off-02.jpg" alt="">
-                        </div>
-                        <div class="side-post-text">
-                            <p class="post-title-date">&#10147;  Tháng 11 18, 2021</p>
-                            <h4><a href="#">Lễ kick off Dự án "Tam giác hướng nghiệp hiệu quả"Lễ kick off Dự án "Tam giác hướng nghiệp hiệu quả"</a></h4>
-                        </div>
-                    </div>
-
-                    <div class="list-item-tag">
-                        <div class="list-item-img"> 
-                            <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/thumbnail-le-kick-off-02.jpg" alt="">
-                        </div>
-                        <div class="side-post-text">
-                            <p class="post-title-date">&#10147;  Tháng 11 18, 2021</p>
-                            <h4><a href="#">Lễ kick off Dự án "Tam giác hướng nghiệp hiệu quả"Lễ kick off Dự án "Tam giác hướng nghiệp hiệu quả"</a></h4>
-                        </div>
-                    </div>
-
-                    <div class="list-item-tag">
-                        <div class="list-item-img"> 
-                            <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/thumbnail-le-kick-off-02.jpg" alt="">
-                        </div>
-                        <div class="side-post-text">
-                            <p class="post-title-date">&#10147;  Tháng 11 18, 2021</p>
-                            <h4><a href="#">Lễ kick off Dự án "Tam giác hướng nghiệp hiệu quả"Lễ kick off Dự án "Tam giác hướng nghiệp hiệu quả"</a></h4>
-                        </div>
-                    </div>
-
-                    <div class="list-item-tag">
-                        <div class="list-item-img"> 
-                            <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/thumbnail-le-kick-off-02.jpg" alt="">
-                        </div>
-                        <div class="side-post-text">
-                            <p class="post-title-date">&#10147;  Tháng 11 18, 2021</p>
-                            <h4><a href="#">Lễ kick off Dự án "Tam giác hướng nghiệp hiệu quả"Lễ kick off Dự án "Tam giác hướng nghiệp hiệu quả"</a></h4>
-                        </div>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
-                
                 <div class="title">Sự kiện gần đây</div>
                 <div class="list-item">
-                    <div class="list-item-tag">
-                        <div class="list-item-img"> 
-                            <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/thumbnail-le-kick-off-02.jpg" alt="">
+                    <?php foreach ($New_Event as $item): ?>
+                        <div class="list-item-tag">
+                            <div class="list-item-img"> 
+                                <a href="posts?ID=<?= $item['ID'] ?>"><img src="<?= $item['Image'] ?>" alt=""></a>
+                            </div>
+                            <div class="side-post-text">
+                                <p class="post-title-date">&#10147; <?php
+                                    $middle = strtotime($item['Posting']);
+                                    echo date('\N\g\à\y d m, Y', $middle); ?>
+                                </p>
+                                <h4><a href="posts?ID=<?= $item['ID'] ?>"><?= $item['Title'] ?></a></h4>
+                            </div>
                         </div>
-                        <div class="side-post-text">
-                            <p class="post-title-date">&#10147;  Tháng 11 18, 2021</p>
-                            <h4><a href="#">Lễ kick off Dự án "Tam giác hướng nghiệp hiệu quả"Lễ kick off Dự án "Tam giác hướng nghiệp hiệu quả"</a></h4>
-                        </div>
-                    </div>
-
-                    <div class="list-item-tag">
-                        <div class="list-item-img"> 
-                            <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/thumbnail-le-kick-off-02.jpg" alt="">
-                        </div>
-                        <div class="side-post-text">
-                            <p class="post-title-date">&#10147;  Tháng 11 18, 2021</p>
-                            <h4><a href="#">Lễ kick off Dự án "Tam giác hướng nghiệp hiệu quả"Lễ kick off Dự án "Tam giác hướng nghiệp hiệu quả"</a></h4>
-                        </div>
-                    </div>
-
-                    <div class="list-item-tag">
-                        <div class="list-item-img"> 
-                            <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/thumbnail-le-kick-off-02.jpg" alt="">
-                        </div>
-                        <div class="side-post-text">
-                            <p class="post-title-date">&#10147;  Tháng 11 18, 2021</p>
-                            <h4><a href="#">Lễ kick off Dự án "Tam giác hướng nghiệp hiệu quả"Lễ kick off Dự án "Tam giác hướng nghiệp hiệu quả"</a></h4>
-                        </div>
-                    </div>
-
-                    <div class="list-item-tag">
-                        <div class="list-item-img"> 
-                            <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/thumbnail-le-kick-off-02.jpg" alt="">
-                        </div>
-                        <div class="side-post-text">
-                            <p class="post-title-date">&#10147;  Tháng 11 18, 2021</p>
-                            <h4><a href="#">Lễ kick off Dự án "Tam giác hướng nghiệp hiệu quả"Lễ kick off Dự án "Tam giác hướng nghiệp hiệu quả"</a></h4>
-                        </div>
-                    </div>
-
-                    <div class="list-item-tag">
-                        <div class="list-item-img"> 
-                            <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/thumbnail-le-kick-off-02.jpg" alt="">
-                        </div>
-                        <div class="side-post-text">
-                            <p class="post-title-date">&#10147;  Tháng 11 18, 2021</p>
-                            <h4><a href="#">Lễ kick off Dự án "Tam giác hướng nghiệp hiệu quả"Lễ kick off Dự án "Tam giác hướng nghiệp hiệu quả"</a></h4>
-                        </div>
-                    </div>
-
-                    <div class="list-item-tag">
-                        <div class="list-item-img"> 
-                            <img src="https://phenikaa-uni.edu.vn:3600/pu/vi/posts/thumbnail-le-kick-off-02.jpg" alt="">
-                        </div>
-                        <div class="side-post-text">
-                            <p class="post-title-date">&#10147;  Tháng 11 18, 2021</p>
-                            <h4><a href="#">Lễ kick off Dự án "Tam giác hướng nghiệp hiệu quả"Lễ kick off Dự án "Tam giác hướng nghiệp hiệu quả"</a></h4>
-                        </div>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </div>
 
-                
+        <div class="system-notification"></div>
     <?= $footer ?>
 </body>
 
