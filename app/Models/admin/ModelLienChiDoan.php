@@ -59,8 +59,6 @@ class ModelLienChiDoan extends HomeModel {
             $id_position = $this->dbTable('account')->select('*')->where('ID', $dataStudent[$i]['ID'])->get()->getResultArray();
             $position = $this->dbTable('position')->select('*')->where('ID', $id_position[0]['Position'])->get()->getResultArray();
             $dataStudent[$i]['Position'] = $position[0]['Name'];
-            echo $position[0]['Name']." - ".$dataStudent[$i]['ID']." - ".$dataStudent[$i]['Position'].'
-            ';
         }
         
         echo json_encode(array('status' => true, "message" => json_encode($dataStudent)));
